@@ -46,12 +46,10 @@ namespace APITrabalhoFinal.Services
 
             var ProductById = GetById(id);
 
-            ProductById.Description = entity.Description;
-            ProductById.Barcode = entity.Barcode;
-            ProductById.Barcodetype = entity.Barcodetype;
-            ProductById.Stock = entity.Stock;
-            ProductById.Price = entity.Price;
-            ProductById.Costprice = entity.Costprice;
+            ProductById.Startdate = entity.Startdate;
+            ProductById.Enddate = entity.Enddate;
+            ProductById.Promotiontype = entity.Promotiontype;
+            ProductById.Value = entity.Value;
 
 
             _dbContext.Update(ProductById);

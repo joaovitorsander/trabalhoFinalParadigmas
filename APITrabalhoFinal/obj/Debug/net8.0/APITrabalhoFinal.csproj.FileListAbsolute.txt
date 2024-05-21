@@ -53,3 +53,7 @@ C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\obj\Debug\net8.0\A
 C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\obj\Debug\net8.0\ref\APITrabalhoFinal.dll
 C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\APITrabalhoFinal.xml
 C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\obj\Debug\net8.0\APITrabalhoFinal.xml
+C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\obj\Debug\net8.0\APITrabalhoFinal.sourcelink.json
+C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

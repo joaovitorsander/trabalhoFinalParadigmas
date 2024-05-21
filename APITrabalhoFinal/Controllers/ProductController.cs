@@ -60,18 +60,19 @@ namespace APITrabalhoFinal.Controllers
             }
         }
 
+
         /// <summary>
-        /// Exclui um produto.
+        /// Obtém um produto pelo ID.
         /// </summary>
-        /// <param name="id">O ID do produto a ser excluído.</param>
-        /// <returns>Retorna NoContent se a exclusão for bem-sucedida.</returns>
-        [HttpDelete("{id}")]
-        public ActionResult<TbProduct> Delete(int id)
+        /// <param name="id">O ID do produto a ser obtido.</param>
+        /// <returns>O produto solicitado.</returns>
+        [HttpGet("{id}")]
+        public ActionResult<TbProduct> GetById(int id)
         {
             try
             {
-                _service.Delete(id);
-                return NoContent();
+                var entity = _service.GetById(id);
+                return Ok(entity);
             }
             catch (NotFoundException E)
             {
@@ -87,16 +88,42 @@ namespace APITrabalhoFinal.Controllers
         }
 
         /// <summary>
-        /// Obtém um produto pelo ID.
+        /// Obtém um produto pelo código de barras.
         /// </summary>
-        /// <param name="id">O ID do produto a ser obtido.</param>
+        /// <param name="barCode">O código de barras do produto a ser obtido.</param>
         /// <returns>O produto solicitado.</returns>
-        [HttpGet("{id}")]
-        public ActionResult<TbProduct> GetById(int id)
+        [HttpGet("barcode/{barcode}")]
+        public ActionResult<TbProduct> GetByBarCode(string barCode)
         {
             try
             {
-                var entity = _service.GetById(id);
+                var entity = _service.GetByBarCode(barCode);
+                return Ok(entity);
+            }
+            catch (NotFoundException E)
+            {
+                return NotFound(E.Message);
+            }
+            catch (System.Exception e)
+            {
+                return new ObjectResult(new { error = e.Message })
+                {
+                    StatusCode = 500
+                };
+            }
+        }
+
+        /// <summary>
+        /// Obtém um produto pela descrição.
+        /// </summary>
+        /// <param name="description">A descrição do produto a ser obtido.</param>
+        /// <returns>A lista de produtos que contém a descrição.</returns>
+        [HttpGet("description/{description}")]
+        public ActionResult<TbProduct> GetByDesc(string description)
+        {
+            try
+            {
+                var entity = _service.GetByDesc(description);
                 return Ok(entity);
             }
             catch (NotFoundException E)

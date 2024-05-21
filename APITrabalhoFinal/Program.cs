@@ -5,9 +5,13 @@ using Microsoft.OpenApi.Models;
 using System.IO;
 using System.Reflection;
 using System;
-using ApiWebDB.BaseDados.Models2;
 using APITrabalhoFinal.Services;
 using Microsoft.Extensions.Logging;
+using APITrabalhoFinal.DataBase.Models;
+using APITrabalhoFinal.Services.DTOs;
+using APITrabalhoFinal.Services.Validate;
+using FluentValidation.AspNetCore;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<TfDbContext>();
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddTransient<IValidator<ProductDTO>, ProductValidate>();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddEndpointsApiExplorer();
 builder.Logging.AddFile("Logs/ApiWebDB-{Date}.log");
 builder.Services.AddSwaggerGen();

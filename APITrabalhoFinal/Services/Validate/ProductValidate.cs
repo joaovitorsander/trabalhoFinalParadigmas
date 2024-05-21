@@ -1,58 +1,33 @@
 ﻿using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
+using FluentValidation;
 
 namespace APITrabalhoFinal.Services.Validate
 {
-    public class ProductValidate
+    public class ProductValidate : AbstractValidator<ProductDTO>
     {
-        public static bool Validate(ProductDTO productDTO)
+        public ProductValidate()
         {
-            if (string.IsNullOrEmpty(productDTO.Description))
-            {
-                throw new InvalidEntityException("A descrição do produto é obrigatória.");
-            }
+            RuleFor(product => product.Description)
+                .NotEmpty().WithMessage("A descrição do produto é obrigatória.")
+                .MaximumLength(255).WithMessage("A descrição do produto não pode exceder 255 caracteres.");
 
-            if (productDTO.Description.Length > 255)
-            {
-                throw new InvalidEntityException("A descrição do produto não pode exceder 255 caracteres.");
-            }
+            RuleFor(product => product.Barcode)
+                .NotEmpty().WithMessage("O código de barras do produto é obrigatório.")
+                .MaximumLength(40).WithMessage("O código de barras do produto não pode exceder 40 caracteres.");
 
-            if (string.IsNullOrEmpty(productDTO.Barcode))
-            {
-                throw new InvalidEntityException("O código de barras do produto é obrigatório.");
-            }
+            RuleFor(product => product.Barcodetype)
+                .NotEmpty().WithMessage("O tipo de código de barras do produto é obrigatório.")
+                .MaximumLength(10).WithMessage("O tipo de código de barras do produto não pode exceder 10 caracteres.");
 
-            if (productDTO.Barcode.Length > 40)
-            {
-                throw new InvalidEntityException("O código de barras do produto não pode exceder 40 caracteres.");
-            }
+            RuleFor(product => product.Stock)
+                .GreaterThan(0).WithMessage("A quantidade em estoque deve ser maior que zero.");
 
-            if (string.IsNullOrEmpty(productDTO.Barcodetype))
-            {
-                throw new InvalidEntityException("O tipo de código de barras do produto é obrigatório.");
-            }
+            RuleFor(product => product.Price)
+                .GreaterThan(0).WithMessage("O preço do produto deve ser maior que zero.");
 
-            if (productDTO.Barcodetype.Length > 40)
-            {
-                throw new InvalidEntityException("O tipo de código de barras do produto não pode exceder 40 caracteres.");
-            }
-
-            if (productDTO.Stock <= 0)
-            {
-                throw new InvalidEntityException("A quantidade em estoque deve ser maior que zero.");
-            }
-
-            if (productDTO.Price <= 0)
-            {
-                throw new InvalidEntityException("O preço do produto deve ser maior que zero.");
-            }
-
-            if (productDTO.Costprice <= 0)
-            {
-                throw new InvalidEntityException("O preço de custo do produto deve ser maior que zero.");
-            }
-
-            return true;
+            RuleFor(product => product.Costprice)
+                .GreaterThan(0).WithMessage("O preço de custo do produto deve ser maior que zero.");
         }
     }
 }

@@ -24,13 +24,6 @@
             <param name="dto">Os novos dados do produto.</param>
             <returns>O produto atualizado.</returns>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.Delete(System.Int32)">
-            <summary>
-            Exclui um produto.
-            </summary>
-            <param name="id">O ID do produto a ser excluído.</param>
-            <returns>Retorna NoContent se a exclusão for bem-sucedida.</returns>
-        </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.GetById(System.Int32)">
             <summary>
             Obtém um produto pelo ID.
@@ -38,123 +31,177 @@
             <param name="id">O ID do produto a ser obtido.</param>
             <returns>O produto solicitado.</returns>
         </member>
+        <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByBarCode(System.String)">
+            <summary>
+            Obtém um produto pelo código de barras.
+            </summary>
+            <param name="barCode">O código de barras do produto a ser obtido.</param>
+            <returns>O produto solicitado.</returns>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByDesc(System.String)">
+            <summary>
+            Obtém um produto pela descrição.
+            </summary>
+            <param name="description">A descrição do produto a ser obtido.</param>
+            <returns>A lista de produtos que contém a descrição.</returns>
+        </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.Get">
             <summary>
             Obtém todos os produtos.
             </summary>
             <returns>Uma lista de todos os produtos.</returns>
         </member>
-        <member name="T:APITrabalhoFinal.BaseDeDados.Models.TbProduct">
+        <member name="T:APITrabalhoFinal.Controllers.PromotionController">
+            <summary>
+            Controlador para gerenciar as promoções.
+            </summary>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)">
+            <summary>
+            Insere uma nova promoção.
+            </summary>
+            <param name="promoção">A promoção a ser inserida.</param>
+            <returns>A promoção inserida.</returns>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.PromotionDTO)">
+            <summary>
+            Atualiza uma promoção existente.
+            </summary>
+            <param name="id">O ID da promoção a ser atualizada.</param>
+            <param name="dto">Os novos dados da promoção.</param>
+            <returns>A promoção atualizada.</returns>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Delete(System.Int32)">
+            <summary>
+            Exclui uma promoção.
+            </summary>
+            <param name="id">O ID da promoção a ser excluída.</param>
+            <returns>Retorna NoContent se a exclusão for bem-sucedida.</returns>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.GetById(System.Int32)">
+            <summary>
+            Obtém uma promoção pelo ID.
+            </summary>
+            <param name="id">O ID da promoção a ser obtida.</param>
+            <returns>A promoção solicitada.</returns>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Get">
+            <summary>
+            Obtém todas as promoções.
+            </summary>
+            <returns>Uma lista de todas as promoções.</returns>
+        </member>
+        <member name="T:APITrabalhoFinal.DataBase.Models.TbProduct">
             <summary>
             tabela de produtos
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Id">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Id">
             <summary>
             código único gerado pelo DB
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Description">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Description">
             <summary>
             Descrição do produto
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Barcode">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Barcode">
             <summary>
             código de barras
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Barcodetype">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Barcodetype">
             <summary>
             Tipo de código de barras:\nEAN-13   Varejo - Número de 13 dígitos)\nDUN-14  Frete - Número de 14 dígitos) \nUPC - Varejo (América do Norte e Canadá) -​ Número de 12 dígitos\nCODE 11 - Telecomunicações - números de 0 a 9, – e *\nCODE 39 - Automotiva e Defesa - Letras (A a Z), numéros (0 a 9) e (-, ., $, /, +, %, e espaço). Um caractere adicional (denotado ‘*’) é usado para os delimitadores de início e parada.
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Stock">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Stock">
             <summary>
             Quantidade em estoque
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Price">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Price">
             <summary>
             Preço de venda
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbProduct.Costprice">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbProduct.Costprice">
             <summary>
             Preço de custo
             </summary>
         </member>
-        <member name="T:APITrabalhoFinal.BaseDeDados.Models.TbPromotion">
+        <member name="T:APITrabalhoFinal.DataBase.Models.TbPromotion">
             <summary>
             Tabela de promoções
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbPromotion.Id">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbPromotion.Id">
             <summary>
             Identificador unico da tabela
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbPromotion.Startdate">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbPromotion.Startdate">
             <summary>
             Data e hora de inicio da promoção
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbPromotion.Enddate">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbPromotion.Enddate">
             <summary>
             date e hora final da promoção
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbPromotion.Promotiontype">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbPromotion.Promotiontype">
             <summary>
             Tipo de promoção\n0 - % de desconto\n1 - Valor fixo de desconto
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbPromotion.Productid">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbPromotion.Productid">
             <summary>
             Código do produto em promoção
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbPromotion.Value">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbPromotion.Value">
             <summary>
             Valor da promoção (Se for tipo 0, é o % se for tipo 1, deve ser o valor monetário)
             </summary>
         </member>
-        <member name="T:APITrabalhoFinal.BaseDeDados.Models.TbSale">
+        <member name="T:APITrabalhoFinal.DataBase.Models.TbSale">
             <summary>
             tabela dos documentos de venda
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Id">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Id">
             <summary>
             código único da tabela (Gerado automaticamente)
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Code">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Code">
             <summary>
             Código da venda (Um código único da venda, onde todos os items de uma venda, terão o mesmo código). Deve ser uma chave guid.
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Createat">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Createat">
             <summary>
             data de criação do registro
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Productid">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Productid">
             <summary>
             Código do produto
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Price">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Price">
             <summary>
             Preço unitário de venda
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Qty">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Qty">
             <summary>
             Quantidade vendida
             </summary>
         </member>
-        <member name="P:APITrabalhoFinal.BaseDeDados.Models.TbSale.Discount">
+        <member name="P:APITrabalhoFinal.DataBase.Models.TbSale.Discount">
             <summary>
             Valor de desconto unitário (Valor em reais)
             </summary>
