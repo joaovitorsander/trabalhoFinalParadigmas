@@ -1,38 +1,39 @@
 ﻿using APITrabalhoFinal.Services.DTOs;
-using APITrabalhoFinal.Services.Exceptions;
+using FluentValidation;
+using FluentValidation.Results;
+using System;
 
 namespace APITrabalhoFinal.Services.Validate
 {
-    public class SaleValidate
+    public class SaleValidate : AbstractValidator<SaleDTO>
     {
-        public static bool Validate(SaleDTO saleDTO)
+        public SaleValidate()
         {
-            if (string.IsNullOrEmpty(saleDTO.Code))
-            {
-                throw new InvalidEntityException("O código da venda é obrigatório.");
-            }
+            RuleFor(sale => sale.Code)
+                .NotEmpty().WithMessage("O código da venda é obrigatório.")
+                .Must(IsGuid).WithMessage("O código da venda deve ser um GUID válido.");
 
-            if (saleDTO.Productid <= 0)
-            {
-                throw new InvalidEntityException("O ID do produto associado à venda é obrigatório.");
-            }
+            RuleFor(sale => sale.Productid)
+                .GreaterThan(0).WithMessage("O ID do produto associado à venda é obrigatório.");
 
-            if (saleDTO.Price <= 0)
-            {
-                throw new InvalidEntityException("O preço da venda deve ser maior que zero.");
-            }
+            RuleFor(sale => sale.Price)
+                .GreaterThan(0).WithMessage("O preço da venda deve ser maior que zero.");
 
-            if (saleDTO.Qty <= 0)
-            {
-                throw new InvalidEntityException("A quantidade vendida deve ser maior que zero.");
-            }
+            RuleFor(sale => sale.Qty)
+                .GreaterThan(0).WithMessage("A quantidade vendida deve ser maior que zero.");
 
-            if (saleDTO.Discount < 0 || saleDTO.Discount > 100)
-            {
-                throw new InvalidEntityException("O desconto deve estar entre 0% e 100%.");
-            }
+            RuleFor(sale => sale.Discount)
+                .InclusiveBetween(0, 100).WithMessage("O desconto deve estar entre 0% e 100%.");
+        }
 
-            return true; 
+        public ValidationResult ValidateSale(SaleDTO sale)
+        {
+            return Validate(sale);
+        }
+
+        private bool IsGuid(string code)
+        {
+            return Guid.TryParse(code, out _);
         }
     }
 }

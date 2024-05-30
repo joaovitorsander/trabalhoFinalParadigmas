@@ -1,33 +1,46 @@
 ﻿using APITrabalhoFinal.Services.DTOs;
-using APITrabalhoFinal.Services.Exceptions;
+using FluentValidation;
+using FluentValidation.Results;
+using System;
 
 namespace APITrabalhoFinal.Services.Validate
 {
-    public class PromotionValidate
+    public class PromotionValidate : AbstractValidator<PromotionDTO>
     {
-        public static bool Validate(PromotionDTO promotionDTO)
+        public PromotionValidate()
         {
-            if (promotionDTO.Startdate > promotionDTO.Enddate)
-            {
-                throw new InvalidEntityException("A data de início da promoção não pode ser posterior ao término.");
-            }
+            RuleFor(promotion => promotion.Startdate)
+                .NotEmpty().WithMessage("A data de início da promoção é obrigatória.");
 
-            if (promotionDTO.Promotiontype <= 0)
-            {
-                throw new InvalidEntityException("O tipo da promoção é obrigatório.");
-            }
+            RuleFor(promotion => promotion.Enddate)
+                .NotEmpty().WithMessage("A data fim da promoção é obrigatória.");
 
-            if (promotionDTO.Productid <= 0)
-            {
-                throw new InvalidEntityException("O ID do produto associado à promoção é obrigatório.");
-            }
+            RuleFor(promotion => promotion.Promotiontype)
+                .Must(p => p == 0 || p == 1)
+                .WithMessage("O tipo de promoção deve ser 0 (desconto percentual) ou 1 (desconto fixo)");
 
-            if (promotionDTO.Value <= 0)
-            {
-                throw new InvalidEntityException("O valor da promoção deve ser maior que zero.");
-            }
+            RuleFor(promotion => promotion.Value)
+                .GreaterThan(0)
+                .WithMessage("O valor da promoção deve ser maior que zero");
 
-            return true; 
+            When(promotion => promotion.Promotiontype == 0, () =>
+            {
+                RuleFor(promotion => promotion.Value)
+                    .InclusiveBetween(0, 100)
+                    .WithMessage("Para desconto percentual, o valor deve estar entre 0 e 100");
+            });
+
+            When(promotion => promotion.Promotiontype == 1, () =>
+            {
+                RuleFor(promotion => promotion.Value)
+                    .GreaterThan(0)
+                    .WithMessage("Para desconto fixo, o valor deve ser positivo");
+            });
+        }
+
+        public ValidationResult ValidatePromotion(PromotionDTO promotion)
+        {
+            return Validate(promotion);
         }
     }
 }

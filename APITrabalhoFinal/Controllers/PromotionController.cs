@@ -3,6 +3,10 @@ using APITrabalhoFinal.Services.Exceptions;
 using APITrabalhoFinal.Services;
 using Microsoft.AspNetCore.Mvc;
 using APITrabalhoFinal.DataBase.Models;
+using System.Collections.Generic;
+using System;
+using Microsoft.AspNetCore.Http;
+using APITrabalhoFinal.Services.Validate;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -15,22 +19,30 @@ namespace APITrabalhoFinal.Controllers
     {
 
         public readonly PromotionService _service;
+        public readonly PromotionValidate _validator;
 
-        public PromotionController(PromotionService service)
+        public PromotionController(PromotionService service, PromotionValidate validator)
         {
             _service = service;
+            _validator = validator;
         }
 
         /// <summary>
         /// Insere uma nova promoção.
         /// </summary>
-        /// <param name="promoção">A promoção a ser inserida.</param>
+        /// <param name="promotion">A promoção a ser inserida.</param>
         /// <returns>A promoção inserida.</returns>
         [HttpPost()]
         public ActionResult<TbPromotion> Insert(PromotionDTO promotion)
         {
             try
             {
+                var validationResult = _validator.ValidatePromotion(promotion);
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(validationResult.Errors);
+                }
+
                 var entity = _service.Insert(promotion);
                 return Ok(entity);
             }
@@ -44,13 +56,25 @@ namespace APITrabalhoFinal.Controllers
         /// Atualiza uma promoção existente.
         /// </summary>
         /// <param name="id">O ID da promoção a ser atualizada.</param>
-        /// <param name="dto">Os novos dados da promoção.</param>
+        /// <param name="dto">Os dados atualizados da promoção.</param>
         /// <returns>A promoção atualizada.</returns>
         [HttpPut("{id}")]
-        public ActionResult<TbPromotion> Update(int id, PromotionDTO dto)
+        public ActionResult<TbPromotion> Put(int id, PromotionDTO dto)
         {
             try
             {
+                var checkPromotionById = _service.GetById(id);
+                if (checkPromotionById == null)
+                {
+                    return NotFound();
+                }
+
+                var validationResult = _validator.ValidatePromotion(dto);
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(validationResult.Errors);
+                }
+
                 var entity = _service.Update(dto, id);
                 return Ok(entity);
             }
@@ -60,43 +84,21 @@ namespace APITrabalhoFinal.Controllers
             }
         }
 
-        /// <summary>
-        /// Exclui uma promoção.
-        /// </summary>
-        /// <param name="id">O ID da promoção a ser excluída.</param>
-        /// <returns>Retorna NoContent se a exclusão for bem-sucedida.</returns>
-        [HttpDelete("{id}")]
-        public ActionResult<TbPromotion> Delete(int id)
-        {
-            try
-            {
-                _service.Delete(id);
-                return NoContent();
-            }
-            catch (NotFoundException E)
-            {
-                return NotFound(E.Message);
-            }
-            catch (System.Exception e)
-            {
-                return new ObjectResult(new { error = e.Message })
-                {
-                    StatusCode = 500
-                };
-            }
-        }
+
 
         /// <summary>
-        /// Obtém uma promoção pelo ID.
+        /// Busca todas as promoções de um produto em um determinado período.
         /// </summary>
-        /// <param name="id">O ID da promoção a ser obtida.</param>
-        /// <returns>A promoção solicitada.</returns>
-        [HttpGet("{id}")]
-        public ActionResult<TbPromotion> GetById(int id)
+        /// <param name="productId"></param>
+        /// <param name="startDate">Data de início do período.</param>
+        /// <param name="endDate">Data de fim do período.</param>
+        /// <returns>Lista de promoções.</returns>
+        [HttpGet("product/{productId}/period")]
+        public ActionResult<IEnumerable<TbPromotion>> GetPromotionsByProductAndPeriod(int productId, DateTime startDate, DateTime endDate)
         {
             try
             {
-                var entity = _service.GetById(id);
+                var entity = _service.GetPromotionsByProductAndPeriod(productId, startDate, endDate);
                 return Ok(entity);
             }
             catch (NotFoundException E)
@@ -112,29 +114,5 @@ namespace APITrabalhoFinal.Controllers
             }
         }
 
-        /// <summary>
-        /// Obtém todas as promoções.
-        /// </summary>
-        /// <returns>Uma lista de todas as promoções.</returns>
-        [HttpGet()]
-        public ActionResult<TbPromotion> Get()
-        {
-            try
-            {
-                var entity = _service.Get();
-                return Ok(entity);
-            }
-            catch (NotFoundException E)
-            {
-                return NotFound(E.Message);
-            }
-            catch (System.Exception e)
-            {
-                return new ObjectResult(new { error = e.Message })
-                {
-                    StatusCode = 500
-                };
-            }
-        }
     }
 }

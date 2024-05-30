@@ -4,6 +4,7 @@ using APITrabalhoFinal.Services.Exceptions;
 using APITrabalhoFinal.Services.Parser;
 using APITrabalhoFinal.Services.Validate;
 using FluentValidation;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -27,10 +28,13 @@ namespace APITrabalhoFinal.Services
         {
             ValidateProduct(dto);
 
+
             var entity = ProductParser.ToEntity(dto);
 
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
+
+            //AjustarStock(entity.Id, entity.Stock);
 
             return entity;
         }
@@ -58,6 +62,8 @@ namespace APITrabalhoFinal.Services
 
             _dbContext.Update(ProductById);
             _dbContext.SaveChanges();
+
+            AjustarStock(entity.Id, entity.Stock);
 
             return entity;
         }
@@ -99,18 +105,54 @@ namespace APITrabalhoFinal.Services
         {
             var lowerDesc = desc.ToLower(); 
 
-            var entities = _dbContext.TbProducts
+            var existingEntity = _dbContext.TbProducts
                 .Where(p => p.Description.ToLower().Contains(lowerDesc))
                 .ToList();
 
-            if (entities.Count == 0)
+            if (existingEntity == null || existingEntity.Count == 0)
             {
                 throw new NotFoundException("Nenhum registro encontrado");
             }
 
-            return entities;
+            return existingEntity;
         }
 
+        public void AjustarStock(int productId, int quantity)
+        {
+            var product = GetById(productId);
+            if (product == null)
+            {
+                throw new NotFoundException("Produto não encontrado.");
+            }
+
+            if (quantity > 0)
+            {
+                product.Stock += quantity;
+            }
+            else if (quantity < 0)
+            {
+                if (product.Stock < Math.Abs(quantity))
+                {
+                    throw new InsufficientStockException("Estoque insuficiente para realizar a operação.");
+                }
+
+                product.Stock += quantity;
+            }
+            else
+            {
+                return;
+            }
+
+            var stockLog = new TbStockLog
+            {
+                Productid = productId,
+                Qty = quantity,
+                Createdat = DateTime.Now
+            };
+
+            _dbContext.TbStockLogs.Add(stockLog);
+            _dbContext.SaveChanges();
+        }
 
         private void ValidateProduct(ProductDTO dto)
         {

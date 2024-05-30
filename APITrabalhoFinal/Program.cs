@@ -21,8 +21,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<TfDbContext>();
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<PromotionService>();
+builder.Services.AddScoped<SalesService>();
 builder.Services.AddTransient<IValidator<ProductDTO>, ProductValidate>();
-builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddTransient<IValidator<PromotionDTO>, PromotionValidate>();
+builder.Services.AddTransient<IValidator<SaleDTO>, SaleValidate>();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddEndpointsApiExplorer();
 builder.Logging.AddFile("Logs/ApiWebDB-{Date}.log");

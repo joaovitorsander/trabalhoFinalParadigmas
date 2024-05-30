@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\services\\validate\\productvalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\services\\validate\\productvalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\services\\promotionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\services\\promotionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,67 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PromotionService.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\PromotionService.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Services\\PromotionService.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\PromotionService.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Services\\PromotionService.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowDMAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T23:21:41.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Program.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Program.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Program.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Program.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAEIAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T23:20:59.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductValidate.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\Validate\\ProductValidate.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Services\\Validate\\ProductValidate.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\Validate\\ProductValidate.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Services\\Validate\\ProductValidate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T22:59:51.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\ProductService.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Services\\ProductService.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAkwGEAAAA8AAAA",
+              "Title": "SalesController.cs",
+              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\SalesController.cs",
+              "RelativeDocumentMoniker": "APITrabalhoFinal\\Controllers\\SalesController.cs",
+              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\SalesController.cs",
+              "RelativeToolTip": "APITrabalhoFinal\\Controllers\\SalesController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAqwCsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T22:59:24.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAmwHsAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T22:36:16.285Z",
+              "WhenOpened": "2024-05-29T23:58:00.667Z",
               "EditorCaption": ""
             }
           ]

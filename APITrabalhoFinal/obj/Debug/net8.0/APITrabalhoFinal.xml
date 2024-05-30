@@ -13,7 +13,7 @@
             <summary>
             Insere um novo produto.
             </summary>
-            <param name="produto">O produto a ser inserido.</param>
+            <param name="product">O produto a ser inserido.</param>
             <returns>O produto inserido.</returns>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.ProductDTO)">
@@ -23,13 +23,6 @@
             <param name="id">O ID do produto a ser atualizado.</param>
             <param name="dto">Os novos dados do produto.</param>
             <returns>O produto atualizado.</returns>
-        </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.GetById(System.Int32)">
-            <summary>
-            Obtém um produto pelo ID.
-            </summary>
-            <param name="id">O ID do produto a ser obtido.</param>
-            <returns>O produto solicitado.</returns>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByBarCode(System.String)">
             <summary>
@@ -60,36 +53,44 @@
             <summary>
             Insere uma nova promoção.
             </summary>
-            <param name="promoção">A promoção a ser inserida.</param>
+            <param name="promotion">A promoção a ser inserida.</param>
             <returns>A promoção inserida.</returns>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.PromotionDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Put(System.Int32,APITrabalhoFinal.Services.DTOs.PromotionDTO)">
             <summary>
             Atualiza uma promoção existente.
             </summary>
             <param name="id">O ID da promoção a ser atualizada.</param>
-            <param name="dto">Os novos dados da promoção.</param>
+            <param name="dto">Os dados atualizados da promoção.</param>
             <returns>A promoção atualizada.</returns>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Delete(System.Int32)">
+        <member name="M:APITrabalhoFinal.Controllers.PromotionController.GetPromotionsByProductAndPeriod(System.Int32,System.DateTime,System.DateTime)">
             <summary>
-            Exclui uma promoção.
+            Busca todas as promoções de um produto em um determinado período.
             </summary>
-            <param name="id">O ID da promoção a ser excluída.</param>
-            <returns>Retorna NoContent se a exclusão for bem-sucedida.</returns>
+            <param name="productId"></param>
+            <param name="startDate">Data de início do período.</param>
+            <param name="endDate">Data de fim do período.</param>
+            <returns>Lista de promoções.</returns>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.GetById(System.Int32)">
+        <member name="T:APITrabalhoFinal.Controllers.SalesController">
             <summary>
-            Obtém uma promoção pelo ID.
+            Controlador para gerenciar as vendas.
             </summary>
-            <param name="id">O ID da promoção a ser obtida.</param>
-            <returns>A promoção solicitada.</returns>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Get">
+        <member name="M:APITrabalhoFinal.Controllers.SalesController.Insert(APITrabalhoFinal.Services.DTOs.SaleDTO)">
             <summary>
-            Obtém todas as promoções.
+            Insere uma nova venda.
             </summary>
-            <returns>Uma lista de todas as promoções.</returns>
+            <param name="sale">A venda a ser inserida</param>
+            <returns>A venda inserida.</returns>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.SalesController.GetByCode(System.String)">
+            <summary>
+            Obtém uma venda pelo código.
+            </summary>
+            <param name="cod">O código da venda a ser obtida.</param>
+            <returns>A venda solicitada.</returns>
         </member>
         <member name="T:APITrabalhoFinal.DataBase.Models.TbProduct">
             <summary>

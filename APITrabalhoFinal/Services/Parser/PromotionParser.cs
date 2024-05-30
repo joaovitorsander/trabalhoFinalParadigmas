@@ -1,5 +1,6 @@
 ﻿using APITrabalhoFinal.DataBase.Models;
 using APITrabalhoFinal.Services.DTOs;
+using System;
 
 namespace APITrabalhoFinal.Services.Parser
 {
@@ -9,9 +10,8 @@ namespace APITrabalhoFinal.Services.Parser
         {
             return new TbPromotion
             {
-                Id = dto.Id,
-                Startdate = dto.Startdate,
-                Enddate = dto.Enddate,
+                Startdate = DateTime.SpecifyKind(dto.Startdate, DateTimeKind.Unspecified),
+                Enddate = DateTime.SpecifyKind(dto.Enddate, DateTimeKind.Unspecified),
                 Promotiontype = dto.Promotiontype,
                 Productid = dto.Productid,
                 Value = dto.Value

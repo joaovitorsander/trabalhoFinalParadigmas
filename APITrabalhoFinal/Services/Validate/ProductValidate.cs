@@ -1,6 +1,7 @@
 ﻿using APITrabalhoFinal.Services.DTOs;
-using APITrabalhoFinal.Services.Exceptions;
 using FluentValidation;
+using FluentValidation.Results;
+using System.Text.RegularExpressions;
 
 namespace APITrabalhoFinal.Services.Validate
 {
@@ -18,7 +19,8 @@ namespace APITrabalhoFinal.Services.Validate
 
             RuleFor(product => product.Barcodetype)
                 .NotEmpty().WithMessage("O tipo de código de barras do produto é obrigatório.")
-                .MaximumLength(10).WithMessage("O tipo de código de barras do produto não pode exceder 10 caracteres.");
+                .MaximumLength(10).WithMessage("O tipo de código de barras do produto não pode exceder 10 caracteres.")
+                .Must(BarCodeTypeValidate).WithMessage("O código de barras não é válido para o tipo especificado.");
 
             RuleFor(product => product.Stock)
                 .GreaterThan(0).WithMessage("A quantidade em estoque deve ser maior que zero.");
@@ -28,6 +30,35 @@ namespace APITrabalhoFinal.Services.Validate
 
             RuleFor(product => product.Costprice)
                 .GreaterThan(0).WithMessage("O preço de custo do produto deve ser maior que zero.");
+        }
+
+        public ValidationResult ValidateProduct(ProductDTO product)
+        {
+            return Validate(product);
+        }
+
+        private bool BarCodeTypeValidate(ProductDTO dto, string barcodetype)
+        {
+            switch (barcodetype.ToUpper())
+            {
+                case "EAN-13":
+                    return Regex.IsMatch(dto.Barcode, @"^\d{13}$");
+
+                case "DUN-14":
+                    return Regex.IsMatch(dto.Barcode, @"^\d{14}$");
+
+                case "UPC":
+                    return Regex.IsMatch(dto.Barcode, @"^\d{12}$");
+
+                case "CODE 11":
+                    return Regex.IsMatch(dto.Barcode, @"^[0-9\-\*]+$");
+
+                case "CODE 39":
+                    return Regex.IsMatch(dto.Barcode, @"^[A-Z0-9\-\.\/\+\%\*\s]+$");
+
+                default:
+                    return false;
+            }
         }
     }
 }

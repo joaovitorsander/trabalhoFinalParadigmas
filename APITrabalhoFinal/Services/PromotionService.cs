@@ -3,7 +3,11 @@ using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
 using APITrabalhoFinal.Services.Parser;
 using APITrabalhoFinal.Services.Validate;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace APITrabalhoFinal.Services
@@ -11,16 +15,17 @@ namespace APITrabalhoFinal.Services
     public class PromotionService
     {
         private readonly TfDbContext _dbContext;
+        private readonly IValidator<PromotionDTO> _validator;
 
-        public PromotionService(TfDbContext dbcontext)
+        public PromotionService(TfDbContext dbcontext, IValidator<PromotionDTO> validator)
         {
             _dbContext = dbcontext;
+            _validator = validator;
         }
 
         public TbPromotion Insert(PromotionDTO dto)
         {
-            if (!PromotionValidate.Validate(dto))
-                return null;
+            ValidatePromotion(dto);
 
             var entity = PromotionParser.ToEntity(dto);
 
@@ -32,31 +37,29 @@ namespace APITrabalhoFinal.Services
 
         public TbPromotion Update(PromotionDTO dto, int id)
         {
-            if (!PromotionValidate.Validate(dto))
-                return null;
 
+            var promotion = GetById(id);
 
-            var existingEntity = GetById(id);
-            if (existingEntity == null)
+            if (promotion == null)
             {
                 throw new NotFoundException("Registro não existe");
             }
 
             var entity = PromotionParser.ToEntity(dto);
 
-            var ProductById = GetById(id);
+            promotion.Startdate = dto.Startdate;
+            promotion.Enddate = dto.Enddate;
+            promotion.Promotiontype = dto.Promotiontype;
+            promotion.Productid = dto.Productid;
+            promotion.Value = dto.Value;
 
-            ProductById.Startdate = entity.Startdate;
-            ProductById.Enddate = entity.Enddate;
-            ProductById.Promotiontype = entity.Promotiontype;
-            ProductById.Value = entity.Value;
-
-
-            _dbContext.Update(ProductById);
+            _dbContext.Update(promotion);
             _dbContext.SaveChanges();
 
             return entity;
         }
+
+
 
         public TbPromotion GetById(int id)
         {
@@ -67,26 +70,32 @@ namespace APITrabalhoFinal.Services
             }
             return existingEntity;
         }
-        public IEnumerable<TbPromotion> Get()
+
+        public IEnumerable<TbPromotion> GetPromotionsByProductAndPeriod(int productId, DateTime startDate, DateTime endDate)
         {
-            var existingEntity = _dbContext.TbPromotions.ToList();
-            if (existingEntity == null || existingEntity.Count == 0)
+            var promotions = _dbContext.TbPromotions
+                .Where(p => p.Productid == productId &&
+                            p.Startdate >= startDate &&
+                            p.Enddate <= endDate)
+                .ToList();
+
+            if (promotions == null || promotions.Count == 0)
             {
-                throw new NotFoundException("Nenhum registro encontrado");
+                throw new NotFoundException("Nenhuma promoção encontrada para o período especificado.");
             }
-            return existingEntity;
+
+            return promotions;
         }
-        public void Delete(int id)
+
+        private void ValidatePromotion(PromotionDTO dto)
         {
-            var existingEntity = GetById(id);
+            var validationResult = _validator.Validate(dto);
 
-            if (existingEntity == null)
+            if (!validationResult.IsValid)
             {
-                throw new NotFoundException("Registro não existe");
+                var errorMessages = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+                throw new InvalidEntityException(errorMessages);
             }
-            _dbContext.Remove(existingEntity);
-            _dbContext.SaveChanges();
-
         }
     }
 }

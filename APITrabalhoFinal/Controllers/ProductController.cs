@@ -2,6 +2,7 @@
 using APITrabalhoFinal.Services;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
+using APITrabalhoFinal.Services.Validate;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APITrabalhoFinal.Controllers
@@ -15,22 +16,29 @@ namespace APITrabalhoFinal.Controllers
     {
 
         public readonly ProductService _service;
+        public readonly ProductValidate _validator;
 
-        public ProductController(ProductService service)
+        public ProductController(ProductService service, ProductValidate validator)
         {
             _service = service;
+            _validator = validator;
         }
 
         /// <summary>
         /// Insere um novo produto.
         /// </summary>
-        /// <param name="produto">O produto a ser inserido.</param>
+        /// <param name="product">O produto a ser inserido.</param>
         /// <returns>O produto inserido.</returns>
         [HttpPost()]
         public ActionResult<TbProduct> Insert(ProductDTO product)
         {
             try
             {
+                var validationResult = _validator.ValidateProduct(product);
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(validationResult.Errors);
+                }
                 var entity = _service.Insert(product);
                 return Ok(entity);
             }
@@ -51,6 +59,12 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
+                var validationResult = _validator.ValidateProduct(dto);
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(validationResult.Errors);
+                }
+
                 var entity = _service.Update(dto, id);
                 return Ok(entity);
             }
@@ -62,38 +76,12 @@ namespace APITrabalhoFinal.Controllers
 
 
         /// <summary>
-        /// Obtém um produto pelo ID.
-        /// </summary>
-        /// <param name="id">O ID do produto a ser obtido.</param>
-        /// <returns>O produto solicitado.</returns>
-        [HttpGet("{id}")]
-        public ActionResult<TbProduct> GetById(int id)
-        {
-            try
-            {
-                var entity = _service.GetById(id);
-                return Ok(entity);
-            }
-            catch (NotFoundException E)
-            {
-                return NotFound(E.Message);
-            }
-            catch (System.Exception e)
-            {
-                return new ObjectResult(new { error = e.Message })
-                {
-                    StatusCode = 500
-                };
-            }
-        }
-
-        /// <summary>
         /// Obtém um produto pelo código de barras.
         /// </summary>
         /// <param name="barCode">O código de barras do produto a ser obtido.</param>
         /// <returns>O produto solicitado.</returns>
-        [HttpGet("barcode/{barcode}")]
-        public ActionResult<TbProduct> GetByBarCode(string barCode)
+        [HttpGet("barcode")]
+        public ActionResult<TbProduct> GetByBarCode([FromQuery] string barCode)
         {
             try
             {
