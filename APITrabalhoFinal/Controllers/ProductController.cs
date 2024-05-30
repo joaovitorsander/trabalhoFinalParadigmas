@@ -46,7 +46,7 @@ namespace APITrabalhoFinal.Controllers
                 var validationResult = _validatorInsertProduct.Validate(product);
                 if (!validationResult.IsValid)
                 {
-                    return BadRequest(validationResult.Errors);
+                    return BadRequest(new { Message = "Dados inválidos", Errors = validationResult.Errors });
                 }
                 var entity = _service.Insert(product);
                 return Ok(entity);
@@ -54,6 +54,10 @@ namespace APITrabalhoFinal.Controllers
             catch (InvalidEntityException E)
             {
                 return BadRequest(E.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -81,15 +85,19 @@ namespace APITrabalhoFinal.Controllers
                 var validationResult = _validatorUpdateProduct.Validate(dto);
                 if (!validationResult.IsValid)
                 {
-                    return BadRequest(validationResult.Errors);
+                    return BadRequest(new { Message = "Dados inválidos", Errors = validationResult.Errors });
                 }
 
                 var entity = _service.Update(dto, id);
                 return Ok(entity);
             }
-            catch (System.Exception e)
+            catch (NotFoundException E)
             {
-                return BadRequest(e.Message);
+                return NotFound(E.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -120,12 +128,9 @@ namespace APITrabalhoFinal.Controllers
             {
                 return NotFound(E.Message);
             }
-            catch (System.Exception e)
+            catch (Exception ex)
             {
-                return new ObjectResult(new { error = e.Message })
-                {
-                    StatusCode = 500
-                };
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -142,7 +147,6 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-
                 var entity = _service.GetByDesc(description);
                 return Ok(entity);
             }
@@ -150,12 +154,9 @@ namespace APITrabalhoFinal.Controllers
             {
                 return NotFound(E.Message);
             }
-            catch (System.Exception e)
+            catch (Exception ex)
             {
-                return new ObjectResult(new { error = e.Message })
-                {
-                    StatusCode = 500
-                };
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -176,12 +177,9 @@ namespace APITrabalhoFinal.Controllers
             {
                 return NotFound(E.Message);
             }
-            catch (System.Exception e)
+            catch (Exception ex)
             {
-                return new ObjectResult(new { error = e.Message })
-                {
-                    StatusCode = 500
-                };
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -218,9 +216,13 @@ namespace APITrabalhoFinal.Controllers
 
                 return Ok("Estoque atualizado com sucesso.");
             }
+            catch (NotFoundException E)
+            {
+                return NotFound(E.Message);
+            }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro ao atualizar estoque: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

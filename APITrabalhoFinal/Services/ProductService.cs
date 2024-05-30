@@ -2,9 +2,7 @@
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
 using APITrabalhoFinal.Services.Parser;
-using APITrabalhoFinal.Services.Validate;
 using FluentValidation;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,26 +14,27 @@ namespace APITrabalhoFinal.Services
     {
         private readonly TfDbContext _dbContext;
 
-        public ProductService(TfDbContext dbcontext)
+        public ProductService(TfDbContext dbContext)
         {
-            _dbContext = dbcontext;
+            _dbContext = dbContext;
         }
-
 
         public TbProduct Insert(ProductDTO dto)
         {
-
             var entity = ProductParser.ToEntity(dto);
-
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
-
             return entity;
         }
 
         public TbProduct Update(ProductUpdateDTO dto, int id)
         {
             var existingEntity = GetById(id);
+
+            if (existingEntity == null)
+            {
+                throw new NotFoundException("Produto não encontrado.");
+            }
 
             existingEntity.Description = dto.Description;
             existingEntity.Barcode = dto.Barcode;
@@ -54,29 +53,29 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbProducts.FirstOrDefault(p => p.Id == id);
             if (existingEntity == null)
             {
-                return null;
+                throw new NotFoundException("Produto não encontrado.");
             }
             return existingEntity;
         }
+
         public IEnumerable<TbProduct> Get()
         {
-            var existingEntity = _dbContext.TbProducts.ToList();
-            if (existingEntity == null || existingEntity.Count == 0)
+            var existingEntities = _dbContext.TbProducts.ToList();
+            if (existingEntities == null || existingEntities.Count == 0)
             {
-                throw new NotFoundException("Nenhum registro encontrado");
+                throw new NotFoundException("Nenhum registro encontrado.");
             }
-            return existingEntity;
+            return existingEntities;
         }
 
         public TbProduct GetByBarCode(string barCode)
         {
             var lowerBarCode = barCode.ToLower();
-
             var entity = _dbContext.TbProducts.FirstOrDefault(p => p.Barcode.ToLower() == lowerBarCode);
 
             if (entity == null)
             {
-                throw new NotFoundException("Nenhum registro encontrado");
+                throw new NotFoundException("Nenhum registro encontrado.");
             }
 
             return entity;
@@ -84,18 +83,17 @@ namespace APITrabalhoFinal.Services
 
         public IEnumerable<TbProduct> GetByDesc(string desc)
         {
-            var lowerDesc = desc.ToLower(); 
-
-            var existingEntity = _dbContext.TbProducts
+            var lowerDesc = desc.ToLower();
+            var existingEntities = _dbContext.TbProducts
                 .Where(p => p.Description.ToLower().Contains(lowerDesc))
                 .ToList();
 
-            if (existingEntity == null || existingEntity.Count == 0)
+            if (existingEntities == null || existingEntities.Count == 0)
             {
-                throw new NotFoundException("Nenhum registro encontrado");
+                throw new NotFoundException("Nenhum registro encontrado.");
             }
 
-            return existingEntity;
+            return existingEntities;
         }
 
         public void AjustarStock(int productId, int quantity)
@@ -106,24 +104,17 @@ namespace APITrabalhoFinal.Services
                 throw new NotFoundException("Produto não encontrado.");
             }
 
-            if (quantity > 0)
+            if (quantity == 0)
             {
-                product.Stock += quantity;
-            }
-            else if (quantity < 0)
-            {
-                if (product.Stock < Math.Abs(quantity))
-                {
-                    throw new InsufficientStockException("Estoque insuficiente para realizar a operação.");
-                }
-
-                product.Stock += quantity;
-            }
-            else
-            {
-                return;
+                throw new InvalidEntityException("A quantidade a atualizar deve ser diferente de zero.");
             }
 
+            if (product.Stock + quantity < 0)
+            {
+                throw new InsufficientStockException("Estoque insuficiente para realizar a operação.");
+            }
+
+            product.Stock += quantity;
             _dbContext.Update(product);
             _dbContext.SaveChanges();
         }
