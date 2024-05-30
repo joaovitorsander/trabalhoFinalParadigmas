@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Http;
 using APITrabalhoFinal.Services.Validate;
+using FluentValidation;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -19,9 +20,9 @@ namespace APITrabalhoFinal.Controllers
     {
 
         public readonly PromotionService _service;
-        public readonly PromotionValidate _validator;
+        public readonly IValidator<PromotionDTO> _validator;
 
-        public PromotionController(PromotionService service, PromotionValidate validator)
+        public PromotionController(PromotionService service, IValidator<PromotionDTO> validator)
         {
             _service = service;
             _validator = validator;
@@ -37,7 +38,7 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                var validationResult = _validator.ValidatePromotion(promotion);
+                var validationResult = _validator.Validate(promotion);
                 if (!validationResult.IsValid)
                 {
                     return BadRequest(validationResult.Errors);
@@ -69,7 +70,7 @@ namespace APITrabalhoFinal.Controllers
                     return NotFound();
                 }
 
-                var validationResult = _validator.ValidatePromotion(dto);
+                var validationResult = _validator.Validate(dto);
                 if (!validationResult.IsValid)
                 {
                     return BadRequest(validationResult.Errors);

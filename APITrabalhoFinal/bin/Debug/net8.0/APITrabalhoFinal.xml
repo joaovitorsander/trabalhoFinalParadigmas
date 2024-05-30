@@ -15,14 +15,21 @@
             </summary>
             <param name="product">O produto a ser inserido.</param>
             <returns>O produto inserido.</returns>
+            <response code="200">Indica que o produto foi inserido com sucesso.</response>
+            <response code="400">Indica que os dados fornecidos são inválidos.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.ProductDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.ProductController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)">
             <summary>
             Atualiza um produto existente.
             </summary>
             <param name="id">O ID do produto a ser atualizado.</param>
             <param name="dto">Os novos dados do produto.</param>
             <returns>O produto atualizado.</returns>
+            <response code="200">Indica que o produto foi atualizado com sucesso.</response>
+            <response code="400">Indica que os dados fornecidos são inválidos.</response>
+            <response code="404">Indica que o produto com o ID especificado não foi encontrado.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByBarCode(System.String)">
             <summary>
@@ -30,6 +37,10 @@
             </summary>
             <param name="barCode">O código de barras do produto a ser obtido.</param>
             <returns>O produto solicitado.</returns>
+            <response code="200">Indica que a operação foi bem-sucedida e retorna o produto correspondente ao código de barras.</response>
+            <response code="400">Indica que os dados fornecidos são inválidos.</response>
+            <response code="404">Indica que nenhum produto correspondente ao código de barras foi encontrado.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByDesc(System.String)">
             <summary>
@@ -37,12 +48,31 @@
             </summary>
             <param name="description">A descrição do produto a ser obtido.</param>
             <returns>A lista de produtos que contém a descrição.</returns>
+            <response code="200">Indica que a operação foi bem-sucedida e retorna os produtos que correspondem à descrição.</response>
+            <response code="404">Indica que nenhum produto correspondente à descrição foi encontrado.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.ProductController.Get">
+             <summary>
+             Obtém todos os produtos.
+             </summary>
+             <returns>Uma lista de todos os produtos.</returns>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
+        </member>
+        <member name="M:APITrabalhoFinal.Controllers.ProductController.UpdateStock(System.Int32,APITrabalhoFinal.Services.DTOs.StockUpdateDTO)">
             <summary>
-            Obtém todos os produtos.
+            Atualiza o estoque de um produto pelo ID.
             </summary>
-            <returns>Uma lista de todos os produtos.</returns>
+            <remarks>
+            O método permite aumentar ou diminuir o estoque de um produto existente especificado pelo seu ID.
+            </remarks>
+            <param name="id">O ID do produto a ser atualizado o estoque.</param>
+            <param name="stockUpdate">Os dados de atualização do estoque, contendo a quantidade a ser adicionada ou removida.</param>
+            <returns>Um código de status HTTP que indica o resultado da operação.</returns>
+            <response code="200">Indica que o estoque do produto foi atualizado com sucesso.</response>
+            <response code="400">Indica que os dados são inválidos.</response>
+            <response code="404">Indica que o produto especificado pelo ID não foi encontrado.</response>
+            <response code="500">Indica que ocorreu um erro interno ao tentar atualizar o estoque.</response>
         </member>
         <member name="T:APITrabalhoFinal.Controllers.PromotionController">
             <summary>

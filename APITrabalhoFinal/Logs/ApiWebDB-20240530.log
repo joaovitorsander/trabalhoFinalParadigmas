@@ -1,0 +1,921 @@
+2024-05-30T11:05:33.8181752-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:05:33.8278330-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:05:33.8385770-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:05:33.8587143-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:05:34.6280386-03:00 0HN40M69DNLSP:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:05:35.0365710-03:00 0HN40M69DNLSP:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 424.7388ms (74253ad3)
+2024-05-30T11:05:35.0422049-03:00 0HN40M69DNLSQ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:05:35.0422055-03:00 0HN40M69DNLSP:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:05:35.0455061-03:00 0HN40M69DNLSQ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.4344ms (74253ad3)
+2024-05-30T11:05:35.0884081-03:00 0HN40M69DNLSP:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 46.5727ms (74253ad3)
+2024-05-30T11:05:35.1562692-03:00 0HN40M69DNLSP:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:05:35.3137617-03:00 0HN40M69DNLSP:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 157.5225ms (74253ad3)
+2024-05-30T11:05:49.9222114-03:00 0HN40M69DNLSR:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotion/10""" - "application/json" 140 (d509f86a)
+2024-05-30T11:05:49.9335838-03:00 0HN40M69DNLSR:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionController.Put (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:05:49.9620543-03:00 0HN40M69DNLSR:00000001 [INF] Route matched with "{action = \"Put\", controller = \"Promotion\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Put(Int32, APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:05:51.2402873-03:00 0HN40M69DNLSR:00000001 [INF] Executed DbCommand ("43"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:05:51.3338995-03:00 0HN40M69DNLSR:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T11:05:51.3373157-03:00 0HN40M69DNLSR:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionController.Put (APITrabalhoFinal)" in 1371.7992ms (afa2e885)
+2024-05-30T11:05:51.3374455-03:00 0HN40M69DNLSR:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionController.Put (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:05:51.3441564-03:00 0HN40M69DNLSR:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotion/10""" - 400 null "text/plain; charset=utf-8" 1422.1363ms (74253ad3)
+2024-05-30T11:06:22.7104343-03:00 0HN40M69DNLSS:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T11:06:22.7120896-03:00 0HN40M69DNLSS:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:06:22.7139969-03:00 0HN40M69DNLSS:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:06:22.7530513-03:00 0HN40M69DNLSS:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T11:06:22.8101024-03:00 0HN40M69DNLSS:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T11:06:22.8210734-03:00 0HN40M69DNLSS:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 106.962ms (afa2e885)
+2024-05-30T11:06:22.8211243-03:00 0HN40M69DNLSS:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:06:22.8212876-03:00 0HN40M69DNLSS:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 110.9252ms (74253ad3)
+2024-05-30T11:06:58.9002450-03:00 0HN40M69DNLST:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/1/updatestock""" - "application/json" 20 (d509f86a)
+2024-05-30T11:06:58.9007812-03:00 0HN40M69DNLST:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:06:58.9037688-03:00 0HN40M69DNLST:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:06:58.9609073-03:00 0HN40M69DNLST:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:06:58.9679654-03:00 0HN40M69DNLST:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:06:59.0428833-03:00 0HN40M69DNLST:00000001 [INF] Executed DbCommand ("18"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T11:06:59.0468256-03:00 0HN40M69DNLST:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T11:06:59.0469680-03:00 0HN40M69DNLST:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 143.1128ms (afa2e885)
+2024-05-30T11:06:59.0469877-03:00 0HN40M69DNLST:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:06:59.0470628-03:00 0HN40M69DNLST:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/1/updatestock""" - 200 null "text/plain; charset=utf-8" 146.8851ms (74253ad3)
+2024-05-30T11:08:10.8357278-03:00 0HN40M69DNLSU:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/1/updatestock""" - "application/json" 21 (d509f86a)
+2024-05-30T11:08:10.8392397-03:00 0HN40M69DNLSU:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:08:10.8394187-03:00 0HN40M69DNLSU:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:08:10.8457882-03:00 0HN40M69DNLSU:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:08:10.8490752-03:00 0HN40M69DNLSU:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:08:10.8523825-03:00 0HN40M69DNLSU:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T11:08:10.8526424-03:00 0HN40M69DNLSU:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T11:08:10.8527466-03:00 0HN40M69DNLSU:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 13.3051ms (afa2e885)
+2024-05-30T11:08:10.8527719-03:00 0HN40M69DNLSU:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:08:10.8528701-03:00 0HN40M69DNLSU:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/1/updatestock""" - 200 null "text/plain; charset=utf-8" 19.9286ms (74253ad3)
+2024-05-30T11:13:00.7658134-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:13:00.7747930-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:13:00.7779858-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:13:00.7801423-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:13:01.1715275-03:00 0HN40MAEH0LA4:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:13:02.1368540-03:00 0HN40MAEH0LA4:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 1013.4968ms (74253ad3)
+2024-05-30T11:13:02.1394867-03:00 0HN40MAEH0LA4:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:13:02.1411783-03:00 0HN40MAEH0LA5:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:13:02.1432428-03:00 0HN40MAEH0LA4:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.7609ms (74253ad3)
+2024-05-30T11:13:02.1780088-03:00 0HN40MAEH0LA5:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 36.9104ms (74253ad3)
+2024-05-30T11:13:02.2482190-03:00 0HN40MAEH0LA5:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:13:02.4679521-03:00 0HN40MAEH0LA5:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 219.7748ms (74253ad3)
+2024-05-30T11:14:05.2454908-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:14:05.2535691-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:14:05.2562623-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:14:05.2635907-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:14:05.9726192-03:00 0HN40MB1RS2VJ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:14:06.6883609-03:00 0HN40MB1RS2VJ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 722.4379ms (74253ad3)
+2024-05-30T11:14:06.6931801-03:00 0HN40MB1RS2VJ:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:14:06.6932154-03:00 0HN40MB1RS2VL:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:14:06.6972275-03:00 0HN40MB1RS2VJ:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 4.1708ms (74253ad3)
+2024-05-30T11:14:06.7319012-03:00 0HN40MB1RS2VL:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 38.7252ms (74253ad3)
+2024-05-30T11:14:06.8175541-03:00 0HN40MB1RS2VL:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:14:06.9419729-03:00 0HN40MB1RS2VL:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 124.4776ms (74253ad3)
+2024-05-30T11:14:30.8611669-03:00 0HN40MB1RS2VM:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - "application/json" 20 (d509f86a)
+2024-05-30T11:14:30.8693040-03:00 0HN40MB1RS2VM:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:14:30.8939374-03:00 0HN40MB1RS2VM:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:14:32.1136083-03:00 0HN40MB1RS2VM:00000001 [INF] Executed DbCommand ("40"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:14:32.2015681-03:00 0HN40MB1RS2VM:00000001 [INF] Executing "ObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T11:14:32.2047011-03:00 0HN40MB1RS2VM:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 1307.9479ms (afa2e885)
+2024-05-30T11:14:32.2048087-03:00 0HN40MB1RS2VM:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:14:32.2113344-03:00 0HN40MB1RS2VM:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - 500 null "text/plain; charset=utf-8" 1350.2557ms (74253ad3)
+2024-05-30T11:15:01.6032820-03:00 0HN40MB1RS2VN:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - "application/json" 20 (d509f86a)
+2024-05-30T11:15:01.6054389-03:00 0HN40MB1RS2VN:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:15:01.6058051-03:00 0HN40MB1RS2VN:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:15:13.4038520-03:00 0HN40MB1RS2VN:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:16:18.1162188-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:16:18.1250330-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:16:18.1364654-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:16:18.1384191-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:16:18.4686331-03:00 0HN40MC9B88D1:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:16:18.8786629-03:00 0HN40MC9B88D1:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 417.9955ms (74253ad3)
+2024-05-30T11:16:18.8913880-03:00 0HN40MC9B88D1:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:16:18.8947172-03:00 0HN40MC9B88D1:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.5278ms (74253ad3)
+2024-05-30T11:16:18.9071685-03:00 0HN40MC9B88D1:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:16:18.9449914-03:00 0HN40MC9B88D1:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 37.8575ms (74253ad3)
+2024-05-30T11:16:19.0627918-03:00 0HN40MC9B88D1:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:16:19.2539180-03:00 0HN40MC9B88D1:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 191.1472ms (74253ad3)
+2024-05-30T11:16:29.8162191-03:00 0HN40MC9B88D3:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - "application/json" 20 (d509f86a)
+2024-05-30T11:16:29.8257001-03:00 0HN40MC9B88D3:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:16:29.8559110-03:00 0HN40MC9B88D3:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:16:36.2279441-03:00 0HN40MC9B88D3:00000001 [INF] Executed DbCommand ("47"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:16:40.8988846-03:00 0HN40MC9B88D3:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T11:16:40.9019905-03:00 0HN40MC9B88D3:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 11042.9592ms (afa2e885)
+2024-05-30T11:16:40.9020993-03:00 0HN40MC9B88D3:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:16:40.9085906-03:00 0HN40MC9B88D3:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - 404 null "text/plain; charset=utf-8" 11092.4375ms (74253ad3)
+2024-05-30T11:17:33.7301880-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:17:33.7382739-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:17:33.7411428-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:17:33.7430945-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:17:34.2832043-03:00 0HN40MCVUC8HS:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:17:34.6337607-03:00 0HN40MCVUC8HS:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 356.0775ms (74253ad3)
+2024-05-30T11:17:34.6402459-03:00 0HN40MCVUC8HS:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:17:34.6402459-03:00 0HN40MCVUC8HT:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:17:34.6423815-03:00 0HN40MCVUC8HS:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.2246ms (74253ad3)
+2024-05-30T11:17:34.6716689-03:00 0HN40MCVUC8HT:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 31.4652ms (74253ad3)
+2024-05-30T11:17:34.7529923-03:00 0HN40MCVUC8HT:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:17:34.8977027-03:00 0HN40MCVUC8HT:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 144.789ms (74253ad3)
+2024-05-30T11:17:46.5420104-03:00 0HN40MCVUC8HU:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/1/stock""" - "application/json" 19 (d509f86a)
+2024-05-30T11:17:46.5503382-03:00 0HN40MCVUC8HU:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:17:46.5717520-03:00 0HN40MCVUC8HU:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:17:54.3167233-03:00 0HN40MCVUC8HU:00000001 [INF] Executed DbCommand ("39"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:17:54.3921762-03:00 0HN40MCVUC8HU:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T11:17:54.4592035-03:00 0HN40MCVUC8HU:00000001 [INF] Executed DbCommand ("7"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T11:17:54.4695931-03:00 0HN40MCVUC8HU:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T11:17:54.4726416-03:00 0HN40MCVUC8HU:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 7898.4053ms (afa2e885)
+2024-05-30T11:17:54.4727625-03:00 0HN40MCVUC8HU:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:17:54.4784067-03:00 0HN40MCVUC8HU:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/1/stock""" - 200 null "text/plain; charset=utf-8" 7936.4672ms (74253ad3)
+2024-05-30T11:32:30.5446500-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:32:30.5525977-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:32:30.5556072-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:32:30.5577959-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:32:31.6527096-03:00 0HN40MLB6UQHC:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:32:32.8298577-03:00 0HN40MLB6UQHC:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 1185.973ms (74253ad3)
+2024-05-30T11:32:32.8590989-03:00 0HN40MLB6UQHC:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:32:32.8608294-03:00 0HN40MLB6UQHE:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:32:32.8624869-03:00 0HN40MLB6UQHC:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.5454ms (74253ad3)
+2024-05-30T11:32:32.9051965-03:00 0HN40MLB6UQHE:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 44.3914ms (74253ad3)
+2024-05-30T11:32:33.0593298-03:00 0HN40MLB6UQHE:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:32:33.2241421-03:00 0HN40MLB6UQHE:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 164.8659ms (74253ad3)
+2024-05-30T11:36:27.1514894-03:00 0HN40MLB6UQHF:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - "application/json" 136 (d509f86a)
+2024-05-30T11:36:27.1595768-03:00 0HN40MLB6UQHF:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:36:27.1916212-03:00 0HN40MLB6UQHF:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:36:27.4142624-03:00 0HN40MLB6UQHF:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T11:36:27.4281903-03:00 0HN40MLB6UQHF:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)" in 233.6578ms (afa2e885)
+2024-05-30T11:36:27.4283088-03:00 0HN40MLB6UQHF:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:36:27.4294822-03:00 0HN40MLB6UQHF:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - 400 null "application/json; charset=utf-8" 278.07ms (74253ad3)
+2024-05-30T11:36:37.2258494-03:00 0HN40MLB6UQHG:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - "application/json" 135 (d509f86a)
+2024-05-30T11:36:37.2269215-03:00 0HN40MLB6UQHG:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:36:37.2271732-03:00 0HN40MLB6UQHG:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:36:38.3339961-03:00 0HN40MLB6UQHG:00000001 [INF] Executed DbCommand ("64"ms) [Parameters=["@p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_products (barcode, barcodetype, costprice, description, price, stock)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING id;" (0723d8ff)
+2024-05-30T11:36:38.3645104-03:00 0HN40MLB6UQHG:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbProduct"'. (605b4265)
+2024-05-30T11:36:38.3761582-03:00 0HN40MLB6UQHG:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)" in 1148.8893ms (afa2e885)
+2024-05-30T11:36:38.3762066-03:00 0HN40MLB6UQHG:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:36:38.3809056-03:00 0HN40MLB6UQHG:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 1155.0916ms (74253ad3)
+2024-05-30T11:36:47.7450223-03:00 0HN40MLB6UQHG:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T11:36:47.7454959-03:00 0HN40MLB6UQHG:00000002 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:36:47.7475382-03:00 0HN40MLB6UQHG:00000002 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:36:47.9365220-03:00 0HN40MLB6UQHG:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T11:36:47.9448342-03:00 0HN40MLB6UQHG:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T11:36:47.9453454-03:00 0HN40MLB6UQHG:00000002 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 197.7585ms (afa2e885)
+2024-05-30T11:36:47.9453805-03:00 0HN40MLB6UQHG:00000002 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:36:47.9455414-03:00 0HN40MLB6UQHG:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 200.6009ms (74253ad3)
+2024-05-30T11:44:09.2772153-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T11:44:09.2845954-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T11:44:09.2876739-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T11:44:09.2893419-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T11:44:09.7822439-03:00 0HN40MRRDR027:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T11:44:10.1576569-03:00 0HN40MRRDR027:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 385.5ms (74253ad3)
+2024-05-30T11:44:10.1688211-03:00 0HN40MRRDR027:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T11:44:10.1710950-03:00 0HN40MRRDR027:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.3476ms (74253ad3)
+2024-05-30T11:44:10.1738011-03:00 0HN40MRRDR027:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T11:44:10.2124513-03:00 0HN40MRRDR027:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 38.6294ms (74253ad3)
+2024-05-30T11:44:10.2932947-03:00 0HN40MRRDR027:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T11:44:10.4326400-03:00 0HN40MRRDR027:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 139.3714ms (74253ad3)
+2024-05-30T11:44:51.6764118-03:00 0HN40MRRDR029:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - "application/json" 125 (d509f86a)
+2024-05-30T11:44:51.6847897-03:00 0HN40MRRDR029:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:44:51.7087309-03:00 0HN40MRRDR029:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:44:51.9695100-03:00 0HN40MRRDR029:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T11:44:51.9891670-03:00 0HN40MRRDR029:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)" in 277.7922ms (afa2e885)
+2024-05-30T11:44:51.9892855-03:00 0HN40MRRDR029:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:44:51.9904451-03:00 0HN40MRRDR029:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - 400 null "application/json; charset=utf-8" 314.1112ms (74253ad3)
+2024-05-30T11:45:13.2072801-03:00 0HN40MRRDR029:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T11:45:13.2124493-03:00 0HN40MRRDR029:00000002 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T11:45:13.2150371-03:00 0HN40MRRDR029:00000002 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T11:45:14.2992997-03:00 0HN40MRRDR029:00000002 [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T11:45:14.3847769-03:00 0HN40MRRDR029:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T11:45:14.3939649-03:00 0HN40MRRDR029:00000002 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 1178.832ms (afa2e885)
+2024-05-30T11:45:14.3940154-03:00 0HN40MRRDR029:00000002 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T11:45:14.4002125-03:00 0HN40MRRDR029:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 1193.7783ms (74253ad3)
+2024-05-30T12:50:02.7299920-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T12:50:02.7375515-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T12:50:02.7404903-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T12:50:02.7423764-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T12:50:03.2619683-03:00 0HN40O0LKS6F3:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T12:50:03.6492067-03:00 0HN40O0LKS6F3:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 392.4116ms (74253ad3)
+2024-05-30T12:50:03.6591061-03:00 0HN40O0LKS6F3:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T12:50:03.6613610-03:00 0HN40O0LKS6F4:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T12:50:03.6625773-03:00 0HN40O0LKS6F3:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.602ms (74253ad3)
+2024-05-30T12:50:03.6945876-03:00 0HN40O0LKS6F4:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 33.3058ms (74253ad3)
+2024-05-30T12:50:03.7892650-03:00 0HN40O0LKS6F4:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T12:50:03.9350704-03:00 0HN40O0LKS6F4:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 145.7869ms (74253ad3)
+2024-05-30T12:50:13.7216172-03:00 0HN40O0LKS6F5:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - "application/json" 125 (d509f86a)
+2024-05-30T12:50:13.7312710-03:00 0HN40O0LKS6F5:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:50:13.7586250-03:00 0HN40O0LKS6F5:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:50:13.9302815-03:00 0HN40O0LKS6F5:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T12:50:13.9492124-03:00 0HN40O0LKS6F5:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)" in 187.4161ms (afa2e885)
+2024-05-30T12:50:13.9493438-03:00 0HN40O0LKS6F5:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:50:13.9513454-03:00 0HN40O0LKS6F5:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - 400 null "application/json; charset=utf-8" 229.8475ms (74253ad3)
+2024-05-30T12:50:31.5592718-03:00 0HN40O0LKS6F6:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T12:50:31.5607710-03:00 0HN40O0LKS6F6:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:50:31.5624828-03:00 0HN40O0LKS6F6:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:50:32.6874375-03:00 0HN40O0LKS6F6:00000001 [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T12:50:32.7811452-03:00 0HN40O0LKS6F6:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T12:50:32.7899752-03:00 0HN40O0LKS6F6:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 1227.3778ms (afa2e885)
+2024-05-30T12:50:32.7900403-03:00 0HN40O0LKS6F6:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:50:32.7965927-03:00 0HN40O0LKS6F6:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 1237.3291ms (74253ad3)
+2024-05-30T12:51:01.5836124-03:00 0HN40O0LKS6F7:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 125 (d509f86a)
+2024-05-30T12:51:01.5843721-03:00 0HN40O0LKS6F7:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:51:01.5894233-03:00 0HN40O0LKS6F7:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:51:01.6367818-03:00 0HN40O0LKS6F7:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T12:51:01.6370405-03:00 0HN40O0LKS6F7:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 47.5437ms (afa2e885)
+2024-05-30T12:51:01.6370715-03:00 0HN40O0LKS6F7:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:51:01.6371556-03:00 0HN40O0LKS6F7:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 53.7042ms (74253ad3)
+2024-05-30T12:52:16.5998277-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T12:52:16.6071946-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T12:52:16.6158079-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T12:52:16.6178644-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T12:52:17.2411267-03:00 0HN40O1TKIFT1:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T12:52:17.5086865-03:00 0HN40O1TKIFT1:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 273.7483ms (74253ad3)
+2024-05-30T12:52:17.5140130-03:00 0HN40O1TKIFT1:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T12:52:17.5141176-03:00 0HN40O1TKIFT2:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T12:52:17.5162557-03:00 0HN40O1TKIFT1:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.3994ms (74253ad3)
+2024-05-30T12:52:17.5394023-03:00 0HN40O1TKIFT2:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 25.292ms (74253ad3)
+2024-05-30T12:52:17.6169404-03:00 0HN40O1TKIFT2:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T12:52:18.1463345-03:00 0HN40O1TKIFT2:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 529.4455ms (74253ad3)
+2024-05-30T12:52:26.5958905-03:00 0HN40O1TKIFT3:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 125 (d509f86a)
+2024-05-30T12:52:26.6032943-03:00 0HN40O1TKIFT3:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:52:26.6284305-03:00 0HN40O1TKIFT3:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:52:28.0968940-03:00 0HN40O1TKIFT3:00000001 [INF] Executed DbCommand ("45"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:52:28.1942670-03:00 0HN40O1TKIFT3:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T12:52:28.2181863-03:00 0HN40O1TKIFT3:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 1587.2253ms (afa2e885)
+2024-05-30T12:52:28.2183024-03:00 0HN40O1TKIFT3:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:52:28.2250854-03:00 0HN40O1TKIFT3:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 1629.2269ms (74253ad3)
+2024-05-30T12:52:43.5886255-03:00 0HN40O1TKIFT4:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 125 (d509f86a)
+2024-05-30T12:52:43.5900779-03:00 0HN40O1TKIFT4:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:52:43.5903662-03:00 0HN40O1TKIFT4:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:52:49.3725089-03:00 0HN40O1TKIFT4:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:53:10.6490316-03:00 0HN40O1TKIFT4:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T12:53:10.6521729-03:00 0HN40O1TKIFT4:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 27061.7117ms (afa2e885)
+2024-05-30T12:53:10.6544822-03:00 0HN40O1TKIFT4:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:53:10.6549446-03:00 0HN40O1TKIFT4:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 27066.3791ms (74253ad3)
+2024-05-30T12:53:45.1318995-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T12:53:45.1405561-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T12:53:45.1438474-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T12:53:45.1458917-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T12:53:45.7033562-03:00 0HN40O2O0310E:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T12:53:46.0417081-03:00 0HN40O2O0310E:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 345.8009ms (74253ad3)
+2024-05-30T12:53:46.0865160-03:00 0HN40O2O0310F:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T12:53:46.0865159-03:00 0HN40O2O0310E:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T12:53:46.0908765-03:00 0HN40O2O0310E:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 4.4678ms (74253ad3)
+2024-05-30T12:53:46.1173792-03:00 0HN40O2O0310F:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 31.0891ms (74253ad3)
+2024-05-30T12:53:46.2774917-03:00 0HN40O2O0310F:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T12:53:46.4322529-03:00 0HN40O2O0310F:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 154.7954ms (74253ad3)
+2024-05-30T12:54:19.2013731-03:00 0HN40O2O0310G:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - "application/json" 125 (d509f86a)
+2024-05-30T12:54:19.2148515-03:00 0HN40O2O0310G:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:54:19.2374756-03:00 0HN40O2O0310G:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:54:20.4968157-03:00 0HN40O2O0310G:00000001 [INF] Executed DbCommand ("38"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:54:20.5134590-03:00 0HN40O2O0310G:00000001 [INF] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (605b4265)
+2024-05-30T12:54:20.5282801-03:00 0HN40O2O0310G:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 1288.1894ms (afa2e885)
+2024-05-30T12:54:20.5283922-03:00 0HN40O2O0310G:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:54:20.5346742-03:00 0HN40O2O0310G:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - 404 null "application/problem+json; charset=utf-8" 1333.3362ms (74253ad3)
+2024-05-30T12:55:05.5246577-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T12:55:05.5326171-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T12:55:05.5426459-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T12:55:05.5448914-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T12:55:05.8171743-03:00 0HN40O3FSGKRR:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T12:55:06.0296058-03:00 0HN40O3FSGKRR:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 218.4408ms (74253ad3)
+2024-05-30T12:55:06.0342788-03:00 0HN40O3FSGKRS:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T12:55:06.0342788-03:00 0HN40O3FSGKRR:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T12:55:06.0363162-03:00 0HN40O3FSGKRR:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.1081ms (74253ad3)
+2024-05-30T12:55:06.0681363-03:00 0HN40O3FSGKRS:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 33.9724ms (74253ad3)
+2024-05-30T12:55:06.1329663-03:00 0HN40O3FSGKRS:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T12:55:06.3391987-03:00 0HN40O3FSGKRS:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 206.3003ms (74253ad3)
+2024-05-30T12:55:17.0184525-03:00 0HN40O3FSGKRT:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - "application/json" 125 (d509f86a)
+2024-05-30T12:55:17.0256397-03:00 0HN40O3FSGKRT:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:55:17.0463219-03:00 0HN40O3FSGKRT:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:55:18.0958251-03:00 0HN40O3FSGKRT:00000001 [INF] Executed DbCommand ("43"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:55:18.1126799-03:00 0HN40O3FSGKRT:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T12:55:18.1159042-03:00 0HN40O3FSGKRT:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 1066.8246ms (afa2e885)
+2024-05-30T12:55:18.1160217-03:00 0HN40O3FSGKRT:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:55:18.1220316-03:00 0HN40O3FSGKRT:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - 404 null "text/plain; charset=utf-8" 1103.5598ms (74253ad3)
+2024-05-30T12:55:44.4377185-03:00 0HN40O3FSGKRU:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T12:55:44.4391273-03:00 0HN40O3FSGKRU:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:55:44.4426616-03:00 0HN40O3FSGKRU:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:55:44.4740552-03:00 0HN40O3FSGKRU:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T12:55:44.5376211-03:00 0HN40O3FSGKRU:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T12:55:44.5490438-03:00 0HN40O3FSGKRU:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 106.2692ms (afa2e885)
+2024-05-30T12:55:44.5490994-03:00 0HN40O3FSGKRU:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:55:44.5492438-03:00 0HN40O3FSGKRU:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 111.6281ms (74253ad3)
+2024-05-30T12:56:58.4634532-03:00 0HN40O3FSGKRV:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 153 (d509f86a)
+2024-05-30T12:56:58.4681625-03:00 0HN40O3FSGKRV:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:56:58.4683707-03:00 0HN40O3FSGKRV:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:56:58.5161169-03:00 0HN40O3FSGKRV:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:56:58.5412923-03:00 0HN40O3FSGKRV:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T12:56:58.5526009-03:00 0HN40O3FSGKRV:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 84.1943ms (afa2e885)
+2024-05-30T12:56:58.5526464-03:00 0HN40O3FSGKRV:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:56:58.5527388-03:00 0HN40O3FSGKRV:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 89.3653ms (74253ad3)
+2024-05-30T12:57:08.7786453-03:00 0HN40O3FSGKS0:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 154 (d509f86a)
+2024-05-30T12:57:08.7788145-03:00 0HN40O3FSGKS0:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:57:08.7789088-03:00 0HN40O3FSGKS0:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:57:08.7835434-03:00 0HN40O3FSGKS0:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:57:08.7893651-03:00 0HN40O3FSGKS0:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:57:08.7950230-03:00 0HN40O3FSGKS0:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:57:08.8762711-03:00 0HN40O3FSGKS0:00000001 [INF] Executed DbCommand ("18"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T12:57:08.8833682-03:00 0HN40O3FSGKS0:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:57:08.9698034-03:00 0HN40O3FSGKS0:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T12:57:08.9700119-03:00 0HN40O3FSGKS0:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 191.0726ms (afa2e885)
+2024-05-30T12:57:08.9700414-03:00 0HN40O3FSGKS0:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:57:08.9701294-03:00 0HN40O3FSGKS0:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "text/plain; charset=utf-8" 191.5454ms (74253ad3)
+2024-05-30T12:57:45.1922047-03:00 0HN40O3FSGKS1:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 154 (d509f86a)
+2024-05-30T12:57:45.1947557-03:00 0HN40O3FSGKS1:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:57:45.1949162-03:00 0HN40O3FSGKS1:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T12:57:48.8094086-03:00 0HN40O3FSGKS1:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:58:39.7518721-03:00 0HN40O3FSGKS1:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:58:48.6689173-03:00 0HN40O3FSGKS1:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:58:56.7959875-03:00 0HN40O3FSGKS1:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T12:59:03.4743213-03:00 0HN40O3FSGKS1:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T12:59:28.2837245-03:00 0HN40O3FSGKS1:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T12:59:28.2882528-03:00 0HN40O3FSGKS1:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 103093.2967ms (afa2e885)
+2024-05-30T12:59:28.2885463-03:00 0HN40O3FSGKS1:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T12:59:28.2888374-03:00 0HN40O3FSGKS1:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "text/plain; charset=utf-8" 103099.76ms (74253ad3)
+2024-05-30T12:59:32.4637296-03:00 0HN40O3FSGKS2:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 154 (d509f86a)
+2024-05-30T12:59:32.4638662-03:00 0HN40O3FSGKS2:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T12:59:32.4639476-03:00 0HN40O3FSGKS2:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:04:37.3703148-03:00 0HN40O3FSGKS2:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:04:43.7344810-03:00 0HN40O3FSGKS2:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:04:47.6317772-03:00 0HN40O3FSGKS2:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:04:50.3985063-03:00 0HN40O3FSGKS2:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T13:05:24.6840964-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T13:05:24.6923114-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T13:05:24.7012928-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T13:05:24.7034367-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T13:05:25.4412654-03:00 0HN40O98E9EEJ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T13:05:25.8361834-03:00 0HN40O98E9EEJ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 403.2107ms (74253ad3)
+2024-05-30T13:05:25.8567758-03:00 0HN40O98E9EEJ:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T13:05:25.8587671-03:00 0HN40O98E9EEJ:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.1118ms (74253ad3)
+2024-05-30T13:05:25.8718472-03:00 0HN40O98E9EEJ:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T13:05:25.9120026-03:00 0HN40O98E9EEJ:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 40.1858ms (74253ad3)
+2024-05-30T13:05:26.0757505-03:00 0HN40O98E9EEL:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T13:05:26.2712203-03:00 0HN40O98E9EEL:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 195.501ms (74253ad3)
+2024-05-30T13:06:31.7438407-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T13:06:31.7525919-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T13:06:31.7635771-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T13:06:31.7658502-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T13:06:32.0399438-03:00 0HN40O9SCJ3VV:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T13:06:32.3948205-03:00 0HN40O9SCJ3VV:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 361.7903ms (74253ad3)
+2024-05-30T13:06:32.4133324-03:00 0HN40O9SCJ3VV:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T13:06:32.4154635-03:00 0HN40O9SCJ3VV:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.1632ms (74253ad3)
+2024-05-30T13:06:32.4382215-03:00 0HN40O9SCJ3VV:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T13:06:32.4645150-03:00 0HN40O9SCJ3VV:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 26.3029ms (74253ad3)
+2024-05-30T13:06:32.6511466-03:00 0HN40O9SCJ3VV:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T13:06:33.2004404-03:00 0HN40O9SCJ3VV:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 549.318ms (74253ad3)
+2024-05-30T13:06:42.7056337-03:00 0HN40O9SCJ401:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - "application/json" 125 (d509f86a)
+2024-05-30T13:06:42.7148693-03:00 0HN40O9SCJ401:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:06:42.7430123-03:00 0HN40O9SCJ401:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:06:48.7880587-03:00 0HN40O9SCJ401:00000001 [INF] Executed DbCommand ("40"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:06:48.8043154-03:00 0HN40O9SCJ401:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:06:48.8075356-03:00 0HN40O9SCJ401:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 6061.316ms (afa2e885)
+2024-05-30T13:06:48.8076474-03:00 0HN40O9SCJ401:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:06:48.8133111-03:00 0HN40O9SCJ401:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - 404 null "text/plain; charset=utf-8" 6107.8023ms (74253ad3)
+2024-05-30T13:07:27.8037941-03:00 0HN40O9SCJ402:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 144 (d509f86a)
+2024-05-30T13:07:27.8052363-03:00 0HN40O9SCJ402:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:07:27.8055348-03:00 0HN40O9SCJ402:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:07:27.8433865-03:00 0HN40O9SCJ402:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:07:27.9282720-03:00 0HN40O9SCJ402:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T13:07:27.9411060-03:00 0HN40O9SCJ402:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 135.4685ms (afa2e885)
+2024-05-30T13:07:27.9411642-03:00 0HN40O9SCJ402:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:07:27.9413185-03:00 0HN40O9SCJ402:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 137.5892ms (74253ad3)
+2024-05-30T13:07:41.0253322-03:00 0HN40O9SCJ403:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 149 (d509f86a)
+2024-05-30T13:07:41.0256204-03:00 0HN40O9SCJ403:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:07:41.0256935-03:00 0HN40O9SCJ403:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:07:41.0694132-03:00 0HN40O9SCJ403:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:07:41.0746084-03:00 0HN40O9SCJ403:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:07:41.0791380-03:00 0HN40O9SCJ403:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:07:41.1486223-03:00 0HN40O9SCJ403:00000001 [INF] Executed DbCommand ("13"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T13:07:41.1524342-03:00 0HN40O9SCJ403:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbProduct"'. (605b4265)
+2024-05-30T13:07:41.1625677-03:00 0HN40O9SCJ403:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 136.8367ms (afa2e885)
+2024-05-30T13:07:41.1626140-03:00 0HN40O9SCJ403:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:07:41.1627018-03:00 0HN40O9SCJ403:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 200 null "application/json; charset=utf-8" 137.4289ms (74253ad3)
+2024-05-30T13:13:50.0359852-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T13:13:50.0430593-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T13:13:50.0469166-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T13:13:50.0555154-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T13:13:50.5791756-03:00 0HN40ODV06OKK:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T13:13:51.0438052-03:00 0HN40ODV06OKK:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 472.2835ms (74253ad3)
+2024-05-30T13:13:51.0586306-03:00 0HN40ODV06OKK:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T13:13:51.0612439-03:00 0HN40ODV06OKK:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.6185ms (74253ad3)
+2024-05-30T13:13:51.0702795-03:00 0HN40ODV06OKK:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T13:13:51.1038804-03:00 0HN40ODV06OKK:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 33.576ms (74253ad3)
+2024-05-30T13:13:51.2209104-03:00 0HN40ODV06OKK:00000004 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T13:13:51.3731280-03:00 0HN40ODV06OKK:00000004 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 152.2625ms (74253ad3)
+2024-05-30T13:17:35.4971740-03:00 0HN40ODV06OKM:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 153 (d509f86a)
+2024-05-30T13:17:35.5113670-03:00 0HN40ODV06OKM:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:17:35.5452254-03:00 0HN40ODV06OKM:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:17:36.8428806-03:00 0HN40ODV06OKM:00000001 [INF] Executed DbCommand ("45"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:17:36.9389879-03:00 0HN40ODV06OKM:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T13:17:36.9535672-03:00 0HN40ODV06OKM:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 1405.5872ms (afa2e885)
+2024-05-30T13:17:36.9536943-03:00 0HN40ODV06OKM:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:17:36.9596020-03:00 0HN40ODV06OKM:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 1462.4984ms (74253ad3)
+2024-05-30T13:17:42.3032899-03:00 0HN40ODV06OKN:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 154 (d509f86a)
+2024-05-30T13:17:42.3049700-03:00 0HN40ODV06OKN:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:17:42.3052508-03:00 0HN40ODV06OKN:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:17:42.3399040-03:00 0HN40ODV06OKN:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:17:42.3444823-03:00 0HN40ODV06OKN:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:17:42.4117134-03:00 0HN40ODV06OKN:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T13:17:42.4161721-03:00 0HN40ODV06OKN:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbProduct"'. (605b4265)
+2024-05-30T13:17:42.4256678-03:00 0HN40ODV06OKN:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 120.3147ms (afa2e885)
+2024-05-30T13:17:42.4257162-03:00 0HN40ODV06OKN:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:17:42.4258656-03:00 0HN40ODV06OKN:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 200 null "application/json; charset=utf-8" 122.6659ms (74253ad3)
+2024-05-30T13:17:50.7409209-03:00 0HN40ODV06OKO:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - "application/json" 154 (d509f86a)
+2024-05-30T13:17:50.7412260-03:00 0HN40ODV06OKO:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:17:50.7413354-03:00 0HN40ODV06OKO:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:17:50.7902422-03:00 0HN40ODV06OKO:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:17:50.7908340-03:00 0HN40ODV06OKO:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:17:50.7911311-03:00 0HN40ODV06OKO:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 49.7634ms (afa2e885)
+2024-05-30T13:17:50.7911623-03:00 0HN40ODV06OKO:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:17:50.7912404-03:00 0HN40ODV06OKO:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - 404 null "text/plain; charset=utf-8" 50.4025ms (74253ad3)
+2024-05-30T13:38:32.8558879-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T13:38:32.8649614-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T13:38:32.9102433-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T13:38:32.9139106-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T13:38:33.7128035-03:00 0HN40OROU5QCO:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T13:38:34.1917441-03:00 0HN40OROU5QCO:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 503.0469ms (74253ad3)
+2024-05-30T13:38:34.2063515-03:00 0HN40OROU5QCO:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T13:38:34.2071260-03:00 0HN40OROU5QCQ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T13:38:34.2095938-03:00 0HN40OROU5QCO:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.5493ms (74253ad3)
+2024-05-30T13:38:34.2410086-03:00 0HN40OROU5QCQ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 33.9347ms (74253ad3)
+2024-05-30T13:38:34.3204509-03:00 0HN40OROU5QCQ:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T13:38:34.4667835-03:00 0HN40OROU5QCQ:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 146.3809ms (74253ad3)
+2024-05-30T13:43:45.6583666-03:00 0HN40OROU5QCR:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 111 (d509f86a)
+2024-05-30T13:43:45.6795012-03:00 0HN40OROU5QCR:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:43:45.7119687-03:00 0HN40OROU5QCR:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:43:45.8477694-03:00 0HN40OROU5QCR:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 132.353ms (afa2e885)
+2024-05-30T13:43:45.8492764-03:00 0HN40OROU5QCR:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:43:45.9161914-03:00 0HN40OROU5QCR:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'FluentValidation.IValidator`1[APITrabalhoFinal.Services.DTOs.ProductUpdateDTO]' while attempting to activate 'APITrabalhoFinal.Controllers.ProductController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method3(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-30T13:43:45.9234200-03:00 0HN40OROU5QCR:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 500 null "text/plain; charset=utf-8" 265.599ms (74253ad3)
+2024-05-30T13:55:15.8754230-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T13:55:15.8829851-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T13:55:15.8867198-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T13:55:15.8902192-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T13:55:16.5305484-03:00 0HN40P53S2611:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T13:55:17.0708627-03:00 0HN40P53S2611:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 549.2155ms (74253ad3)
+2024-05-30T13:55:17.0821173-03:00 0HN40P53S2611:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T13:55:17.0821173-03:00 0HN40P53S2612:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T13:55:17.0850145-03:00 0HN40P53S2611:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.9212ms (74253ad3)
+2024-05-30T13:55:17.1263782-03:00 0HN40P53S2612:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 44.3904ms (74253ad3)
+2024-05-30T13:55:17.2009511-03:00 0HN40P53S2612:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T13:55:17.3716420-03:00 0HN40P53S2612:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 170.7388ms (74253ad3)
+2024-05-30T13:55:35.3582408-03:00 0HN40P53S2613:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - "application/json" 125 (d509f86a)
+2024-05-30T13:55:35.3711228-03:00 0HN40P53S2613:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:55:35.4022623-03:00 0HN40P53S2613:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:55:35.5963358-03:00 0HN40P53S2613:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T13:55:35.6183871-03:00 0HN40P53S2613:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)" in 212.8817ms (afa2e885)
+2024-05-30T13:55:35.6184931-03:00 0HN40P53S2613:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:55:35.6197300-03:00 0HN40P53S2613:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Product""" - 400 null "application/json; charset=utf-8" 261.5377ms (74253ad3)
+2024-05-30T13:55:49.5676958-03:00 0HN40P53S2614:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - "application/json" 111 (d509f86a)
+2024-05-30T13:55:49.5689608-03:00 0HN40P53S2614:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:55:49.5728189-03:00 0HN40P53S2614:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:55:50.9128706-03:00 0HN40P53S2614:00000001 [INF] Executed DbCommand ("41"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:55:50.9229042-03:00 0HN40P53S2614:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:55:50.9231712-03:00 0HN40P53S2614:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 1350.2855ms (afa2e885)
+2024-05-30T13:55:50.9231995-03:00 0HN40P53S2614:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:55:50.9289502-03:00 0HN40P53S2614:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10""" - 404 null "text/plain; charset=utf-8" 1361.2807ms (74253ad3)
+2024-05-30T13:55:56.5751539-03:00 0HN40P53S2615:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 111 (d509f86a)
+2024-05-30T13:55:56.5759466-03:00 0HN40P53S2615:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:55:56.5760984-03:00 0HN40P53S2615:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:55:56.6011759-03:00 0HN40P53S2615:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:55:56.6636919-03:00 0HN40P53S2615:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T13:55:56.6639124-03:00 0HN40P53S2615:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 87.7904ms (afa2e885)
+2024-05-30T13:55:56.6639359-03:00 0HN40P53S2615:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:55:56.6640658-03:00 0HN40P53S2615:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 89.0752ms (74253ad3)
+2024-05-30T13:56:13.9933739-03:00 0HN40P53S2616:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 111 (d509f86a)
+2024-05-30T13:56:13.9936015-03:00 0HN40P53S2616:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:56:13.9936721-03:00 0HN40P53S2616:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:56:14.0361701-03:00 0HN40P53S2616:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:56:14.0370663-03:00 0HN40P53S2616:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T13:56:14.0372175-03:00 0HN40P53S2616:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 43.5265ms (afa2e885)
+2024-05-30T13:56:14.0372364-03:00 0HN40P53S2616:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:56:14.0373190-03:00 0HN40P53S2616:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 44.0023ms (74253ad3)
+2024-05-30T13:57:09.7928509-03:00 0HN40P53S2617:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 128 (d509f86a)
+2024-05-30T13:57:09.7930728-03:00 0HN40P53S2617:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:57:09.7931772-03:00 0HN40P53S2617:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:57:09.8050083-03:00 0HN40P53S2617:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:57:09.8061115-03:00 0HN40P53S2617:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'. (605b4265)
+2024-05-30T13:57:09.8065588-03:00 0HN40P53S2617:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 13.3204ms (afa2e885)
+2024-05-30T13:57:09.8066098-03:00 0HN40P53S2617:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:57:09.8067575-03:00 0HN40P53S2617:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 400 null "application/json; charset=utf-8" 13.9656ms (74253ad3)
+2024-05-30T13:57:15.3271357-03:00 0HN40P53S2618:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - "application/json" 129 (d509f86a)
+2024-05-30T13:57:15.3272909-03:00 0HN40P53S2618:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:57:15.3273644-03:00 0HN40P53S2618:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Update(Int32, APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:57:15.3334793-03:00 0HN40P53S2618:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:57:15.3395543-03:00 0HN40P53S2618:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:57:15.4167186-03:00 0HN40P53S2618:00000001 [INF] Executed DbCommand ("13"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T13:57:15.4211259-03:00 0HN40P53S2618:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbProduct"'. (605b4265)
+2024-05-30T13:57:15.4305411-03:00 0HN40P53S2618:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)" in 103.1464ms (afa2e885)
+2024-05-30T13:57:15.4305745-03:00 0HN40P53S2618:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Update (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:57:15.4306636-03:00 0HN40P53S2618:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9""" - 200 null "application/json; charset=utf-8" 103.6139ms (74253ad3)
+2024-05-30T13:57:50.1847463-03:00 0HN40P53S2619:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""" - null null (d509f86a)
+2024-05-30T13:57:50.1867521-03:00 0HN40P53S2619:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:57:50.1890818-03:00 0HN40P53S2619:00000001 [INF] Route matched with "{action = \"GetByBarCode\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByBarCode(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:57:50.1902445-03:00 0HN40P53S2619:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:57:50.1903841-03:00 0HN40P53S2619:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)" in 1.2622ms (afa2e885)
+2024-05-30T13:57:50.1904040-03:00 0HN40P53S2619:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:57:50.1905054-03:00 0HN40P53S2619:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""" - 400 null "text/plain; charset=utf-8" 9.797ms (74253ad3)
+2024-05-30T13:58:09.8044224-03:00 0HN40P53S261A:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=55555555555555" - null null (d509f86a)
+2024-05-30T13:58:09.8046103-03:00 0HN40P53S261A:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:58:09.8046825-03:00 0HN40P53S261A:00000001 [INF] Route matched with "{action = \"GetByBarCode\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByBarCode(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:58:09.8599836-03:00 0HN40P53S261A:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__lowerBarCode_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE lower(t.barcode) = @__lowerBarCode_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:58:09.8604777-03:00 0HN40P53S261A:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbProduct"'. (605b4265)
+2024-05-30T13:58:09.8606801-03:00 0HN40P53S261A:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)" in 55.9752ms (afa2e885)
+2024-05-30T13:58:09.8607098-03:00 0HN40P53S261A:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:58:09.8608042-03:00 0HN40P53S261A:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=55555555555555" - 200 null "application/json; charset=utf-8" 56.4118ms (74253ad3)
+2024-05-30T13:58:20.9282808-03:00 0HN40P53S261B:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=555555555555555" - null null (d509f86a)
+2024-05-30T13:58:20.9285005-03:00 0HN40P53S261B:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:58:20.9286182-03:00 0HN40P53S261B:00000001 [INF] Route matched with "{action = \"GetByBarCode\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByBarCode(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:58:20.9332818-03:00 0HN40P53S261B:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__lowerBarCode_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE lower(t.barcode) = @__lowerBarCode_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:58:21.0489410-03:00 0HN40P53S261B:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:58:21.0491150-03:00 0HN40P53S261B:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)" in 120.4698ms (afa2e885)
+2024-05-30T13:58:21.0491472-03:00 0HN40P53S261B:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:58:21.0492539-03:00 0HN40P53S261B:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=555555555555555" - 404 null "text/plain; charset=utf-8" 121.0542ms (74253ad3)
+2024-05-30T13:59:03.6733034-03:00 0HN40P53S261C:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=55555555555555" - null null (d509f86a)
+2024-05-30T13:59:03.6750404-03:00 0HN40P53S261C:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:59:03.6752614-03:00 0HN40P53S261C:00000001 [INF] Route matched with "{action = \"GetByBarCode\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByBarCode(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:59:03.6799959-03:00 0HN40P53S261C:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__lowerBarCode_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE lower(t.barcode) = @__lowerBarCode_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:59:03.6803471-03:00 0HN40P53S261C:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbProduct"'. (605b4265)
+2024-05-30T13:59:03.6805056-03:00 0HN40P53S261C:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)" in 5.2022ms (afa2e885)
+2024-05-30T13:59:03.6805739-03:00 0HN40P53S261C:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:59:03.6806554-03:00 0HN40P53S261C:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=55555555555555" - 200 null "application/json; charset=utf-8" 11.1513ms (74253ad3)
+2024-05-30T13:59:13.6519094-03:00 0HN40P53S261D:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=555555555555555" - null null (d509f86a)
+2024-05-30T13:59:13.6520817-03:00 0HN40P53S261D:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:59:13.6521550-03:00 0HN40P53S261D:00000001 [INF] Route matched with "{action = \"GetByBarCode\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByBarCode(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:59:13.6573833-03:00 0HN40P53S261D:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__lowerBarCode_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE lower(t.barcode) = @__lowerBarCode_0
+LIMIT 1" (0723d8ff)
+2024-05-30T13:59:13.6903336-03:00 0HN40P53S261D:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:59:13.6904705-03:00 0HN40P53S261D:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)" in 38.2911ms (afa2e885)
+2024-05-30T13:59:13.6905024-03:00 0HN40P53S261D:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:59:13.6906082-03:00 0HN40P53S261D:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""?barCode=555555555555555" - 404 null "text/plain; charset=utf-8" 38.7437ms (74253ad3)
+2024-05-30T13:59:22.3698840-03:00 0HN40P53S261E:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""" - null null (d509f86a)
+2024-05-30T13:59:22.3700715-03:00 0HN40P53S261E:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (500cc934)
+2024-05-30T13:59:22.3701380-03:00 0HN40P53S261E:00000001 [INF] Route matched with "{action = \"GetByBarCode\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByBarCode(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T13:59:22.3704546-03:00 0HN40P53S261E:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T13:59:22.3705447-03:00 0HN40P53S261E:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)" in 0.3848ms (afa2e885)
+2024-05-30T13:59:22.3705599-03:00 0HN40P53S261E:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByBarCode (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T13:59:22.3706129-03:00 0HN40P53S261E:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/barcode""" - 400 null "text/plain; charset=utf-8" 0.8269ms (74253ad3)
+2024-05-30T14:01:27.1760887-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T14:01:27.1832907-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T14:01:27.1922870-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T14:01:27.1945351-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T14:01:28.0852188-03:00 0HN40P8IISJRF:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T14:01:28.4558239-03:00 0HN40P8IISJRF:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 382.4402ms (74253ad3)
+2024-05-30T14:01:28.4622002-03:00 0HN40P8IISJRG:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T14:01:28.4622003-03:00 0HN40P8IISJRF:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T14:01:28.4654683-03:00 0HN40P8IISJRF:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.1873ms (74253ad3)
+2024-05-30T14:01:28.4964891-03:00 0HN40P8IISJRG:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 34.4307ms (74253ad3)
+2024-05-30T14:01:28.5753650-03:00 0HN40P8IISJRG:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T14:01:28.7284704-03:00 0HN40P8IISJRG:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 153.1523ms (74253ad3)
+2024-05-30T14:05:59.4043514-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T14:05:59.4126953-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T14:05:59.4154832-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T14:05:59.4176434-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T14:05:59.7574605-03:00 0HN40PB3JE6BH:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T14:06:00.1563216-03:00 0HN40PB3JE6BH:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 406.9853ms (74253ad3)
+2024-05-30T14:06:00.1719115-03:00 0HN40PB3JE6BH:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T14:06:00.1719087-03:00 0HN40PB3JE6BI:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T14:06:00.1749671-03:00 0HN40PB3JE6BH:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.318ms (74253ad3)
+2024-05-30T14:06:00.2101080-03:00 0HN40PB3JE6BI:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 38.5211ms (74253ad3)
+2024-05-30T14:06:00.2805538-03:00 0HN40PB3JE6BI:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T14:06:00.4438220-03:00 0HN40PB3JE6BI:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 163.2939ms (74253ad3)
+2024-05-30T14:06:59.7298584-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-05-30T14:06:59.7370255-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-05-30T14:06:59.7397742-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-05-30T14:06:59.7416678-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-05-30T14:07:00.2591431-03:00 0HN40PBLKSH27:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-05-30T14:07:00.6181639-03:00 0HN40PBLKSH27:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 364.1156ms (74253ad3)
+2024-05-30T14:07:00.6213578-03:00 0HN40PBLKSH28:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-05-30T14:07:00.6213578-03:00 0HN40PBLKSH27:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-05-30T14:07:00.6237621-03:00 0HN40PBLKSH27:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.3999ms (74253ad3)
+2024-05-30T14:07:00.6543623-03:00 0HN40PBLKSH28:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 33.1545ms (74253ad3)
+2024-05-30T14:07:00.7274040-03:00 0HN40PBLKSH28:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-05-30T14:07:00.8949370-03:00 0HN40PBLKSH28:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 167.6126ms (74253ad3)
+2024-05-30T14:07:29.4257687-03:00 0HN40PBLKSH29:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/description/teste""" - null null (d509f86a)
+2024-05-30T14:07:29.4419067-03:00 0HN40PBLKSH29:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByDesc (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:07:29.4735096-03:00 0HN40PBLKSH29:00000001 [INF] Route matched with "{action = \"GetByDesc\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByDesc(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:07:31.0321775-03:00 0HN40PBLKSH29:00000001 [INF] Executed DbCommand ("52"ms) [Parameters=["@__lowerDesc_0_contains='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE lower(t.description) LIKE @__lowerDesc_0_contains" (0723d8ff)
+2024-05-30T14:07:31.1386166-03:00 0HN40PBLKSH29:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T14:07:31.1425692-03:00 0HN40PBLKSH29:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByDesc (APITrabalhoFinal)" in 1665.5862ms (afa2e885)
+2024-05-30T14:07:31.1426828-03:00 0HN40PBLKSH29:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByDesc (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:07:31.1487477-03:00 0HN40PBLKSH29:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/description/teste""" - 404 null "text/plain; charset=utf-8" 1723.0514ms (74253ad3)
+2024-05-30T14:07:44.6068166-03:00 0HN40PBLKSH2A:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/description/13""" - null null (d509f86a)
+2024-05-30T14:07:44.6089442-03:00 0HN40PBLKSH2A:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByDesc (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:07:44.6092807-03:00 0HN40PBLKSH2A:00000001 [INF] Route matched with "{action = \"GetByDesc\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] GetByDesc(System.String)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:07:44.6393428-03:00 0HN40PBLKSH2A:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__lowerDesc_0_contains='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE lower(t.description) LIKE @__lowerDesc_0_contains" (0723d8ff)
+2024-05-30T14:07:44.7055227-03:00 0HN40PBLKSH2A:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T14:07:44.7242717-03:00 0HN40PBLKSH2A:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.GetByDesc (APITrabalhoFinal)" in 114.8928ms (afa2e885)
+2024-05-30T14:07:44.7243401-03:00 0HN40PBLKSH2A:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.GetByDesc (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:07:44.7245625-03:00 0HN40PBLKSH2A:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product/description/13""" - 200 null "application/json; charset=utf-8" 117.8138ms (74253ad3)
+2024-05-30T14:08:36.6976372-03:00 0HN40PBLKSH2B:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10/stock""" - "application/json" 19 (d509f86a)
+2024-05-30T14:08:36.6979761-03:00 0HN40PBLKSH2B:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:08:36.7019406-03:00 0HN40PBLKSH2B:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:08:36.7797995-03:00 0HN40PBLKSH2B:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T14:08:36.7804452-03:00 0HN40PBLKSH2B:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T14:08:36.7805787-03:00 0HN40PBLKSH2B:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 78.5581ms (afa2e885)
+2024-05-30T14:08:36.7806109-03:00 0HN40PBLKSH2B:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:08:36.7808353-03:00 0HN40PBLKSH2B:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/10/stock""" - 404 null "text/plain; charset=utf-8" 83.2387ms (74253ad3)
+2024-05-30T14:08:47.0002508-03:00 0HN40PBLKSH2C:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - "application/json" 19 (d509f86a)
+2024-05-30T14:08:47.0005200-03:00 0HN40PBLKSH2C:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:08:47.0006083-03:00 0HN40PBLKSH2C:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:08:47.0053692-03:00 0HN40PBLKSH2C:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T14:08:47.0064677-03:00 0HN40PBLKSH2C:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T14:08:47.0066329-03:00 0HN40PBLKSH2C:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 5.9962ms (afa2e885)
+2024-05-30T14:08:47.0066669-03:00 0HN40PBLKSH2C:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:08:47.0067945-03:00 0HN40PBLKSH2C:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - 400 null "text/plain; charset=utf-8" 6.5956ms (74253ad3)
+2024-05-30T14:09:14.2299269-03:00 0HN40PBLKSH2D:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - "application/json" 20 (d509f86a)
+2024-05-30T14:09:14.2300788-03:00 0HN40PBLKSH2D:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:09:14.2302145-03:00 0HN40PBLKSH2D:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:09:14.2340830-03:00 0HN40PBLKSH2D:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T14:09:14.2387281-03:00 0HN40PBLKSH2D:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T14:09:14.4617927-03:00 0HN40PBLKSH2D:00000001 [INF] Executed DbCommand ("13"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T14:09:14.4655212-03:00 0HN40PBLKSH2D:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T14:09:14.4656325-03:00 0HN40PBLKSH2D:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 235.3771ms (afa2e885)
+2024-05-30T14:09:14.4656513-03:00 0HN40PBLKSH2D:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:09:14.4657230-03:00 0HN40PBLKSH2D:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - 200 null "text/plain; charset=utf-8" 235.8444ms (74253ad3)
+2024-05-30T14:09:32.1104941-03:00 0HN40PBLKSH2E:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T14:09:32.1108171-03:00 0HN40PBLKSH2E:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:09:32.1121692-03:00 0HN40PBLKSH2E:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:09:32.1186589-03:00 0HN40PBLKSH2E:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T14:09:32.1193177-03:00 0HN40PBLKSH2E:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T14:09:32.1196438-03:00 0HN40PBLKSH2E:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 7.4209ms (afa2e885)
+2024-05-30T14:09:32.1196683-03:00 0HN40PBLKSH2E:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:09:32.1197506-03:00 0HN40PBLKSH2E:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 9.3029ms (74253ad3)
+2024-05-30T14:09:51.0389157-03:00 0HN40PBLKSH2F:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - "application/json" 21 (d509f86a)
+2024-05-30T14:09:51.0390977-03:00 0HN40PBLKSH2F:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:09:51.0392080-03:00 0HN40PBLKSH2F:00000001 [INF] Route matched with "{action = \"UpdateStock\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult UpdateStock(Int32, APITrabalhoFinal.Services.DTOs.StockUpdateDTO)" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:09:51.0441812-03:00 0HN40PBLKSH2F:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T14:09:51.0477642-03:00 0HN40PBLKSH2F:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-05-30T14:09:51.0522688-03:00 0HN40PBLKSH2F:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-05-30T14:09:51.0526935-03:00 0HN40PBLKSH2F:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-05-30T14:09:51.0528041-03:00 0HN40PBLKSH2F:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)" in 13.4401ms (afa2e885)
+2024-05-30T14:09:51.0528506-03:00 0HN40PBLKSH2F:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:09:51.0530470-03:00 0HN40PBLKSH2F:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Product/9/stock""" - 200 null "text/plain; charset=utf-8" 14.1507ms (74253ad3)
+2024-05-30T14:09:55.3001579-03:00 0HN40PBLKSH2F:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - null null (d509f86a)
+2024-05-30T14:09:55.3003734-03:00 0HN40PBLKSH2F:00000002 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (500cc934)
+2024-05-30T14:09:55.3004487-03:00 0HN40PBLKSH2F:00000002 [INF] Route matched with "{action = \"Get\", controller = \"Product\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbProduct] Get()" on controller "APITrabalhoFinal.Controllers.ProductController" ("APITrabalhoFinal"). (122b2fdf)
+2024-05-30T14:09:55.3036840-03:00 0HN40PBLKSH2F:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t" (0723d8ff)
+2024-05-30T14:09:55.3041372-03:00 0HN40PBLKSH2F:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbProduct, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-05-30T14:09:55.3044167-03:00 0HN40PBLKSH2F:00000002 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 3.9515ms (afa2e885)
+2024-05-30T14:09:55.3044424-03:00 0HN40PBLKSH2F:00000002 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
+2024-05-30T14:09:55.3045179-03:00 0HN40PBLKSH2F:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 4.4785ms (74253ad3)

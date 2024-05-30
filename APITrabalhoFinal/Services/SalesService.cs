@@ -12,18 +12,14 @@ namespace APITrabalhoFinal.Services
     public class SalesService
     {
         private readonly TfDbContext _dbContext;
-        private readonly IValidator<SaleDTO> _validator;
 
-        public SalesService(TfDbContext dbcontext, IValidator<SaleDTO> validator)
+        public SalesService(TfDbContext dbcontext)
         {
             _dbContext = dbcontext;
-            _validator = validator;
         }
 
         public TbSale Insert(SaleDTO dto)
         {
-            ValidateSale(dto);
-
             var entity = SaleParser.ToEntity(dto);
 
             _dbContext.Add(entity);
@@ -40,18 +36,6 @@ namespace APITrabalhoFinal.Services
                 throw new NotFoundException("Registro não existe");
             }
             return existingEntity;
-        }
-
-
-        private void ValidateSale(SaleDTO dto)
-        {
-            var validationResult = _validator.Validate(dto);
-
-            if (!validationResult.IsValid)
-            {
-                var errorMessages = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-                throw new InvalidEntityException(errorMessages);
-            }
         }
     }
 }

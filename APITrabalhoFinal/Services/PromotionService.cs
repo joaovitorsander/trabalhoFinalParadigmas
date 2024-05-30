@@ -15,17 +15,14 @@ namespace APITrabalhoFinal.Services
     public class PromotionService
     {
         private readonly TfDbContext _dbContext;
-        private readonly IValidator<PromotionDTO> _validator;
 
-        public PromotionService(TfDbContext dbcontext, IValidator<PromotionDTO> validator)
+        public PromotionService(TfDbContext dbcontext)
         {
             _dbContext = dbcontext;
-            _validator = validator;
         }
 
         public TbPromotion Insert(PromotionDTO dto)
         {
-            ValidatePromotion(dto);
 
             var entity = PromotionParser.ToEntity(dto);
 
@@ -66,7 +63,7 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbPromotions.FirstOrDefault(c => c.Id == id);
             if (existingEntity == null)
             {
-                throw new NotFoundException("Registro não existe");
+                return null;
             }
             return existingEntity;
         }
@@ -85,17 +82,6 @@ namespace APITrabalhoFinal.Services
             }
 
             return promotions;
-        }
-
-        private void ValidatePromotion(PromotionDTO dto)
-        {
-            var validationResult = _validator.Validate(dto);
-
-            if (!validationResult.IsValid)
-            {
-                var errorMessages = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-                throw new InvalidEntityException(errorMessages);
-            }
         }
     }
 }

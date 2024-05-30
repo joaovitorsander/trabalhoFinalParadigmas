@@ -26,11 +26,6 @@ namespace APITrabalhoFinal.Services.Validate
                 .InclusiveBetween(0, 100).WithMessage("O desconto deve estar entre 0% e 100%.");
         }
 
-        public ValidationResult ValidateSale(SaleDTO sale)
-        {
-            return Validate(sale);
-        }
-
         private bool IsGuid(string code)
         {
             return Guid.TryParse(code, out _);

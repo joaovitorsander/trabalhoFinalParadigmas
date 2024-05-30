@@ -3,6 +3,7 @@ using APITrabalhoFinal.Services;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
 using APITrabalhoFinal.Services.Validate;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APITrabalhoFinal.Controllers
@@ -15,9 +16,9 @@ namespace APITrabalhoFinal.Controllers
     public class SalesController : ControllerBase
     {
         public readonly SalesService _service;
-        public readonly SaleValidate _validator;
+        public readonly IValidator<SaleDTO> _validator;
 
-        public SalesController(SalesService service, SaleValidate validator)
+        public SalesController(SalesService service, IValidator<SaleDTO> validator)
         {
             _service = service;
             _validator = validator;
@@ -33,9 +34,9 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                var validationResult = _validator.ValidateSale(sale);
-                if (!validationResult.IsValid) 
-                { 
+                var validationResult = _validator.Validate(sale);
+                if (!validationResult.IsValid)
+                {
                     return BadRequest(validationResult.Errors);
                 }
 

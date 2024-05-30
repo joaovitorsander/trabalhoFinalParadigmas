@@ -1,17 +1,16 @@
 ﻿using APITrabalhoFinal.Services.DTOs;
 using FluentValidation;
-using FluentValidation.Results;
 using System.Text.RegularExpressions;
 
 namespace APITrabalhoFinal.Services.Validate
 {
-    public class ProductValidate : AbstractValidator<ProductDTO>
+    public class ProductUpdateValidate : AbstractValidator<ProductUpdateDTO>
     {
-        public ProductValidate()
+        public ProductUpdateValidate()
         {
             RuleFor(product => product.Description)
-                .NotEmpty().WithMessage("A descrição do produto é obrigatória.")
-                .MaximumLength(255).WithMessage("A descrição do produto não pode exceder 255 caracteres.");
+                 .NotEmpty().WithMessage("A descrição do produto é obrigatória.")
+                 .MaximumLength(255).WithMessage("A descrição do produto não pode exceder 255 caracteres.");
 
             RuleFor(product => product.Barcode)
                 .NotEmpty().WithMessage("O código de barras do produto é obrigatório.")
@@ -22,9 +21,6 @@ namespace APITrabalhoFinal.Services.Validate
                 .MaximumLength(10).WithMessage("O tipo de código de barras do produto não pode exceder 10 caracteres.")
                 .Must(BarCodeTypeValidate).WithMessage("O código de barras não é válido para o tipo especificado.");
 
-            RuleFor(product => product.Stock)
-                .GreaterThan(0).WithMessage("A quantidade em estoque deve ser maior que zero.");
-
             RuleFor(product => product.Price)
                 .GreaterThan(0).WithMessage("O preço do produto deve ser maior que zero.");
 
@@ -32,7 +28,7 @@ namespace APITrabalhoFinal.Services.Validate
                 .GreaterThan(0).WithMessage("O preço de custo do produto deve ser maior que zero.");
         }
 
-        private bool BarCodeTypeValidate(ProductDTO dto, string barcodetype)
+        private bool BarCodeTypeValidate(ProductUpdateDTO dto, string barcodetype)
         {
             switch (barcodetype.ToUpper())
             {

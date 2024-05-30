@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xPAhJccCwanmvXaHswdW53Ral6BNZGdkGSUzXoZPm9xqR2k3e8rnwZiFn4AfZD0jVk4tviVlRAZf/gz3zWITcQ==",
+  "dgSpecHash": "8/ZwVlcAKHS7na/Ub+k6LRyksaWn791GnRiu04TqDsQFQhNzqXCvVjiCvpdqx4B/K3bMVfk0tmIogOG34RhZWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\João\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\APITrabalhoFinal.csproj",
   "expectedPackageFiles": [
@@ -24,7 +24,7 @@
     "C:\\Users\\João\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0-preview.3.24172.9\\microsoft.extensions.primitives.9.0.0-preview.3.24172.9.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
-    "C:\\Users\\João\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0-preview.3\\npgsql.entityframeworkcore.postgresql.9.0.0-preview.3.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\serilog\\4.0.0-dev-02166\\serilog.4.0.0-dev-02166.nupkg.sha512",
@@ -35,8 +35,9 @@
     "C:\\Users\\João\\.nuget\\packages\\serilog.sinks.file\\3.2.0\\serilog.sinks.file.3.2.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\serilog.sinks.rollingfile\\3.3.0\\serilog.sinks.rollingfile.3.3.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
-    "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
-    "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.6.2\\swashbuckle.aspnetcore.annotations.6.6.2.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\system.io\\4.1.0\\system.io.4.1.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\system.io.filesystem\\4.0.1\\system.io.filesystem.4.0.1.nupkg.sha512",

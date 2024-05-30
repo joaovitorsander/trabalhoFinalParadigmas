@@ -37,10 +37,5 @@ namespace APITrabalhoFinal.Services.Validate
                     .WithMessage("Para desconto fixo, o valor deve ser positivo");
             });
         }
-
-        public ValidationResult ValidatePromotion(PromotionDTO promotion)
-        {
-            return Validate(promotion);
-        }
     }
 }

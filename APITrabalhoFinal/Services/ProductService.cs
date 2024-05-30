@@ -15,57 +15,38 @@ namespace APITrabalhoFinal.Services
     public class ProductService
     {
         private readonly TfDbContext _dbContext;
-        private readonly IValidator<ProductDTO> _validator;
 
-        public ProductService(TfDbContext dbcontext, IValidator<ProductDTO> validator)
+        public ProductService(TfDbContext dbcontext)
         {
             _dbContext = dbcontext;
-            _validator = validator;
         }
 
 
         public TbProduct Insert(ProductDTO dto)
         {
-            ValidateProduct(dto);
-
 
             var entity = ProductParser.ToEntity(dto);
 
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
 
-            //AjustarStock(entity.Id, entity.Stock);
-
             return entity;
         }
 
-        public TbProduct Update(ProductDTO dto, int id)
+        public TbProduct Update(ProductUpdateDTO dto, int id)
         {
-            ValidateProduct(dto);
-
             var existingEntity = GetById(id);
-            if (existingEntity == null)
-            {
-                throw new NotFoundException("Registro não existe");
-            }
 
-            var entity = ProductParser.ToEntity(dto);
+            existingEntity.Description = dto.Description;
+            existingEntity.Barcode = dto.Barcode;
+            existingEntity.Barcodetype = dto.Barcodetype;
+            existingEntity.Price = dto.Price;
+            existingEntity.Costprice = dto.Costprice;
 
-            var ProductById = GetById(id);
-
-            ProductById.Description = entity.Description;
-            ProductById.Barcode = entity.Barcode;
-            ProductById.Barcodetype = entity.Barcodetype;
-            ProductById.Price = entity.Price;
-            ProductById.Costprice = entity.Costprice;
-
-
-            _dbContext.Update(ProductById);
+            _dbContext.Update(existingEntity);
             _dbContext.SaveChanges();
 
-            AjustarStock(entity.Id, entity.Stock);
-
-            return entity;
+            return existingEntity;
         }
 
         public TbProduct GetById(int id)
@@ -73,7 +54,7 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbProducts.FirstOrDefault(p => p.Id == id);
             if (existingEntity == null)
             {
-                throw new NotFoundException("Registro não existe");
+                return null;
             }
             return existingEntity;
         }
@@ -143,26 +124,8 @@ namespace APITrabalhoFinal.Services
                 return;
             }
 
-            var stockLog = new TbStockLog
-            {
-                Productid = productId,
-                Qty = quantity,
-                Createdat = DateTime.Now
-            };
-
-            _dbContext.TbStockLogs.Add(stockLog);
+            _dbContext.Update(product);
             _dbContext.SaveChanges();
-        }
-
-        private void ValidateProduct(ProductDTO dto)
-        {
-            var validationResult = _validator.Validate(dto);
-
-            if (!validationResult.IsValid)
-            {
-                var errorMessages = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-                throw new InvalidEntityException(errorMessages);
-            }
         }
     }
 }

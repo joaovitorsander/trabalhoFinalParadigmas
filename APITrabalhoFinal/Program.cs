@@ -24,6 +24,7 @@ builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<PromotionService>();
 builder.Services.AddScoped<SalesService>();
 builder.Services.AddTransient<IValidator<ProductDTO>, ProductValidate>();
+builder.Services.AddTransient<IValidator<ProductUpdateDTO>, ProductUpdateValidate>();
 builder.Services.AddTransient<IValidator<PromotionDTO>, PromotionValidate>();
 builder.Services.AddTransient<IValidator<SaleDTO>, SaleValidate>();
 builder.Services.AddFluentValidationClientsideAdapters();
