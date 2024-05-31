@@ -85,6 +85,10 @@
             </summary>
             <param name="promotion">A promoção a ser inserida.</param>
             <returns>A promoção inserida.</returns>
+            <response code="200">Indica que a promoção foi inserida com sucesso.</response>
+            <response code="400">Indica que os dados fornecidos são inválidos.</response>
+            <response code="404">Indica que o id do produto passado não existe.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.PromotionController.Put(System.Int32,APITrabalhoFinal.Services.DTOs.PromotionDTO)">
             <summary>
@@ -93,6 +97,10 @@
             <param name="id">O ID da promoção a ser atualizada.</param>
             <param name="dto">Os dados atualizados da promoção.</param>
             <returns>A promoção atualizada.</returns>
+            <response code="200">Indica que a promoção foi atualizada com sucesso.</response>
+            <response code="400">Indica que os dados fornecidos são inválidos.</response>
+            <response code="404">Indica que a promoção com o ID especificado não foi encontrada ou o ID do produto não existe.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
         <member name="M:APITrabalhoFinal.Controllers.PromotionController.GetPromotionsByProductAndPeriod(System.Int32,System.DateTime,System.DateTime)">
             <summary>
@@ -102,6 +110,10 @@
             <param name="startDate">Data de início do período.</param>
             <param name="endDate">Data de fim do período.</param>
             <returns>Lista de promoções.</returns>
+            <response code="200">Indica que a busca foi realizada com sucesso.</response>
+            <response code="400">Indica que os dados fornecidos são inválidos.</response>
+            <response code="404">Indica que o ID do produto não foi encontrado ou nenhuma promoção foi encontrada para o período especificado.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
         <member name="T:APITrabalhoFinal.Controllers.SalesController">
             <summary>

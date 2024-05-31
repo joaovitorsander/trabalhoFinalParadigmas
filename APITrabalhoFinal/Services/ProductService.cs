@@ -31,11 +31,6 @@ namespace APITrabalhoFinal.Services
         {
             var existingEntity = GetById(id);
 
-            if (existingEntity == null)
-            {
-                throw new NotFoundException("Produto não encontrado.");
-            }
-
             existingEntity.Description = dto.Description;
             existingEntity.Barcode = dto.Barcode;
             existingEntity.Barcodetype = dto.Barcodetype;

@@ -23,8 +23,16 @@ namespace APITrabalhoFinal.Services
 
         public TbPromotion Insert(PromotionDTO dto)
         {
+            var productExists = _dbContext.TbProducts.Any(p => p.Id == dto.Productid);
+            if (!productExists)
+            {
+                throw new NotFoundException("Produto não encontrado.");
+            }
 
             var entity = PromotionParser.ToEntity(dto);
+
+            entity.Startdate = DateTime.SpecifyKind(dto.Startdate, DateTimeKind.Unspecified);
+            entity.Enddate = DateTime.SpecifyKind(dto.Enddate, DateTimeKind.Unspecified);
 
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
@@ -35,25 +43,24 @@ namespace APITrabalhoFinal.Services
         public TbPromotion Update(PromotionDTO dto, int id)
         {
 
-            var promotion = GetById(id);
-
-            if (promotion == null)
+            var productExists = _dbContext.TbProducts.Any(p => p.Id == dto.Productid);
+            if (!productExists)
             {
-                throw new NotFoundException("Registro não existe");
+                throw new NotFoundException("Produto não encontrado.");
             }
 
-            var entity = PromotionParser.ToEntity(dto);
+            var existingEntity = GetById(id);
 
-            promotion.Startdate = dto.Startdate;
-            promotion.Enddate = dto.Enddate;
-            promotion.Promotiontype = dto.Promotiontype;
-            promotion.Productid = dto.Productid;
-            promotion.Value = dto.Value;
+            existingEntity.Startdate = DateTime.SpecifyKind(dto.Startdate, DateTimeKind.Unspecified);
+            existingEntity.Enddate = DateTime.SpecifyKind(dto.Enddate, DateTimeKind.Unspecified); 
+            existingEntity.Promotiontype = dto.Promotiontype;
+            existingEntity.Productid = dto.Productid;
+            existingEntity.Value = dto.Value;
 
-            _dbContext.Update(promotion);
+            _dbContext.Update(existingEntity);
             _dbContext.SaveChanges();
 
-            return entity;
+            return existingEntity;  
         }
 
 
@@ -63,13 +70,19 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbPromotions.FirstOrDefault(c => c.Id == id);
             if (existingEntity == null)
             {
-                return null;
+                throw new NotFoundException("Promoção não encontrada.");
             }
             return existingEntity;
         }
 
         public IEnumerable<TbPromotion> GetPromotionsByProductAndPeriod(int productId, DateTime startDate, DateTime endDate)
         {
+            var productExists = _dbContext.TbProducts.Any(p => p.Id == productId);
+            if (!productExists)
+            {
+                throw new NotFoundException("Produto não encontrado.");
+            }
+
             var promotions = _dbContext.TbPromotions
                 .Where(p => p.Productid == productId &&
                             p.Startdate >= startDate &&
@@ -83,5 +96,6 @@ namespace APITrabalhoFinal.Services
 
             return promotions;
         }
+
     }
 }
