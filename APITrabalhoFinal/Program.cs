@@ -28,6 +28,10 @@ builder.Services.AddTransient<IValidator<ProductUpdateDTO>, ProductUpdateValidat
 builder.Services.AddTransient<IValidator<PromotionDTO>, PromotionValidate>();
 builder.Services.AddTransient<IValidator<SaleDTO>, SaleValidate>();
 builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Logging.AddFile("Logs/ApiWebDB-{Date}.log");
 builder.Services.AddSwaggerGen();

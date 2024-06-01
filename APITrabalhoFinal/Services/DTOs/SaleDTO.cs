@@ -3,9 +3,7 @@
 namespace APITrabalhoFinal.Services.DTOs
 {
     public class SaleDTO
-    {
-        public int Id { get; set; }
-
+    { 
         public string Code { get; set; }
 
         public DateTime Createat { get; set; }

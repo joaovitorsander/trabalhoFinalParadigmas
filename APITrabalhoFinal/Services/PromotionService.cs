@@ -63,8 +63,6 @@ namespace APITrabalhoFinal.Services
             return existingEntity;  
         }
 
-
-
         public TbPromotion GetById(int id)
         {
             var existingEntity = _dbContext.TbPromotions.FirstOrDefault(c => c.Id == id);
@@ -97,5 +95,17 @@ namespace APITrabalhoFinal.Services
             return promotions;
         }
 
+        public List<TbPromotion> GetActivePromotions(int productId)
+        {
+            var currentDate = DateTime.Now;
+
+            return _dbContext.TbPromotions
+                     .Where(p => p.Productid == productId
+                                 && p.Startdate <= currentDate
+                                 && p.Enddate >= currentDate)
+                     .OrderByDescending(p => p.Enddate) 
+                     .ThenByDescending(p => p.Startdate)
+                     .ToList();
+        }
     }
 }

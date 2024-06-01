@@ -5,6 +5,7 @@ using APITrabalhoFinal.Services.Exceptions;
 using APITrabalhoFinal.Services.Validate;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -29,6 +30,10 @@ namespace APITrabalhoFinal.Controllers
         /// </summary>
         /// <param name="sale">A venda a ser inserida</param>
         /// <returns>A venda inserida.</returns>
+        /// <response code="200">Indica que a venda foi inserida com sucesso.</response>
+        /// <response code="400">Indica que houve um erro de validação nos dados da venda ou que o estoque é insuficiente.</response>
+        /// <response code="404">Indica que o produto com o ID especificado não foi encontrado.</response>
+        /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         [HttpPost()]
         public ActionResult<TbSale> Insert(SaleDTO sale)
         {
@@ -43,9 +48,21 @@ namespace APITrabalhoFinal.Controllers
                 var entity = _service.Insert(sale);
                 return Ok(entity);
             }
-            catch (InvalidEntityException E)
+            catch (InvalidEntityException ex)
             {
-                return BadRequest(E.Message);
+                return BadRequest(ex.Message);
+            }
+            catch (InsufficientStockException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro interno no servidor: " + ex.Message);
             }
         }
 
@@ -54,7 +71,10 @@ namespace APITrabalhoFinal.Controllers
         /// </summary>
         /// <param name="cod">O código da venda a ser obtida.</param>
         /// <returns>A venda solicitada.</returns>
-        [HttpGet("{id}")]
+        /// <response code="200">Indica que a venda foi retornada com sucesso.</response>
+        /// <response code="404">Indica que a venda com o código especificado não foi encontrada.</response>
+        /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
+        [HttpGet("{cod}")]
         public ActionResult<TbSale> GetByCode(string cod)
         {
             try
