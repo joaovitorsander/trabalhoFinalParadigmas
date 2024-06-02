@@ -6,6 +6,7 @@ using APITrabalhoFinal.Services.Validate;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -92,6 +93,40 @@ namespace APITrabalhoFinal.Controllers
                 {
                     StatusCode = 500
                 };
+            }
+        }
+
+        /// <summary>
+        /// Obtém um relatório de vendas por período.
+        /// </summary>
+        /// <param name="startDate">A data de início do período.</param>
+        /// <param name="endDate">A data de fim do período.</param>
+        /// <returns>Uma lista de relatórios de vendas agrupados por código da venda.</returns>
+        /// <response code="200">Indica que o relatório de vendas foi retornado com sucesso.</response>
+        /// <response code="400">Indica que as datas de início e fim não foram fornecidas ou são inválidas.</response>
+        /// <response code="404">Indica que não foram encontradas vendas no período especificado.</response>
+        /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
+        [HttpGet("report")]
+        public ActionResult<List<SalesReportDTO>> GetSalesReport(DateTime startDate, DateTime endDate)
+        {
+
+            if (startDate == default || endDate == default)
+            {
+                return BadRequest("As datas de início e fim são obrigatórias.");
+            }
+
+            try
+            {
+                var report = _service.GetSalesReportByPeriod(startDate, endDate);
+                return Ok(report);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
             }
         }
     }

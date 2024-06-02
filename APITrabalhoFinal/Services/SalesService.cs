@@ -80,6 +80,28 @@ namespace APITrabalhoFinal.Services
             return existingEntity;
         }
 
+        public List<SalesReportDTO> GetSalesReportByPeriod(DateTime startDate, DateTime endDate)
+        {
+            var query = from sale in _dbContext.TbSales
+                        join product in _dbContext.TbProducts on sale.Productid equals product.Id
+                        where sale.Createat >= startDate && sale.Createat < endDate.AddDays(1)
+                        select new SalesReportDTO
+                        {
+                            SaleCode = sale.Code,
+                            ProductDescription = product.Description,
+                            Price = sale.Price,
+                            Quantity = sale.Qty,
+                            SaleDate = sale.Createat
+                        };
+
+            if (!query.Any())
+            {
+                throw new NotFoundException("Nenhuma venda encontrada para o período.");
+            }
+
+            return query.ToList();
+        }
+
         public decimal ApplyPromotion(decimal price, TbPromotion promotion)
         {
             switch (promotion.Promotiontype)
