@@ -529,3 +529,66 @@ RETURNING id;" (0723d8ff)
 2024-06-01T22:42:07.7058078-03:00 0HN42KJG41ICO:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)" in 57216.3841ms (afa2e885)
 2024-06-01T22:42:07.7059165-03:00 0HN42KJG41ICO:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (99874f2b)
 2024-06-01T22:42:07.7118982-03:00 0HN42KJG41ICO:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - 200 null "application/json; charset=utf-8" 57261.091ms (74253ad3)
+2024-06-01T23:16:16.4080047-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-06-01T23:16:16.4153649-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-06-01T23:16:16.4185597-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-06-01T23:16:16.4208621-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-06-01T23:16:19.2565135-03:00 0HN42L7TVR9LJ:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-06-01T23:16:19.7134447-03:00 0HN42L7TVR9LJ:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 467.0341ms (74253ad3)
+2024-06-01T23:16:19.7580705-03:00 0HN42L7TVR9LJ:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-06-01T23:16:19.7580715-03:00 0HN42L7TVR9LK:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-06-01T23:16:19.7637864-03:00 0HN42L7TVR9LJ:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 5.8716ms (74253ad3)
+2024-06-01T23:16:19.8473256-03:00 0HN42L7TVR9LK:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 89.622ms (74253ad3)
+2024-06-01T23:16:19.9361464-03:00 0HN42L7TVR9LK:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-06-01T23:16:20.1185765-03:00 0HN42L7TVR9LK:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 182.4867ms (74253ad3)
+2024-06-01T23:16:30.3560294-03:00 0HN42L7TVR9LL:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/15/logs""" - null null (d509f86a)
+2024-06-01T23:16:30.3631725-03:00 0HN42L7TVR9LL:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (500cc934)
+2024-06-01T23:16:30.3881809-03:00 0HN42L7TVR9LL:00000001 [INF] Route matched with "{action = \"GetStockLogs\", controller = \"StockLog\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.StockLogResultDTO]] GetStockLogs(Int32)" on controller "APITrabalhoFinal.Controllers.StockLogController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-01T23:16:31.6883725-03:00 0HN42L7TVR9LL:00000001 [INF] Executed DbCommand ("44"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-01T23:16:31.7925616-03:00 0HN42L7TVR9LL:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-01T23:16:31.7956761-03:00 0HN42L7TVR9LL:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)" in 1404.5937ms (afa2e885)
+2024-06-01T23:16:31.7957857-03:00 0HN42L7TVR9LL:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (99874f2b)
+2024-06-01T23:16:31.8018670-03:00 0HN42L7TVR9LL:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/15/logs""" - 404 null "text/plain; charset=utf-8" 1445.8783ms (74253ad3)
+2024-06-01T23:16:54.5193285-03:00 0HN42L7TVR9LM:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/10/logs""" - null null (d509f86a)
+2024-06-01T23:16:54.5201151-03:00 0HN42L7TVR9LM:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (500cc934)
+2024-06-01T23:16:54.5451175-03:00 0HN42L7TVR9LM:00000001 [INF] Route matched with "{action = \"GetStockLogs\", controller = \"StockLog\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.StockLogResultDTO]] GetStockLogs(Int32)" on controller "APITrabalhoFinal.Controllers.StockLogController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-01T23:16:54.6611415-03:00 0HN42L7TVR9LM:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-01T23:16:54.6780985-03:00 0HN42L7TVR9LM:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_stock_logs AS t
+    WHERE t.productid = @__productId_0)" (0723d8ff)
+2024-06-01T23:16:54.7013010-03:00 0HN42L7TVR9LM:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-01T23:16:54.7014750-03:00 0HN42L7TVR9LM:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)" in 156.2468ms (afa2e885)
+2024-06-01T23:16:54.7015057-03:00 0HN42L7TVR9LM:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (99874f2b)
+2024-06-01T23:16:54.7016489-03:00 0HN42L7TVR9LM:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/10/logs""" - 404 null "text/plain; charset=utf-8" 182.5868ms (74253ad3)
+2024-06-01T23:17:10.6903103-03:00 0HN42L7TVR9LN:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/11/logs""" - null null (d509f86a)
+2024-06-01T23:17:10.6906771-03:00 0HN42L7TVR9LN:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (500cc934)
+2024-06-01T23:17:10.6907936-03:00 0HN42L7TVR9LN:00000001 [INF] Route matched with "{action = \"GetStockLogs\", controller = \"StockLog\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.StockLogResultDTO]] GetStockLogs(Int32)" on controller "APITrabalhoFinal.Controllers.StockLogController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-01T23:17:10.7358239-03:00 0HN42L7TVR9LN:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-01T23:17:10.7412957-03:00 0HN42L7TVR9LN:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_stock_logs AS t
+    WHERE t.productid = @__productId_0)" (0723d8ff)
+2024-06-01T23:17:10.7990403-03:00 0HN42L7TVR9LN:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.createdat AS \"Date\", t0.barcode AS \"Barcode\", t0.description AS \"Description\", t.qty AS \"Quantity\"
+FROM tb_stock_logs AS t
+INNER JOIN tb_products AS t0 ON t.productid = t0.id
+WHERE t.productid = @__productId_0" (0723d8ff)
+2024-06-01T23:17:10.8130977-03:00 0HN42L7TVR9LN:00000001 [INF] Executing "ObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.Services.DTOs.StockLogResultDTO, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-06-01T23:17:10.8266354-03:00 0HN42L7TVR9LN:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)" in 135.7984ms (afa2e885)
+2024-06-01T23:17:10.8266762-03:00 0HN42L7TVR9LN:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (99874f2b)
+2024-06-01T23:17:10.8267761-03:00 0HN42L7TVR9LN:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/11/logs""" - 200 null "application/json; charset=utf-8" 136.5332ms (74253ad3)

@@ -141,6 +141,16 @@
             <response code="404">Indica que a venda com o código especificado não foi encontrada.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
+        <member name="M:APITrabalhoFinal.Controllers.StockLogController.GetStockLogs(System.Int32)">
+            <summary>
+            Obtém os logs de um determinado produto.
+            </summary>
+            <param name="productId">A descrição do produto a ser obtido.</param>
+            <returns>A lista de logs do produto.</returns>
+            <response code="200">Indica que a operação foi bem-sucedida e retorna logs correspondentes ao produto.</response>
+            <response code="404">Indica que o ID do produto informado não existe ou nenhum log foi encontrado para o mesmo.</response>
+            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
+        </member>
         <member name="T:APITrabalhoFinal.DataBase.Models.TbProduct">
             <summary>
             tabela de produtos
