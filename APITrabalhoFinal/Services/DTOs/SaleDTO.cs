@@ -10,8 +10,6 @@ namespace APITrabalhoFinal.Services.DTOs
 
         public int Productid { get; set; }
 
-        public decimal Price { get; set; }
-
         public int Qty { get; set; }
 
         public decimal Discount { get; set; }

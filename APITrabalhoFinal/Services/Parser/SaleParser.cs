@@ -12,7 +12,6 @@ namespace APITrabalhoFinal.Services.Parser
                 Code = dto.Code,
                 Createat = dto.Createat,
                 Productid = dto.Productid,
-                Price = dto.Price,
                 Qty = dto.Qty,
                 Discount = dto.Discount
             };

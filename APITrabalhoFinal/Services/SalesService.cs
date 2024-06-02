@@ -26,28 +26,36 @@ namespace APITrabalhoFinal.Services
 
         public TbSale Insert(SaleDTO dto)
         {
-            var entity = SaleParser.ToEntity(dto);
-
-            var product = _productService.GetById(entity.Productid);
+            var product = _productService.GetById(dto.Productid);
             if (product == null)
             {
-                throw new InvalidEntityException("Produto não encontrado");
+                throw new NotFoundException("Produto não encontrado.");
             }
-            if (product.Stock < entity.Qty)
+
+            if (product.Stock < dto.Qty)
             {
                 throw new InsufficientStockException("Estoque insuficiente para o produto: " + product.Description);
             }
-            product.Stock -= entity.Qty;
 
-            var promotions = _promotionService.GetActivePromotions(entity.Productid);
+            var promotions = _promotionService.GetActivePromotions(dto.Productid);
+
+
+            decimal unitPrice = product.Price;
 
             foreach (var promotion in promotions)
             {
-                entity.Price = ApplyPromotion(entity.Price, promotion);
+                unitPrice = ApplyPromotion(unitPrice, promotion);
             }
 
-            _dbContext.Update(product);
 
+            decimal totalPrice = unitPrice * dto.Qty;
+
+            var entity = SaleParser.ToEntity(dto);
+            entity.Price = totalPrice; 
+
+            product.Stock -= dto.Qty;
+
+            _dbContext.Update(product);
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
 
@@ -60,6 +68,7 @@ namespace APITrabalhoFinal.Services
 
             return entity;
         }
+
 
         public TbSale GetByCode(string code)
         {

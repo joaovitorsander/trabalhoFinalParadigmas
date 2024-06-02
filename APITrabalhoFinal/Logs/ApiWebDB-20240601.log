@@ -478,3 +478,54 @@ FROM tb_products AS t" (0723d8ff)
 2024-06-01T22:18:48.5586193-03:00 0HN42K59CDMJH:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)" in 4.1843ms (afa2e885)
 2024-06-01T22:18:48.5586569-03:00 0HN42K59CDMJH:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductController.Get (APITrabalhoFinal)"' (99874f2b)
 2024-06-01T22:18:48.5588030-03:00 0HN42K59CDMJH:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Product""" - 200 null "application/json; charset=utf-8" 4.8102ms (74253ad3)
+2024-06-01T22:27:51.6621530-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-06-01T22:27:51.6711519-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-06-01T22:27:51.6740270-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-06-01T22:27:51.6757756-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-06-01T22:27:55.5837817-03:00 0HN42KCS960RC:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-06-01T22:27:57.1696585-03:00 0HN42KCS960RC:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 1595.807ms (74253ad3)
+2024-06-01T22:27:57.1870526-03:00 0HN42KCS960RC:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-06-01T22:27:57.1894005-03:00 0HN42KCS960RD:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-06-01T22:27:57.1909589-03:00 0HN42KCS960RC:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 4.1104ms (74253ad3)
+2024-06-01T22:27:57.7059990-03:00 0HN42KCS960RD:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 516.6669ms (74253ad3)
+2024-06-01T22:27:57.7496061-03:00 0HN42KCS960RD:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-06-01T22:27:57.9019847-03:00 0HN42KCS960RD:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 152.4448ms (74253ad3)
+2024-06-01T22:39:42.7212680-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-06-01T22:39:42.7291393-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-06-01T22:39:42.7392422-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-06-01T22:39:42.7411046-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-06-01T22:39:43.3070184-03:00 0HN42KJG41ICM:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-06-01T22:39:43.7007780-03:00 0HN42KJG41ICM:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 405.3509ms (74253ad3)
+2024-06-01T22:39:43.7114747-03:00 0HN42KJG41ICM:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-06-01T22:39:43.7139968-03:00 0HN42KJG41ICN:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-06-01T22:39:43.7142719-03:00 0HN42KJG41ICM:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 2.8699ms (74253ad3)
+2024-06-01T22:39:43.7539154-03:00 0HN42KJG41ICN:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 39.9767ms (74253ad3)
+2024-06-01T22:39:43.8459606-03:00 0HN42KJG41ICN:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-06-01T22:39:44.0394831-03:00 0HN42KJG41ICN:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 193.5899ms (74253ad3)
+2024-06-01T22:41:10.4508524-03:00 0HN42KJG41ICO:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - "application/json" 136 (d509f86a)
+2024-06-01T22:41:10.4591210-03:00 0HN42KJG41ICO:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-01T22:41:10.4865112-03:00 0HN42KJG41ICO:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbSale] Insert(APITrabalhoFinal.Services.DTOs.SaleDTO)" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-01T22:41:15.2329020-03:00 0HN42KJG41ICO:00000001 [INF] Executed DbCommand ("46"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-01T22:41:18.4193506-03:00 0HN42KJG41ICO:00000001 [INF] Executed DbCommand ("7"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.productid = @__productId_0 AND t.startdate <= now()::timestamp AND t.enddate >= now()::timestamp
+ORDER BY t.promotiontype" (0723d8ff)
+2024-06-01T22:42:07.6291114-03:00 0HN42KJG41ICO:00000001 [INF] Executed DbCommand ("15"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p7='?', @p8='?' (DbType = DateTime2), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;
+INSERT INTO tb_sales (code, createat, discount, price, productid, qty)
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12)
+RETURNING id;" (0723d8ff)
+2024-06-01T22:42:07.6739843-03:00 0HN42KJG41ICO:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_stock_logs (createdat, productid, qty)
+VALUES (@p0, @p1, @p2)
+RETURNING id;" (0723d8ff)
+2024-06-01T22:42:07.6871770-03:00 0HN42KJG41ICO:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbSale"'. (605b4265)
+2024-06-01T22:42:07.7058078-03:00 0HN42KJG41ICO:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)" in 57216.3841ms (afa2e885)
+2024-06-01T22:42:07.7059165-03:00 0HN42KJG41ICO:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-01T22:42:07.7118982-03:00 0HN42KJG41ICO:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - 200 null "application/json; charset=utf-8" 57261.091ms (74253ad3)

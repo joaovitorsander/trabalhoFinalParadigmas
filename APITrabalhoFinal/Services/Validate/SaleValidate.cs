@@ -16,9 +16,6 @@ namespace APITrabalhoFinal.Services.Validate
             RuleFor(sale => sale.Productid)
                 .GreaterThan(0).WithMessage("O ID do produto associado à venda é obrigatório.");
 
-            RuleFor(sale => sale.Price)
-                .GreaterThan(0).WithMessage("O preço da venda deve ser maior que zero.");
-
             RuleFor(sale => sale.Qty)
                 .GreaterThan(0).WithMessage("A quantidade vendida deve ser maior que zero.");
         }
