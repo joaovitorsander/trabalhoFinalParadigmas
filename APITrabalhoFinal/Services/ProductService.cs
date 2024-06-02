@@ -13,10 +13,12 @@ namespace APITrabalhoFinal.Services
     public class ProductService
     {
         private readonly TfDbContext _dbContext;
+        private readonly StockLogService _stockLogService;
 
-        public ProductService(TfDbContext dbContext)
+        public ProductService(TfDbContext dbContext, StockLogService stockLogService)
         {
             _dbContext = dbContext;
+            _stockLogService = stockLogService;
         }
 
         public TbProduct Insert(ProductDTO dto)
@@ -24,12 +26,22 @@ namespace APITrabalhoFinal.Services
             var entity = ProductParser.ToEntity(dto);
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
+
+            _stockLogService.InsertStockLog(new StockLogDTO
+            {
+                Productid = entity.Id,
+                Qty = entity.Stock,
+                Createdat = DateTime.Now
+            });
+
             return entity;
         }
 
         public TbProduct Update(ProductUpdateDTO dto, int id)
         {
             var existingEntity = GetById(id);
+
+            int oldStock = existingEntity.Stock;
 
             existingEntity.Description = dto.Description;
             existingEntity.Barcode = dto.Barcode;
@@ -39,6 +51,13 @@ namespace APITrabalhoFinal.Services
 
             _dbContext.Update(existingEntity);
             _dbContext.SaveChanges();
+
+            _stockLogService.InsertStockLog(new StockLogDTO
+            {
+                Productid = existingEntity.Id,
+                Qty = existingEntity.Stock - oldStock,
+                Createdat = DateTime.Now
+            });
 
             return existingEntity;
         }
@@ -109,9 +128,18 @@ namespace APITrabalhoFinal.Services
                 throw new InsufficientStockException("Estoque insuficiente para realizar a operação.");
             }
 
+            int oldStock = product.Stock;
             product.Stock += quantity;
+
             _dbContext.Update(product);
             _dbContext.SaveChanges();
+
+            _stockLogService.InsertStockLog(new StockLogDTO
+            {
+                Productid = product.Id,
+                Qty = product.Stock - oldStock,
+                Createdat = DateTime.Now
+            });
         }
     }
 }

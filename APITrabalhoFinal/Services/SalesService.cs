@@ -14,12 +14,14 @@ namespace APITrabalhoFinal.Services
         private readonly TfDbContext _dbContext;
         private readonly ProductService _productService;
         private readonly PromotionService _promotionService;
+        private readonly StockLogService _stockLogService;
 
-        public SalesService(TfDbContext dbcontext, ProductService productService, PromotionService promotionService)
+        public SalesService(TfDbContext dbcontext, ProductService productService, PromotionService promotionService, StockLogService stockLogService)
         {
             _dbContext = dbcontext;
             _productService = productService;
             _promotionService = promotionService;
+            _stockLogService = stockLogService;
         }
 
         public TbSale Insert(SaleDTO dto)
@@ -48,6 +50,13 @@ namespace APITrabalhoFinal.Services
 
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
+
+            _stockLogService.InsertStockLog(new StockLogDTO
+            {
+                Productid = entity.Productid,
+                Qty = -entity.Qty,
+                Createdat = DateTime.Now
+            });
 
             return entity;
         }
