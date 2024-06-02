@@ -55,6 +55,8 @@ namespace APITrabalhoFinal.Services
 
             product.Stock -= dto.Qty;
 
+            entity.Createat = DateTime.Now;
+
             _dbContext.Update(product);
             _dbContext.Add(entity);
             _dbContext.SaveChanges();

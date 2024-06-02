@@ -10,7 +10,6 @@ namespace APITrabalhoFinal.Services.Parser
             return new TbSale
             {
                 Code = dto.Code,
-                Createat = dto.Createat,
                 Productid = dto.Productid,
                 Qty = dto.Qty,
                 Discount = dto.Discount

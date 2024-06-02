@@ -6,8 +6,6 @@ namespace APITrabalhoFinal.Services.DTOs
     { 
         public string Code { get; set; }
 
-        public DateTime Createat { get; set; }
-
         public int Productid { get; set; }
 
         public int Qty { get; set; }
