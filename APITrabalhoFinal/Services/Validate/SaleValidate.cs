@@ -21,9 +21,6 @@ namespace APITrabalhoFinal.Services.Validate
 
             RuleFor(sale => sale.Qty)
                 .GreaterThan(0).WithMessage("A quantidade vendida deve ser maior que zero.");
-
-            RuleFor(sale => sale.Discount)
-                .InclusiveBetween(0, 100).WithMessage("O desconto deve estar entre 0% e 100%.");
         }
 
         private bool IsGuid(string code)

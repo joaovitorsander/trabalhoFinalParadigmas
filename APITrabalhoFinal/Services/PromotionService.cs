@@ -100,12 +100,11 @@ namespace APITrabalhoFinal.Services
             var currentDate = DateTime.Now;
 
             return _dbContext.TbPromotions
-                     .Where(p => p.Productid == productId
-                                 && p.Startdate <= currentDate
-                                 && p.Enddate >= currentDate)
-                     .OrderByDescending(p => p.Enddate) 
-                     .ThenByDescending(p => p.Startdate)
-                     .ToList();
+                .Where(p => p.Productid == productId
+                            && p.Startdate <= DateTime.Now
+                            && p.Enddate >= DateTime.Now)
+                .OrderBy(p => p.Promotiontype)
+                .ToList();
         }
     }
 }
