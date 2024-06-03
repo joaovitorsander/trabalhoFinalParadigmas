@@ -1,7 +1,7 @@
 ﻿using APITrabalhoFinal.DataBase.Models;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
-using APITrabalhoFinal.Services.Parser;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,15 +10,17 @@ namespace APITrabalhoFinal.Services
     public class StockLogService
     {
         private readonly TfDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public StockLogService(TfDbContext dbContext)
+        public StockLogService(TfDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public TbStockLog InsertStockLog(StockLogDTO dto)
         {
-            var entity = StockLogParser.ToEntity(dto);
+            var entity = _mapper.Map<TbStockLog>(dto);
             _dbContext.TbStockLogs.Add(entity);
             _dbContext.SaveChanges();
             return entity;

@@ -58,3 +58,5 @@ C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\F
 C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\libman.json
+C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal\bin\Debug\net8.0\AutoMapper.dll

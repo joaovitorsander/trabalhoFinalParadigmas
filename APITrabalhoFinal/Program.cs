@@ -12,6 +12,7 @@ using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Validate;
 using FluentValidation.AspNetCore;
 using FluentValidation;
+using APITrabalhoFinal.Services.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,7 @@ builder.Services.AddTransient<IValidator<ProductDTO>, ProductValidate>();
 builder.Services.AddTransient<IValidator<ProductUpdateDTO>, ProductUpdateValidate>();
 builder.Services.AddTransient<IValidator<PromotionDTO>, PromotionValidate>();
 builder.Services.AddTransient<IValidator<SaleDTO>, SaleValidate>();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {

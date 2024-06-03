@@ -1,8 +1,8 @@
 ﻿using APITrabalhoFinal.DataBase.Models;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
-using APITrabalhoFinal.Services.Parser;
 using APITrabalhoFinal.Services.Validate;
+using AutoMapper;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,10 +15,12 @@ namespace APITrabalhoFinal.Services
     public class PromotionService
     {
         private readonly TfDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public PromotionService(TfDbContext dbcontext)
+        public PromotionService(TfDbContext dbcontext, IMapper mapper)
         {
             _dbContext = dbcontext;
+            _mapper = mapper;
         }
 
         public TbPromotion Insert(PromotionDTO dto)
@@ -29,7 +31,7 @@ namespace APITrabalhoFinal.Services
                 throw new NotFoundException("Produto não encontrado.");
             }
 
-            var entity = PromotionParser.ToEntity(dto);
+            var entity = _mapper.Map<TbPromotion>(dto);
 
             entity.Startdate = DateTime.SpecifyKind(dto.Startdate, DateTimeKind.Unspecified);
             entity.Enddate = DateTime.SpecifyKind(dto.Enddate, DateTimeKind.Unspecified);

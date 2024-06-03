@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8/ZwVlcAKHS7na/Ub+k6LRyksaWn791GnRiu04TqDsQFQhNzqXCvVjiCvpdqx4B/K3bMVfk0tmIogOG34RhZWw==",
+  "dgSpecHash": "3PMV+feWqGwgDniHCMgGqaTgrjogwbZXYzbXKJ7z60Z+ThEi4EbqVLDtnw04tffyFX8EqZPeQ9J23OL8+M5DdA==",
   "success": true,
   "projectFilePath": "C:\\Users\\João\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\APITrabalhoFinal.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\João\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.1\\fluentvalidation.dependencyinjectionextensions.11.9.1.nupkg.sha512",

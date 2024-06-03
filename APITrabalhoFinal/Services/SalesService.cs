@@ -1,11 +1,11 @@
 ﻿using APITrabalhoFinal.DataBase.Models;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
-using APITrabalhoFinal.Services.Parser;
 using FluentValidation;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using AutoMapper;
 
 namespace APITrabalhoFinal.Services
 {
@@ -15,13 +15,15 @@ namespace APITrabalhoFinal.Services
         private readonly ProductService _productService;
         private readonly PromotionService _promotionService;
         private readonly StockLogService _stockLogService;
+        private readonly IMapper _mapper;
 
-        public SalesService(TfDbContext dbcontext, ProductService productService, PromotionService promotionService, StockLogService stockLogService)
+        public SalesService(TfDbContext dbcontext, ProductService productService, PromotionService promotionService, StockLogService stockLogService, IMapper mapper)
         {
             _dbContext = dbcontext;
             _productService = productService;
             _promotionService = promotionService;
             _stockLogService = stockLogService;
+            _mapper = mapper;
         }
 
         public TbSale Insert(SaleDTO dto)
@@ -50,7 +52,7 @@ namespace APITrabalhoFinal.Services
 
             decimal totalPrice = unitPrice * dto.Qty;
 
-            var entity = SaleParser.ToEntity(dto);
+            var entity = _mapper.Map<TbSale>(dto);
             entity.Price = totalPrice; 
 
             product.Stock -= dto.Qty;

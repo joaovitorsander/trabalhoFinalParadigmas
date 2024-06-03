@@ -1,7 +1,7 @@
 ﻿using APITrabalhoFinal.DataBase.Models;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
-using APITrabalhoFinal.Services.Parser;
+using AutoMapper;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,16 +14,18 @@ namespace APITrabalhoFinal.Services
     {
         private readonly TfDbContext _dbContext;
         private readonly StockLogService _stockLogService;
+        private readonly IMapper _mapper;
 
-        public ProductService(TfDbContext dbContext, StockLogService stockLogService)
+        public ProductService(TfDbContext dbContext, StockLogService stockLogService, IMapper mapper)
         {
             _dbContext = dbContext;
             _stockLogService = stockLogService;
+            _mapper = mapper;
         }
 
         public TbProduct Insert(ProductDTO dto)
         {
-            var entity = ProductParser.ToEntity(dto);
+            var entity = _mapper.Map<TbProduct>(dto);
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
 
@@ -43,11 +45,7 @@ namespace APITrabalhoFinal.Services
 
             int oldStock = existingEntity.Stock;
 
-            existingEntity.Description = dto.Description;
-            existingEntity.Barcode = dto.Barcode;
-            existingEntity.Barcodetype = dto.Barcodetype;
-            existingEntity.Price = dto.Price;
-            existingEntity.Costprice = dto.Costprice;
+            _mapper.Map(dto, existingEntity);
 
             _dbContext.Update(existingEntity);
             _dbContext.SaveChanges();
