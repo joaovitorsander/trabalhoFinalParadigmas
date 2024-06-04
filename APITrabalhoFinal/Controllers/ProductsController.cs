@@ -15,7 +15,7 @@ namespace APITrabalhoFinal.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductsController : ControllerBase
     {
 
         public readonly ProductService _service;
@@ -23,7 +23,7 @@ namespace APITrabalhoFinal.Controllers
         public readonly IValidator<ProductUpdateDTO> _validatorUpdateProduct;
 
 
-        public ProductController(ProductService service, IValidator<ProductDTO> validatorInsertProduct, IValidator<ProductUpdateDTO> validatorUpdateProduct)
+        public ProductsController(ProductService service, IValidator<ProductDTO> validatorInsertProduct, IValidator<ProductUpdateDTO> validatorUpdateProduct)
         {
             _service = service;
             _validatorInsertProduct = validatorInsertProduct;
@@ -35,7 +35,7 @@ namespace APITrabalhoFinal.Controllers
         /// </summary>
         /// <param name="product">O produto a ser inserido.</param>
         /// <returns>O produto inserido.</returns>
-        /// <response code="200">Indica que o produto foi inserido com sucesso.</response>
+        /// <response code="201">Indica que o produto foi inserido com sucesso.</response>
         /// <response code="400">Indica que os dados fornecidos são inválidos.</response>
         /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         [HttpPost()]
@@ -148,29 +148,6 @@ namespace APITrabalhoFinal.Controllers
             try
             {
                 var entity = _service.GetByDesc(description);
-                return Ok(entity);
-            }
-            catch (NotFoundException E)
-            {
-                return NotFound(E.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Obtém todos os produtos.
-        /// </summary>
-        /// <returns>Uma lista de todos os produtos.</returns>
-        ///<response code="500">Indica que ocorreu um erro interno no servidor.</response>
-        [HttpGet()]
-        public ActionResult<TbProduct> Get()
-        {
-            try
-            {
-                var entity = _service.Get();
                 return Ok(entity);
             }
             catch (NotFoundException E)

@@ -4,22 +4,22 @@
         <name>APITrabalhoFinal</name>
     </assembly>
     <members>
-        <member name="T:APITrabalhoFinal.Controllers.ProductController">
+        <member name="T:APITrabalhoFinal.Controllers.ProductsController">
             <summary>
             Controlador para gerenciar os produtos.
             </summary>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.ProductsController.Insert(APITrabalhoFinal.Services.DTOs.ProductDTO)">
             <summary>
             Insere um novo produto.
             </summary>
             <param name="product">O produto a ser inserido.</param>
             <returns>O produto inserido.</returns>
-            <response code="200">Indica que o produto foi inserido com sucesso.</response>
+            <response code="201">Indica que o produto foi inserido com sucesso.</response>
             <response code="400">Indica que os dados fornecidos são inválidos.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.ProductsController.Update(System.Int32,APITrabalhoFinal.Services.DTOs.ProductUpdateDTO)">
             <summary>
             Atualiza um produto existente.
             </summary>
@@ -31,7 +31,7 @@
             <response code="404">Indica que o produto com o ID especificado não foi encontrado.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByBarCode(System.String)">
+        <member name="M:APITrabalhoFinal.Controllers.ProductsController.GetByBarCode(System.String)">
             <summary>
             Obtém um produto pelo código de barras.
             </summary>
@@ -42,7 +42,7 @@
             <response code="404">Indica que nenhum produto correspondente ao código de barras foi encontrado.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.GetByDesc(System.String)">
+        <member name="M:APITrabalhoFinal.Controllers.ProductsController.GetByDesc(System.String)">
             <summary>
             Obtém um produto pela descrição.
             </summary>
@@ -52,14 +52,7 @@
             <response code="404">Indica que nenhum produto correspondente à descrição foi encontrado.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.Get">
-             <summary>
-             Obtém todos os produtos.
-             </summary>
-             <returns>Uma lista de todos os produtos.</returns>
-            <response code="500">Indica que ocorreu um erro interno no servidor.</response>
-        </member>
-        <member name="M:APITrabalhoFinal.Controllers.ProductController.UpdateStock(System.Int32,APITrabalhoFinal.Services.DTOs.StockUpdateDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.ProductsController.UpdateStock(System.Int32,APITrabalhoFinal.Services.DTOs.StockUpdateDTO)">
             <summary>
             Atualiza o estoque de um produto pelo ID.
             </summary>
@@ -74,23 +67,23 @@
             <response code="404">Indica que o produto especificado pelo ID não foi encontrado.</response>
             <response code="500">Indica que ocorreu um erro interno ao tentar atualizar o estoque.</response>
         </member>
-        <member name="T:APITrabalhoFinal.Controllers.PromotionController">
+        <member name="T:APITrabalhoFinal.Controllers.PromotionsController">
             <summary>
             Controlador para gerenciar as promoções.
             </summary>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.PromotionsController.Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)">
             <summary>
             Insere uma nova promoção.
             </summary>
             <param name="promotion">A promoção a ser inserida.</param>
             <returns>A promoção inserida.</returns>
-            <response code="200">Indica que a promoção foi inserida com sucesso.</response>
+            <response code="201">Indica que a promoção foi inserida com sucesso.</response>
             <response code="400">Indica que os dados fornecidos são inválidos.</response>
             <response code="404">Indica que o id do produto passado não existe.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.Put(System.Int32,APITrabalhoFinal.Services.DTOs.PromotionDTO)">
+        <member name="M:APITrabalhoFinal.Controllers.PromotionsController.Put(System.Int32,APITrabalhoFinal.Services.DTOs.PromotionDTO)">
             <summary>
             Atualiza uma promoção existente.
             </summary>
@@ -102,7 +95,7 @@
             <response code="404">Indica que a promoção com o ID especificado não foi encontrada ou o ID do produto não existe.</response>
             <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         </member>
-        <member name="M:APITrabalhoFinal.Controllers.PromotionController.GetPromotionsByProductAndPeriod(System.Int32,System.DateTime,System.DateTime)">
+        <member name="M:APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod(System.Int32,System.DateTime,System.DateTime)">
             <summary>
             Busca todas as promoções de um produto em um determinado período.
             </summary>

@@ -16,13 +16,13 @@ namespace APITrabalhoFinal.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class PromotionController : ControllerBase
+    public class PromotionsController : ControllerBase
     {
 
         public readonly PromotionService _service;
         public readonly IValidator<PromotionDTO> _validator;
 
-        public PromotionController(PromotionService service, IValidator<PromotionDTO> validator)
+        public PromotionsController(PromotionService service, IValidator<PromotionDTO> validator)
         {
             _service = service;
             _validator = validator;
@@ -33,7 +33,7 @@ namespace APITrabalhoFinal.Controllers
         /// </summary>
         /// <param name="promotion">A promoção a ser inserida.</param>
         /// <returns>A promoção inserida.</returns>
-        /// <response code="200">Indica que a promoção foi inserida com sucesso.</response>
+        /// <response code="201">Indica que a promoção foi inserida com sucesso.</response>
         /// <response code="400">Indica que os dados fornecidos são inválidos.</response>
         /// <response code="404">Indica que o id do produto passado não existe.</response>
         /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>

@@ -31,7 +31,7 @@ namespace APITrabalhoFinal.Controllers
         /// </summary>
         /// <param name="sale">A venda a ser inserida</param>
         /// <returns>A venda inserida.</returns>
-        /// <response code="200">Indica que a venda foi inserida com sucesso.</response>
+        /// <response code="201">Indica que a venda foi inserida com sucesso.</response>
         /// <response code="400">Indica que houve um erro de validação nos dados da venda ou que o estoque é insuficiente.</response>
         /// <response code="404">Indica que o produto com o ID especificado não foi encontrado.</response>
         /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>

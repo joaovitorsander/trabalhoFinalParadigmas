@@ -70,16 +70,6 @@ namespace APITrabalhoFinal.Services
             return existingEntity;
         }
 
-        public IEnumerable<TbProduct> Get()
-        {
-            var existingEntities = _dbContext.TbProducts.ToList();
-            if (existingEntities == null || existingEntities.Count == 0)
-            {
-                throw new NotFoundException("Nenhum registro encontrado.");
-            }
-            return existingEntities;
-        }
-
         public TbProduct GetByBarCode(string barCode)
         {
             var lowerBarCode = barCode.ToLower();
