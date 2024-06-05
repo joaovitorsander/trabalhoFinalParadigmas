@@ -7,6 +7,8 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using FluentValidation.Results;
+using System.Linq;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -26,6 +28,7 @@ namespace APITrabalhoFinal.Controllers
             _validator = validator;
         }
 
+
         /// <summary>
         /// Insere uma nova venda.
         /// </summary>
@@ -36,22 +39,30 @@ namespace APITrabalhoFinal.Controllers
         /// <response code="404">Indica que o produto com o ID especificado não foi encontrado.</response>
         /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         [HttpPost()]
-        public ActionResult<TbSale> Insert(SaleDTO sale)
+        [ProducesResponseType(typeof(TbSale), 201)]
+        public IActionResult Insert([FromBody] List<SaleDTO> sale)
         {
             try
             {
-                var validationResult = _validator.Validate(sale);
-                if (!validationResult.IsValid)
+                var validationResults = new List<FluentValidation.Results.ValidationResult>();
+
+                foreach (var saleItem in sale)
                 {
-                    return BadRequest(validationResult.Errors);
+                    var validationResult = _validator.Validate(saleItem);
+                    validationResults.Add(validationResult);
+                }
+
+                if (validationResults.Any(result => !result.IsValid))
+                {
+                    var errors = validationResults
+                        .SelectMany(result => result.Errors)
+                        .ToList();
+
+                    return BadRequest(errors);
                 }
 
                 var entity = _service.Insert(sale);
                 return Ok(entity);
-            }
-            catch (InvalidEntityException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (InsufficientStockException ex)
             {
@@ -66,6 +77,7 @@ namespace APITrabalhoFinal.Controllers
                 return StatusCode(500, "Erro interno no servidor: " + ex.Message);
             }
         }
+
 
         /// <summary>
         /// Obtém uma venda pelo código.

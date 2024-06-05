@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using System;
+using System.Collections.Generic;
 
 namespace APITrabalhoFinal.Services.Validate
 {
@@ -9,20 +10,11 @@ namespace APITrabalhoFinal.Services.Validate
     {
         public SaleValidate()
         {
-            RuleFor(sale => sale.Code)
-                .NotEmpty().WithMessage("O código da venda é obrigatório.")
-                .Must(IsGuid).WithMessage("O código da venda deve ser um GUID válido.");
-
             RuleFor(sale => sale.Productid)
                 .GreaterThan(0).WithMessage("O ID do produto associado à venda é obrigatório.");
 
             RuleFor(sale => sale.Qty)
                 .GreaterThan(0).WithMessage("A quantidade vendida deve ser maior que zero.");
-        }
-
-        private bool IsGuid(string code)
-        {
-            return Guid.TryParse(code, out _);
         }
     }
 }

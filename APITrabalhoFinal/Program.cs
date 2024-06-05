@@ -13,6 +13,7 @@ using APITrabalhoFinal.Services.Validate;
 using FluentValidation.AspNetCore;
 using FluentValidation;
 using APITrabalhoFinal.Services.Mappings;
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 

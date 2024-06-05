@@ -26,51 +26,57 @@ namespace APITrabalhoFinal.Services
             _mapper = mapper;
         }
 
-        public TbSale Insert(SaleDTO dto)
+        public IEnumerable<TbSale> Insert(List<SaleDTO> dtoList)
         {
-            var product = _productService.GetById(dto.Productid);
-            if (product == null)
+            var sales = new List<TbSale>();
+            var currentTime = DateTime.Now;
+            var code = Guid.NewGuid().ToString();
+
+            foreach (var dto in dtoList)
             {
-                throw new NotFoundException("Produto não encontrado.");
+                var product = _productService.GetById(dto.Productid);
+                if (product == null)
+                    throw new NotFoundException("Produto não existe");
+
+                if (product.Stock < dto.Qty)
+                    throw new InsufficientStockException("Estoque insuficiente para a movimentação");
+
+                var promotions = _promotionService.GetActivePromotions(dto.Productid);
+
+                decimal unitPrice = product.Price;
+                decimal originalPrice = unitPrice;
+                foreach (var promotion in promotions)
+                {
+                    unitPrice = ApplyPromotion(unitPrice, promotion);
+                }
+
+                decimal totalDiscount = originalPrice - unitPrice;
+
+                var newStock = product.Stock - dto.Qty;
+                _productService.AjustarStock(product.Id, newStock);
+
+                var stockLogDto = new StockLogDTO
+                {
+                    Productid = dto.Productid,
+                    Qty = -dto.Qty,
+                    Createdat = DateTime.Now
+                };
+                _stockLogService.InsertStockLog(stockLogDto);
+
+                var sale = _mapper.Map<TbSale>(dto);
+
+                sale.Code = code;
+                sale.Price = product.Price;
+                sale.Discount = totalDiscount;
+                sale.Createat = currentTime;
+
+                _dbContext.Add(sale);
+                sales.Add(sale);
             }
 
-            if (product.Stock < dto.Qty)
-            {
-                throw new InsufficientStockException("Estoque insuficiente para o produto: " + product.Description);
-            }
-
-            var promotions = _promotionService.GetActivePromotions(dto.Productid);
-
-
-            decimal unitPrice = product.Price;
-
-            foreach (var promotion in promotions)
-            {
-                unitPrice = ApplyPromotion(unitPrice, promotion);
-            }
-
-
-            decimal totalPrice = unitPrice * dto.Qty;
-
-            var entity = _mapper.Map<TbSale>(dto);
-            entity.Price = totalPrice; 
-
-            product.Stock -= dto.Qty;
-
-            entity.Createat = DateTime.Now;
-
-            _dbContext.Update(product);
-            _dbContext.Add(entity);
             _dbContext.SaveChanges();
 
-            _stockLogService.InsertStockLog(new StockLogDTO
-            {
-                Productid = entity.Productid,
-                Qty = -entity.Qty,
-                Createdat = DateTime.Now
-            });
-
-            return entity;
+            return sales;
         }
 
 
@@ -108,15 +114,22 @@ namespace APITrabalhoFinal.Services
 
         public decimal ApplyPromotion(decimal price, TbPromotion promotion)
         {
+            decimal discountedPrice = price;
+
             switch (promotion.Promotiontype)
             {
                 case 0:
-                    return price * (1 - promotion.Value / 100);
+                    discountedPrice = price * (1 - promotion.Value / 100);
+                    break;
                 case 1:
-                    return price - promotion.Value;
+                    discountedPrice = price - promotion.Value;
+                    break;
                 default:
-                    return price;
+                    discountedPrice = price;
+                    break;
             }
+
+            return discountedPrice;
         }
     }
 }

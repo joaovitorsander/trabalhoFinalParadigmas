@@ -99,8 +99,6 @@ namespace APITrabalhoFinal.Services
 
         public List<TbPromotion> GetActivePromotions(int productId)
         {
-            var currentDate = DateTime.Now;
-
             return _dbContext.TbPromotions
                 .Where(p => p.Productid == productId
                             && p.Startdate <= DateTime.Now
