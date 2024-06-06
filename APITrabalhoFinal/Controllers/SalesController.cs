@@ -121,16 +121,14 @@ namespace APITrabalhoFinal.Controllers
         [HttpGet("report")]
         public ActionResult<List<SalesReportDTO>> GetSalesReport(DateTime startDate, DateTime endDate)
         {
-
-            if (startDate == default || endDate == default)
-            {
-                return BadRequest("As datas de início e fim são obrigatórias.");
-            }
-
             try
             {
                 var report = _service.GetSalesReportByPeriod(startDate, endDate);
                 return Ok(report);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (NotFoundException ex)
             {

@@ -3,7 +3,6 @@ using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
 using AutoMapper;
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,16 +14,26 @@ namespace APITrabalhoFinal.Services
         private readonly TfDbContext _dbContext;
         private readonly StockLogService _stockLogService;
         private readonly IMapper _mapper;
+        public readonly IValidator<ProductDTO> _validatorInsertProduct;
+        public readonly IValidator<ProductUpdateDTO> _validatorUpdateProduct;
 
-        public ProductService(TfDbContext dbContext, StockLogService stockLogService, IMapper mapper)
+        public ProductService(TfDbContext dbContext, StockLogService stockLogService, IMapper mapper, IValidator<ProductDTO> validatorInsertProduct, IValidator<ProductUpdateDTO> validatorUpdateProduct)
         {
             _dbContext = dbContext;
             _stockLogService = stockLogService;
             _mapper = mapper;
+            _validatorInsertProduct = validatorInsertProduct;
+            _validatorUpdateProduct = validatorUpdateProduct;
         }
 
         public TbProduct Insert(ProductDTO dto)
         {
+            var validationResult = _validatorInsertProduct.Validate(dto);
+            if (!validationResult.IsValid)
+            {
+                throw new InvalidDataException("Dados inválidos", validationResult.Errors);
+            }
+
             var entity = _mapper.Map<TbProduct>(dto);
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
@@ -43,19 +52,18 @@ namespace APITrabalhoFinal.Services
         {
             var existingEntity = GetById(id);
 
+            var validationResult = _validatorUpdateProduct.Validate(dto);
+            if (!validationResult.IsValid)
+            {
+                throw new InvalidDataException("Dados inválidos", validationResult.Errors);
+            }
+
             int oldStock = existingEntity.Stock;
 
             _mapper.Map(dto, existingEntity);
 
             _dbContext.Update(existingEntity);
             _dbContext.SaveChanges();
-
-            _stockLogService.InsertStockLog(new StockLogDTO
-            {
-                Productid = existingEntity.Id,
-                Qty = existingEntity.Stock - oldStock,
-                Createdat = DateTime.Now
-            });
 
             return existingEntity;
         }
@@ -72,6 +80,11 @@ namespace APITrabalhoFinal.Services
 
         public TbProduct GetByBarCode(string barCode)
         {
+            if (string.IsNullOrWhiteSpace(barCode))
+            {
+                throw new InvalidEntityException("O código de barras não pode ser vazio ou nulo.");
+            }
+
             var lowerBarCode = barCode.ToLower();
             var entity = _dbContext.TbProducts.FirstOrDefault(p => p.Barcode.ToLower() == lowerBarCode);
 
@@ -104,6 +117,11 @@ namespace APITrabalhoFinal.Services
             if (product == null)
             {
                 throw new NotFoundException("Produto não encontrado.");
+            }
+
+            if (quantity == 0)
+            {
+                throw new InvalidDataException("A quantidade a atualizar deve ser diferente de zero.", null);
             }
 
             if (quantity == 0)

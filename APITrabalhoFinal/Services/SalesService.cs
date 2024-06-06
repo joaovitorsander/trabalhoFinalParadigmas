@@ -92,6 +92,11 @@ namespace APITrabalhoFinal.Services
 
         public List<SalesReportDTO> GetSalesReportByPeriod(DateTime startDate, DateTime endDate)
         {
+            if (startDate == default || endDate == default)
+            {
+                throw new BadRequestException("As datas de início e fim são obrigatórias.");
+            }
+
             var query = from sale in _dbContext.TbSales
                         join product in _dbContext.TbProducts on sale.Productid equals product.Id
                         where sale.Createat >= startDate && sale.Createat < endDate.AddDays(1)

@@ -2,11 +2,11 @@
 using APITrabalhoFinal.Services;
 using APITrabalhoFinal.Services.DTOs;
 using APITrabalhoFinal.Services.Exceptions;
-using APITrabalhoFinal.Services.Validate;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -19,15 +19,10 @@ namespace APITrabalhoFinal.Controllers
     {
 
         public readonly ProductService _service;
-        public readonly IValidator<ProductDTO> _validatorInsertProduct;
-        public readonly IValidator<ProductUpdateDTO> _validatorUpdateProduct;
-
-
-        public ProductsController(ProductService service, IValidator<ProductDTO> validatorInsertProduct, IValidator<ProductUpdateDTO> validatorUpdateProduct)
-        {
+    
+        public ProductsController(ProductService service) 
+        { 
             _service = service;
-            _validatorInsertProduct = validatorInsertProduct;
-            _validatorUpdateProduct = validatorUpdateProduct;
         }
 
         /// <summary>
@@ -39,21 +34,19 @@ namespace APITrabalhoFinal.Controllers
         /// <response code="400">Indica que os dados fornecidos são inválidos.</response>
         /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         [HttpPost()]
+        [ProducesResponseType(typeof(TbProduct), 201)]
+        [ProducesResponseType(500)]
         public ActionResult<TbProduct> Insert(ProductDTO product)
         {
             try
             {
-                var validationResult = _validatorInsertProduct.Validate(product);
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(new { Message = "Dados inválidos", Errors = validationResult.Errors });
-                }
                 var entity = _service.Insert(product);
-                return Ok(entity);
+                return CreatedAtAction(nameof(Insert), new { id = entity.Id }, entity);
             }
-            catch (InvalidEntityException E)
+            catch (InvalidDataException ex)
             {
-                return BadRequest(E.Message);
+                var errors = ex.ValidationErrors.Select(e => e.ErrorMessage).ToList();
+                return BadRequest(new { Message = "Dados inválidos", Errors = errors });
             }
             catch (Exception ex)
             {
@@ -76,24 +69,16 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                var checkProductById = _service.GetById(id);
-                if (checkProductById == null)
-                {
-                    return NotFound("Produto com o ID especificado não foi encontrado");
-                }
-
-                var validationResult = _validatorUpdateProduct.Validate(dto);
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(new { Message = "Dados inválidos", Errors = validationResult.Errors });
-                }
-
                 var entity = _service.Update(dto, id);
                 return Ok(entity);
             }
-            catch (NotFoundException E)
+            catch (NotFoundException ex)
             {
-                return NotFound(E.Message);
+                return NotFound(ex.Message);
+            }
+            catch (InvalidDataException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
@@ -116,13 +101,12 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(barCode))
-                {
-                    return BadRequest("O código de barras não pode ser vazio ou nulo.");
-                }
-
                 var entity = _service.GetByBarCode(barCode);
                 return Ok(entity);
+            }
+            catch (InvalidEntityException E) 
+            { 
+                return BadRequest(E.Message); 
             }
             catch (NotFoundException E)
             {
@@ -178,24 +162,24 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                var product = _service.GetById(id);
-                if (product == null)
-                {
-                    return NotFound("Produto não encontrado.");
-                }
-
-                if (stockUpdate.Quantity == 0)
-                {
-                    return BadRequest("A quantidade a atualizar deve ser diferente de zero.");
-                }
-
                 _service.AjustarStock(id, stockUpdate.Quantity);
-
                 return Ok("Estoque atualizado com sucesso.");
             }
-            catch (NotFoundException E)
+            catch (NotFoundException ex)
             {
-                return NotFound(E.Message);
+                return NotFound(ex.Message);
+            }
+            catch (InvalidDataException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (InvalidEntityException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (InsufficientStockException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
