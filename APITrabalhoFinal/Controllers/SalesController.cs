@@ -20,14 +20,11 @@ namespace APITrabalhoFinal.Controllers
     public class SalesController : ControllerBase
     {
         public readonly SalesService _service;
-        public readonly IValidator<SaleDTO> _validator;
 
-        public SalesController(SalesService service, IValidator<SaleDTO> validator)
+        public SalesController(SalesService service)
         {
             _service = service;
-            _validator = validator;
         }
-
 
         /// <summary>
         /// Insere uma nova venda.
@@ -44,26 +41,15 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                var validationResults = new List<FluentValidation.Results.ValidationResult>();
-
-                foreach (var saleItem in sale)
-                {
-                    var validationResult = _validator.Validate(saleItem);
-                    validationResults.Add(validationResult);
-                }
-
-                if (validationResults.Any(result => !result.IsValid))
-                {
-                    var errors = validationResults
-                        .SelectMany(result => result.Errors)
-                        .ToList();
-
-                    return BadRequest(errors);
-                }
-
                 var entity = _service.Insert(sale);
-                return Ok(entity);
+                return CreatedAtAction(nameof(Insert), null, entity);
             }
+            catch (InvalidDataException ex)
+            {
+                var errors = ex.ValidationErrors.Select(e => e.ErrorMessage).ToList();
+                return BadRequest(new { Message = "Dados inválidos", Errors = errors });
+            }
+            
             catch (InsufficientStockException ex)
             {
                 return BadRequest(ex.Message);

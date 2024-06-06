@@ -16,14 +16,16 @@ namespace APITrabalhoFinal.Services
         private readonly PromotionService _promotionService;
         private readonly StockLogService _stockLogService;
         private readonly IMapper _mapper;
+        public readonly IValidator<SaleDTO> _validator;
 
-        public SalesService(TfDbContext dbcontext, ProductService productService, PromotionService promotionService, StockLogService stockLogService, IMapper mapper)
+        public SalesService(TfDbContext dbcontext, ProductService productService, PromotionService promotionService, StockLogService stockLogService, IMapper mapper, IValidator<SaleDTO> validator)
         {
             _dbContext = dbcontext;
             _productService = productService;
             _promotionService = promotionService;
             _stockLogService = stockLogService;
             _mapper = mapper;
+            _validator = validator;
         }
 
         public IEnumerable<TbSale> Insert(List<SaleDTO> dtoList)
@@ -34,6 +36,12 @@ namespace APITrabalhoFinal.Services
 
             foreach (var dto in dtoList)
             {
+                var validationResult = _validator.Validate(dto);
+                if (!validationResult.IsValid)
+                {
+                    throw new InvalidDataException("Dados inválidos", validationResult.Errors);
+                }
+
                 var product = _productService.GetById(dto.Productid);
                 if (product == null)
                     throw new NotFoundException("Produto não existe");
@@ -52,8 +60,7 @@ namespace APITrabalhoFinal.Services
 
                 decimal totalDiscount = originalPrice - unitPrice;
 
-                var newStock = product.Stock - dto.Qty;
-                _productService.AjustarStock(product.Id, newStock);
+                _productService.AjustarStock(product.Id, -dto.Qty);
 
                 var stockLogDto = new StockLogDTO
                 {
@@ -85,7 +92,7 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbSales.FirstOrDefault(c => c.Code == code);
             if (existingEntity == null)
             {
-                throw new NotFoundException("Registro não existe");
+                throw new NotFoundException("Ñenhuma venda encontrada para este código");
             }
             return existingEntity;
         }

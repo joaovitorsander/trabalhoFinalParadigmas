@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\controllers\\promotionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\controllers\\promotionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\services\\promotionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\services\\promotionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\services\\salesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\services\\salesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|c:\\users\\jo\u00E3o\\source\\repos\\apitrabalhofinal\\apitrabalhofinal\\controllers\\stocklogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1B5D255-B85D-4E74-9B3D-290E090DA446}|APITrabalhoFinal\\APITrabalhoFinal.csproj|solutionrelative:apitrabalhofinal\\controllers\\stocklogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,67 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SalesService.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\SalesService.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Services\\SalesService.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\SalesService.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Services\\SalesService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T02:28:49.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Controllers\\ProductsController.cs",
-              "ViewState": "AQIAAJoAAAAAAAAAAAAcwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T02:18:27.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\ProductService.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Services\\ProductService.cs",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAuwBoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T02:09:32.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PromotionService.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\PromotionService.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Services\\PromotionService.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Services\\PromotionService.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Services\\PromotionService.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAswIcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T02:07:52.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PromotionsController.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\PromotionsController.cs",
-              "RelativeDocumentMoniker": "APITrabalhoFinal\\Controllers\\PromotionsController.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\PromotionsController.cs",
-              "RelativeToolTip": "APITrabalhoFinal\\Controllers\\PromotionsController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAADwv3UAAAAtAAAA",
+              "Title": "StockLogController.cs",
+              "DocumentMoniker": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\StockLogController.cs",
+              "RelativeDocumentMoniker": "APITrabalhoFinal\\Controllers\\StockLogController.cs",
+              "ToolTip": "C:\\Users\\Jo\u00E3o\\source\\repos\\APITrabalhoFinal\\APITrabalhoFinal\\Controllers\\StockLogController.cs",
+              "RelativeToolTip": "APITrabalhoFinal\\Controllers\\StockLogController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAkwCQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T02:07:48.767Z",
+              "WhenOpened": "2024-06-06T02:54:12.135Z",
               "EditorCaption": ""
             }
           ]

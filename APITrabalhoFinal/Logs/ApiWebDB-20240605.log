@@ -1122,3 +1122,179 @@ WHERE t.productid = @__productId_0 AND t.startdate >= @__startDate_1 AND t.endda
 2024-06-05T23:35:16.6495847-03:00 0HN45Q33TKF6E:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)" in 7.4124ms (afa2e885)
 2024-06-05T23:35:16.6496097-03:00 0HN45Q33TKF6E:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (99874f2b)
 2024-06-05T23:35:16.6497646-03:00 0HN45Q33TKF6E:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""?startDate=2024-06-05&endDate=2024-06-10" - 200 null "application/json; charset=utf-8" 7.9711ms (74253ad3)
+2024-06-05T23:46:54.8178245-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-06-05T23:46:54.8305139-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-06-05T23:46:54.8441834-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-06-05T23:46:54.8466981-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-06-05T23:46:56.1898509-03:00 0HN45QBMKVU1E:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-06-05T23:46:56.9557653-03:00 0HN45QBMKVU1E:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 779.8366ms (74253ad3)
+2024-06-05T23:46:56.9758620-03:00 0HN45QBMKVU1F:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-06-05T23:46:56.9759067-03:00 0HN45QBMKVU1E:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-06-05T23:46:56.9793938-03:00 0HN45QBMKVU1E:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 3.3872ms (74253ad3)
+2024-06-05T23:46:57.1621944-03:00 0HN45QBMKVU1F:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 186.4713ms (74253ad3)
+2024-06-05T23:46:57.2385086-03:00 0HN45QBMKVU1F:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-06-05T23:46:57.4687236-03:00 0HN45QBMKVU1F:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 230.2612ms (74253ad3)
+2024-06-05T23:47:09.3435958-03:00 0HN45QBMKVU1G:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/28/logs""" - null null (d509f86a)
+2024-06-05T23:47:09.3518656-03:00 0HN45QBMKVU1G:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:47:09.3757404-03:00 0HN45QBMKVU1G:00000001 [INF] Route matched with "{action = \"GetStockLogs\", controller = \"StockLog\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.StockLogResultDTO]] GetStockLogs(Int32)" on controller "APITrabalhoFinal.Controllers.StockLogController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:47:10.7470990-03:00 0HN45QBMKVU1G:00000001 [INF] Executed DbCommand ("47"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-05T23:47:10.8650964-03:00 0HN45QBMKVU1G:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:47:10.8681677-03:00 0HN45QBMKVU1G:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)" in 1489.4855ms (afa2e885)
+2024-06-05T23:47:10.8682766-03:00 0HN45QBMKVU1G:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:47:10.8748311-03:00 0HN45QBMKVU1G:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/28/logs""" - 404 null "text/plain; charset=utf-8" 1531.4481ms (74253ad3)
+2024-06-05T23:47:42.0897932-03:00 0HN45QBMKVU1H:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/20/logs""" - null null (d509f86a)
+2024-06-05T23:47:42.0902236-03:00 0HN45QBMKVU1H:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:47:42.0904934-03:00 0HN45QBMKVU1H:00000001 [INF] Route matched with "{action = \"GetStockLogs\", controller = \"StockLog\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.StockLogResultDTO]] GetStockLogs(Int32)" on controller "APITrabalhoFinal.Controllers.StockLogController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:47:42.1202296-03:00 0HN45QBMKVU1H:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-05T23:47:42.1358673-03:00 0HN45QBMKVU1H:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_stock_logs AS t
+    WHERE t.productid = @__productId_0)" (0723d8ff)
+2024-06-05T23:47:42.1983388-03:00 0HN45QBMKVU1H:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.createdat AS \"Date\", t0.barcode AS \"Barcode\", t0.description AS \"Description\", t.qty AS \"Quantity\"
+FROM tb_stock_logs AS t
+INNER JOIN tb_products AS t0 ON t.productid = t0.id
+WHERE t.productid = @__productId_0" (0723d8ff)
+2024-06-05T23:47:42.2097038-03:00 0HN45QBMKVU1H:00000001 [INF] Executing "ObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.Services.DTOs.StockLogResultDTO, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-06-05T23:47:42.2220639-03:00 0HN45QBMKVU1H:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)" in 131.4829ms (afa2e885)
+2024-06-05T23:47:42.2221153-03:00 0HN45QBMKVU1H:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.StockLogController.GetStockLogs (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:47:42.2222471-03:00 0HN45QBMKVU1H:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/20/logs""" - 200 null "application/json; charset=utf-8" 132.5328ms (74253ad3)
+2024-06-05T23:47:55.9709982-03:00 0HN45QBMKVU1I:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - "application/json" 45 (d509f86a)
+2024-06-05T23:47:55.9728875-03:00 0HN45QBMKVU1I:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:47:55.9792989-03:00 0HN45QBMKVU1I:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Insert(System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SaleDTO])" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:47:56.0615072-03:00 0HN45QBMKVU1I:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-06-05T23:47:56.0644985-03:00 0HN45QBMKVU1I:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)" in 85.1429ms (afa2e885)
+2024-06-05T23:47:56.0645421-03:00 0HN45QBMKVU1I:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:47:56.0646120-03:00 0HN45QBMKVU1I:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - 400 null "application/json; charset=utf-8" 93.6613ms (74253ad3)
+2024-06-05T23:48:04.2682136-03:00 0HN45QBMKVU1J:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - "application/json" 45 (d509f86a)
+2024-06-05T23:48:04.2690182-03:00 0HN45QBMKVU1J:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:48:04.2691126-03:00 0HN45QBMKVU1J:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Insert(System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SaleDTO])" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:48:04.3507908-03:00 0HN45QBMKVU1J:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:48:04.3728254-03:00 0HN45QBMKVU1J:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:48:04.3730225-03:00 0HN45QBMKVU1J:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)" in 103.8891ms (afa2e885)
+2024-06-05T23:48:04.3730505-03:00 0HN45QBMKVU1J:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:48:04.3731354-03:00 0HN45QBMKVU1J:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - 404 null "text/plain; charset=utf-8" 104.9903ms (74253ad3)
+2024-06-05T23:48:16.1277912-03:00 0HN45QBMKVU1K:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - "application/json" 46 (d509f86a)
+2024-06-05T23:48:16.1279750-03:00 0HN45QBMKVU1K:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:48:16.1280499-03:00 0HN45QBMKVU1K:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Insert(System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SaleDTO])" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:48:16.1364518-03:00 0HN45QBMKVU1K:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:48:16.2130267-03:00 0HN45QBMKVU1K:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:48:16.2131898-03:00 0HN45QBMKVU1K:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)" in 85.117ms (afa2e885)
+2024-06-05T23:48:16.2132227-03:00 0HN45QBMKVU1K:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:48:16.2133859-03:00 0HN45QBMKVU1K:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - 400 null "text/plain; charset=utf-8" 85.7233ms (74253ad3)
+2024-06-05T23:48:25.7810408-03:00 0HN45QBMKVU1L:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - "application/json" 45 (d509f86a)
+2024-06-05T23:48:25.7812011-03:00 0HN45QBMKVU1L:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:48:25.7812594-03:00 0HN45QBMKVU1L:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Insert(System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SaleDTO])" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:48:25.7856494-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:48:25.8127206-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.productid = @__productId_0 AND t.startdate <= now()::timestamp AND t.enddate >= now()::timestamp
+ORDER BY t.promotiontype" (0723d8ff)
+2024-06-05T23:48:25.8169672-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.barcode, t.barcodetype, t.costprice, t.description, t.price, t.stock
+FROM tb_products AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:48:25.8966551-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?', @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_products SET barcode = @p0, barcodetype = @p1, costprice = @p2, description = @p3, price = @p4, stock = @p5
+WHERE id = @p6;" (0723d8ff)
+2024-06-05T23:48:25.9690918-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_stock_logs (createdat, productid, qty)
+VALUES (@p0, @p1, @p2)
+RETURNING id;" (0723d8ff)
+2024-06-05T23:48:25.9877290-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_stock_logs (createdat, productid, qty)
+VALUES (@p0, @p1, @p2)
+RETURNING id;" (0723d8ff)
+2024-06-05T23:48:26.0122112-03:00 0HN45QBMKVU1L:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?', @p1='?' (DbType = DateTime2), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_sales (code, createat, discount, price, productid, qty)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING id;" (0723d8ff)
+2024-06-05T23:48:26.0155236-03:00 0HN45QBMKVU1L:00000001 [INF] Executing "CreatedAtActionResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbSale, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-06-05T23:48:26.0486947-03:00 0HN45QBMKVU1L:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)" in 267.4123ms (afa2e885)
+2024-06-05T23:48:26.0487334-03:00 0HN45QBMKVU1L:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:48:26.0488603-03:00 0HN45QBMKVU1L:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Sales""" - 201 null "application/json; charset=utf-8" 267.869ms (74253ad3)
+2024-06-05T23:49:06.2923297-03:00 0HN45QBMKVU1M:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/3af5bb95-5238-4275-beac-f1de7310e979""" - null null (d509f86a)
+2024-06-05T23:49:06.2927492-03:00 0HN45QBMKVU1M:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.GetByCode (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:49:06.2951144-03:00 0HN45QBMKVU1M:00000001 [INF] Route matched with "{action = \"GetByCode\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbSale] GetByCode(System.String)" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:49:06.3062826-03:00 0HN45QBMKVU1M:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__code_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.code, t.createat, t.discount, t.price, t.productid, t.qty
+FROM tb_sales AS t
+WHERE t.code = @__code_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:49:06.3077676-03:00 0HN45QBMKVU1M:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbSale"'. (605b4265)
+2024-06-05T23:49:06.3080209-03:00 0HN45QBMKVU1M:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.GetByCode (APITrabalhoFinal)" in 12.8741ms (afa2e885)
+2024-06-05T23:49:06.3080419-03:00 0HN45QBMKVU1M:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.GetByCode (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:49:06.3081777-03:00 0HN45QBMKVU1M:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/3af5bb95-5238-4275-beac-f1de7310e979""" - 200 null "application/json; charset=utf-8" 15.8998ms (74253ad3)
+2024-06-05T23:49:13.7392823-03:00 0HN45QBMKVU1N:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/3af5bb95-5238-4275-beac-f1de7310e97""" - null null (d509f86a)
+2024-06-05T23:49:13.7395559-03:00 0HN45QBMKVU1N:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.GetByCode (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:49:13.7396813-03:00 0HN45QBMKVU1N:00000001 [INF] Route matched with "{action = \"GetByCode\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbSale] GetByCode(System.String)" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:49:13.7452785-03:00 0HN45QBMKVU1N:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__code_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.code, t.createat, t.discount, t.price, t.productid, t.qty
+FROM tb_sales AS t
+WHERE t.code = @__code_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:49:13.7750093-03:00 0HN45QBMKVU1N:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:49:13.7751426-03:00 0HN45QBMKVU1N:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.GetByCode (APITrabalhoFinal)" in 35.4354ms (afa2e885)
+2024-06-05T23:49:13.7751685-03:00 0HN45QBMKVU1N:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.GetByCode (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:49:13.7752665-03:00 0HN45QBMKVU1N:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/3af5bb95-5238-4275-beac-f1de7310e97""" - 404 null "text/plain; charset=utf-8" 36.0717ms (74253ad3)
+2024-06-05T23:50:30.2207554-03:00 0HN45QBMKVU1O:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/report""?startDate=2024-06-01&endDate=2024-06-02" - null null (d509f86a)
+2024-06-05T23:50:30.2210806-03:00 0HN45QBMKVU1O:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:50:30.2232473-03:00 0HN45QBMKVU1O:00000001 [INF] Route matched with "{action = \"GetSalesReport\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SalesReportDTO]] GetSalesReport(System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:50:30.2550893-03:00 0HN45QBMKVU1O:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__startDate_0='?' (DbType = DateTime2), @__AddDays_1='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_sales AS t
+    INNER JOIN tb_products AS t0 ON t.productid = t0.id
+    WHERE t.createat >= @__startDate_0 AND t.createat < @__AddDays_1)" (0723d8ff)
+2024-06-05T23:50:30.2776093-03:00 0HN45QBMKVU1O:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:50:30.2777520-03:00 0HN45QBMKVU1O:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)" in 54.4682ms (afa2e885)
+2024-06-05T23:50:30.2777971-03:00 0HN45QBMKVU1O:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:50:30.2778998-03:00 0HN45QBMKVU1O:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/report""?startDate=2024-06-01&endDate=2024-06-02" - 404 null "text/plain; charset=utf-8" 59.1815ms (74253ad3)
+2024-06-05T23:50:40.2093764-03:00 0HN45QBMKVU1P:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/report""?startDate=2024-06-01&endDate=2024-06-10" - null null (d509f86a)
+2024-06-05T23:50:40.2098304-03:00 0HN45QBMKVU1P:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:50:40.2099560-03:00 0HN45QBMKVU1P:00000001 [INF] Route matched with "{action = \"GetSalesReport\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SalesReportDTO]] GetSalesReport(System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:50:40.2186123-03:00 0HN45QBMKVU1P:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__startDate_0='?' (DbType = DateTime2), @__AddDays_1='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_sales AS t
+    INNER JOIN tb_products AS t0 ON t.productid = t0.id
+    WHERE t.createat >= @__startDate_0 AND t.createat < @__AddDays_1)" (0723d8ff)
+2024-06-05T23:50:40.2267510-03:00 0HN45QBMKVU1P:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__startDate_0='?' (DbType = DateTime2), @__AddDays_1='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.code AS \"SaleCode\", t0.description AS \"ProductDescription\", t.price AS \"Price\", t.qty AS \"Quantity\", t.createat AS \"SaleDate\"
+FROM tb_sales AS t
+INNER JOIN tb_products AS t0 ON t.productid = t0.id
+WHERE t.createat >= @__startDate_0 AND t.createat < @__AddDays_1" (0723d8ff)
+2024-06-05T23:50:40.2275227-03:00 0HN45QBMKVU1P:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.Services.DTOs.SalesReportDTO, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-06-05T23:50:40.2289534-03:00 0HN45QBMKVU1P:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)" in 18.9738ms (afa2e885)
+2024-06-05T23:50:40.2289848-03:00 0HN45QBMKVU1P:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:50:40.2290628-03:00 0HN45QBMKVU1P:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/report""?startDate=2024-06-01&endDate=2024-06-10" - 200 null "application/json; charset=utf-8" 19.7791ms (74253ad3)
+2024-06-05T23:50:48.8993654-03:00 0HN45QBMKVU1Q:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/report""?startDate=2024-06-01" - null null (d509f86a)
+2024-06-05T23:50:48.8995232-03:00 0HN45QBMKVU1Q:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:50:48.8995794-03:00 0HN45QBMKVU1Q:00000001 [INF] Route matched with "{action = \"GetSalesReport\", controller = \"Sales\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[APITrabalhoFinal.Services.DTOs.SalesReportDTO]] GetSalesReport(System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.SalesController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:50:48.9224960-03:00 0HN45QBMKVU1Q:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:50:48.9226069-03:00 0HN45QBMKVU1Q:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)" in 23.0114ms (afa2e885)
+2024-06-05T23:50:48.9226467-03:00 0HN45QBMKVU1Q:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.SalesController.GetSalesReport (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:50:48.9227020-03:00 0HN45QBMKVU1Q:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Sales/report""?startDate=2024-06-01" - 400 null "text/plain; charset=utf-8" 23.373ms (74253ad3)
