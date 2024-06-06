@@ -16,15 +16,24 @@ namespace APITrabalhoFinal.Services
     {
         private readonly TfDbContext _dbContext;
         private readonly IMapper _mapper;
+        public readonly IValidator<PromotionDTO> _validator;
 
-        public PromotionService(TfDbContext dbcontext, IMapper mapper)
+        public PromotionService(TfDbContext dbcontext, IMapper mapper, IValidator<PromotionDTO> validator)
         {
             _dbContext = dbcontext;
             _mapper = mapper;
+            _validator = validator;
         }
 
         public TbPromotion Insert(PromotionDTO dto)
         {
+
+            var validationResult = _validator.Validate(dto);
+            if (!validationResult.IsValid)
+            {
+                throw new InvalidDataException("Dados inválidos", validationResult.Errors);
+            }
+
             var productExists = _dbContext.TbProducts.Any(p => p.Id == dto.Productid);
             if (!productExists)
             {
@@ -44,6 +53,17 @@ namespace APITrabalhoFinal.Services
 
         public TbPromotion Update(PromotionDTO dto, int id)
         {
+            var promotionExists = GetById(id);
+            if (promotionExists == null)
+            {
+                throw new NotFoundException("Promoção não encontrada.");
+            }
+
+            var validationResult = _validator.Validate(dto);
+            if (!validationResult.IsValid)
+            {
+                throw new InvalidDataException("Dados inválidos", validationResult.Errors);
+            }
 
             var productExists = _dbContext.TbProducts.Any(p => p.Id == dto.Productid);
             if (!productExists)
@@ -70,13 +90,18 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbPromotions.FirstOrDefault(c => c.Id == id);
             if (existingEntity == null)
             {
-                throw new NotFoundException("Promoção não encontrada.");
+                return null;
             }
             return existingEntity;
         }
 
         public IEnumerable<TbPromotion> GetPromotionsByProductAndPeriod(int productId, DateTime startDate, DateTime endDate)
         {
+            if (startDate == default(DateTime) || endDate == default(DateTime))
+            {
+                throw new InvalidEntityException("A data de início e a data de fim não podem ser vazias.");
+            }
+
             var productExists = _dbContext.TbProducts.Any(p => p.Id == productId);
             if (!productExists)
             {

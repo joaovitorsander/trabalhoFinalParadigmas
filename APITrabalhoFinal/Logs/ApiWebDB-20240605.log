@@ -957,3 +957,168 @@ RETURNING id;" (0723d8ff)
 2024-06-05T23:04:20.1744664-03:00 0HN45PGPR6JB2:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.ProductsController.UpdateStock (APITrabalhoFinal)" in 19.5028ms (afa2e885)
 2024-06-05T23:04:20.1744902-03:00 0HN45PGPR6JB2:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.ProductsController.UpdateStock (APITrabalhoFinal)"' (99874f2b)
 2024-06-05T23:04:20.1745745-03:00 0HN45PGPR6JB2:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Products/20/stock""" - 200 null "text/plain; charset=utf-8" 19.997ms (74253ad3)
+2024-06-05T23:31:33.0624526-03:00  [INF] Now listening on: "http://localhost:5034" (d826f4b8)
+2024-06-05T23:31:33.0709662-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-06-05T23:31:33.0817716-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-06-05T23:31:33.0838924-03:00  [INF] Content root path: "C:\Users\João\source\repos\APITrabalhoFinal\APITrabalhoFinal" (cc26f24e)
+2024-06-05T23:31:35.2807102-03:00 0HN45Q33TKF61:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - null null (d509f86a)
+2024-06-05T23:31:36.6229333-03:00 0HN45Q33TKF61:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 1357.0726ms (74253ad3)
+2024-06-05T23:31:36.6466332-03:00 0HN45Q33TKF61:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-06-05T23:31:36.6466329-03:00 0HN45Q33TKF62:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - null null (d509f86a)
+2024-06-05T23:31:36.6506408-03:00 0HN45Q33TKF61:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_framework/aspnetcore-browser-refresh.js""" - 200 13768 "application/javascript; charset=utf-8" 4.2005ms (74253ad3)
+2024-06-05T23:31:36.9075899-03:00 0HN45Q33TKF62:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 261.2215ms (74253ad3)
+2024-06-05T23:31:37.0454084-03:00 0HN45Q33TKF62:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-06-05T23:31:37.3503031-03:00 0HN45Q33TKF62:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 304.9615ms (74253ad3)
+2024-06-05T23:31:46.4144753-03:00 0HN45Q33TKF63:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - "application/json" 141 (d509f86a)
+2024-06-05T23:31:46.4239341-03:00 0HN45Q33TKF63:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:31:46.4526126-03:00 0HN45Q33TKF63:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:31:46.8506675-03:00 0HN45Q33TKF63:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-06-05T23:31:46.8592577-03:00 0HN45Q33TKF63:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)" in 403.4773ms (afa2e885)
+2024-06-05T23:31:46.8593797-03:00 0HN45Q33TKF63:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:31:46.8606729-03:00 0HN45Q33TKF63:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - 400 null "application/json; charset=utf-8" 446.3334ms (74253ad3)
+2024-06-05T23:31:52.4006801-03:00 0HN45Q33TKF64:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - "application/json" 141 (d509f86a)
+2024-06-05T23:31:52.4016702-03:00 0HN45Q33TKF64:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:31:52.4019086-03:00 0HN45Q33TKF64:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:31:53.6345962-03:00 0HN45Q33TKF64:00000001 [INF] Executed DbCommand ("46"ms) [Parameters=["@__dto_Productid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__dto_Productid_0)" (0723d8ff)
+2024-06-05T23:31:53.6796053-03:00 0HN45Q33TKF64:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:31:53.6799866-03:00 0HN45Q33TKF64:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)" in 1278.1296ms (afa2e885)
+2024-06-05T23:31:53.6800407-03:00 0HN45Q33TKF64:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:31:53.6852962-03:00 0HN45Q33TKF64:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - 404 null "text/plain; charset=utf-8" 1284.7839ms (74253ad3)
+2024-06-05T23:32:08.0748957-03:00 0HN45Q33TKF65:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - "application/json" 141 (d509f86a)
+2024-06-05T23:32:08.0751758-03:00 0HN45Q33TKF65:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:32:08.0753777-03:00 0HN45Q33TKF65:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:32:08.0984946-03:00 0HN45Q33TKF65:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__dto_Productid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__dto_Productid_0)" (0723d8ff)
+2024-06-05T23:32:08.2688886-03:00 0HN45Q33TKF65:00000001 [INF] Executed DbCommand ("31"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_promotions (enddate, productid, startdate, value)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id, promotiontype;" (0723d8ff)
+2024-06-05T23:32:08.2869026-03:00 0HN45Q33TKF65:00000001 [INF] Executing "CreatedAtActionResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbPromotion"'. (605b4265)
+2024-06-05T23:32:08.3118595-03:00 0HN45Q33TKF65:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)" in 236.4585ms (afa2e885)
+2024-06-05T23:32:08.3119177-03:00 0HN45Q33TKF65:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:32:08.3120834-03:00 0HN45Q33TKF65:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - 201 null "application/json; charset=utf-8" 237.4113ms (74253ad3)
+2024-06-05T23:32:20.0869345-03:00 0HN45Q33TKF66:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - "application/json" 141 (d509f86a)
+2024-06-05T23:32:20.0872391-03:00 0HN45Q33TKF66:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:32:20.0873205-03:00 0HN45Q33TKF66:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:32:20.1122870-03:00 0HN45Q33TKF66:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-06-05T23:32:20.1126276-03:00 0HN45Q33TKF66:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)" in 25.2718ms (afa2e885)
+2024-06-05T23:32:20.1126882-03:00 0HN45Q33TKF66:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:32:20.1127782-03:00 0HN45Q33TKF66:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - 400 null "application/json; charset=utf-8" 25.9091ms (74253ad3)
+2024-06-05T23:32:38.2620486-03:00 0HN45Q33TKF67:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - "application/json" 142 (d509f86a)
+2024-06-05T23:32:38.2622080-03:00 0HN45Q33TKF67:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:32:38.2622876-03:00 0HN45Q33TKF67:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Insert(APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:32:38.3095521-03:00 0HN45Q33TKF67:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__dto_Productid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__dto_Productid_0)" (0723d8ff)
+2024-06-05T23:32:38.3157889-03:00 0HN45Q33TKF67:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_promotions (enddate, productid, startdate, value)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id, promotiontype;" (0723d8ff)
+2024-06-05T23:32:38.3163394-03:00 0HN45Q33TKF67:00000001 [INF] Executing "CreatedAtActionResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbPromotion"'. (605b4265)
+2024-06-05T23:32:38.3167280-03:00 0HN45Q33TKF67:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)" in 54.4191ms (afa2e885)
+2024-06-05T23:32:38.3167541-03:00 0HN45Q33TKF67:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Insert (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:32:38.3168908-03:00 0HN45Q33TKF67:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5034""""/api/Promotions""" - 201 null "application/json; charset=utf-8" 54.8491ms (74253ad3)
+2024-06-05T23:32:55.5538588-03:00 0HN45Q33TKF68:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotions/29""" - "application/json" 140 (d509f86a)
+2024-06-05T23:32:55.5541719-03:00 0HN45Q33TKF68:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:32:55.5584996-03:00 0HN45Q33TKF68:00000001 [INF] Route matched with "{action = \"Put\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Put(Int32, APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:32:55.6049269-03:00 0HN45Q33TKF68:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:32:55.6303754-03:00 0HN45Q33TKF68:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:32:55.6305760-03:00 0HN45Q33TKF68:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)" in 72.0323ms (afa2e885)
+2024-06-05T23:32:55.6306053-03:00 0HN45Q33TKF68:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:32:55.6307505-03:00 0HN45Q33TKF68:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotions/29""" - 404 null "text/plain; charset=utf-8" 76.9617ms (74253ad3)
+2024-06-05T23:33:32.9829425-03:00 0HN45Q33TKF69:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotions/27""" - "application/json" 141 (d509f86a)
+2024-06-05T23:33:32.9831242-03:00 0HN45Q33TKF69:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:33:32.9834018-03:00 0HN45Q33TKF69:00000001 [INF] Route matched with "{action = \"Put\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Put(Int32, APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:33:32.9880932-03:00 0HN45Q33TKF69:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:33:33.0162957-03:00 0HN45Q33TKF69:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-06-05T23:33:33.0165345-03:00 0HN45Q33TKF69:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)" in 33.081ms (afa2e885)
+2024-06-05T23:33:33.0166338-03:00 0HN45Q33TKF69:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:33:33.0167649-03:00 0HN45Q33TKF69:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotions/27""" - 400 null "application/json; charset=utf-8" 33.9156ms (74253ad3)
+2024-06-05T23:33:43.8099559-03:00 0HN45Q33TKF6A:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotions/27""" - "application/json" 141 (d509f86a)
+2024-06-05T23:33:43.8100762-03:00 0HN45Q33TKF6A:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:33:43.8101480-03:00 0HN45Q33TKF6A:00000001 [INF] Route matched with "{action = \"Put\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[APITrabalhoFinal.DataBase.Models.TbPromotion] Put(Int32, APITrabalhoFinal.Services.DTOs.PromotionDTO)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:33:43.8139939-03:00 0HN45Q33TKF6A:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:33:43.8183382-03:00 0HN45Q33TKF6A:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__dto_Productid_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__dto_Productid_0)" (0723d8ff)
+2024-06-05T23:33:43.8213057-03:00 0HN45Q33TKF6A:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-06-05T23:33:43.8337555-03:00 0HN45Q33TKF6A:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Decimal)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_promotions SET enddate = @p0, productid = @p1, promotiontype = @p2, startdate = @p3, value = @p4
+WHERE id = @p5;" (0723d8ff)
+2024-06-05T23:33:43.8347562-03:00 0HN45Q33TKF6A:00000001 [INF] Executing "OkObjectResult", writing value of type '"APITrabalhoFinal.DataBase.Models.TbPromotion"'. (605b4265)
+2024-06-05T23:33:43.8348900-03:00 0HN45Q33TKF6A:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)" in 24.7222ms (afa2e885)
+2024-06-05T23:33:43.8349151-03:00 0HN45Q33TKF6A:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.Put (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:33:43.8349867-03:00 0HN45Q33TKF6A:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5034""""/api/Promotions/27""" - 200 null "application/json; charset=utf-8" 25.0806ms (74253ad3)
+2024-06-05T23:34:07.0488363-03:00 0HN45Q33TKF6B:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""" - null null (d509f86a)
+2024-06-05T23:34:07.0492583-03:00 0HN45Q33TKF6B:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:34:07.0517443-03:00 0HN45Q33TKF6B:00000001 [INF] Route matched with "{action = \"GetPromotionsByProductAndPeriod\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[APITrabalhoFinal.DataBase.Models.TbPromotion]] GetPromotionsByProductAndPeriod(Int32, System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:34:07.0768742-03:00 0HN45Q33TKF6B:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:34:07.0770057-03:00 0HN45Q33TKF6B:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)" in 25.2246ms (afa2e885)
+2024-06-05T23:34:07.0770387-03:00 0HN45Q33TKF6B:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:34:07.0771077-03:00 0HN45Q33TKF6B:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""" - 400 null "text/plain; charset=utf-8" 28.3247ms (74253ad3)
+2024-06-05T23:34:21.7759791-03:00 0HN45Q33TKF6C:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/29/period""" - null null (d509f86a)
+2024-06-05T23:34:21.7761707-03:00 0HN45Q33TKF6C:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:34:21.7762373-03:00 0HN45Q33TKF6C:00000001 [INF] Route matched with "{action = \"GetPromotionsByProductAndPeriod\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[APITrabalhoFinal.DataBase.Models.TbPromotion]] GetPromotionsByProductAndPeriod(Int32, System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:34:21.8014725-03:00 0HN45Q33TKF6C:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-06-05T23:34:21.8015802-03:00 0HN45Q33TKF6C:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)" in 25.3293ms (afa2e885)
+2024-06-05T23:34:21.8016098-03:00 0HN45Q33TKF6C:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:34:21.8016668-03:00 0HN45Q33TKF6C:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/29/period""" - 400 null "text/plain; charset=utf-8" 25.7377ms (74253ad3)
+2024-06-05T23:34:50.4416862-03:00 0HN45Q33TKF6D:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""?startDate=2024-06-06%2002%3A31%3A40.117&endDate=2024-06-06%2002%3A31%3A40.118" - null null (d509f86a)
+2024-06-05T23:34:50.4419348-03:00 0HN45Q33TKF6D:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:34:50.4420213-03:00 0HN45Q33TKF6D:00000001 [INF] Route matched with "{action = \"GetPromotionsByProductAndPeriod\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[APITrabalhoFinal.DataBase.Models.TbPromotion]] GetPromotionsByProductAndPeriod(Int32, System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:34:50.4603989-03:00 0HN45Q33TKF6D:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-05T23:34:50.4705008-03:00 0HN45Q33TKF6D:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__productId_0='?' (DbType = Int32), @__startDate_1='?' (DbType = DateTime2), @__endDate_2='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.productid = @__productId_0 AND t.startdate >= @__startDate_1 AND t.enddate <= @__endDate_2" (0723d8ff)
+2024-06-05T23:34:50.4713114-03:00 0HN45Q33TKF6D:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbPromotion, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-06-05T23:34:50.4721008-03:00 0HN45Q33TKF6D:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)" in 30.0594ms (afa2e885)
+2024-06-05T23:34:50.4721331-03:00 0HN45Q33TKF6D:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:34:50.4722218-03:00 0HN45Q33TKF6D:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""?startDate=2024-06-06%2002%3A31%3A40.117&endDate=2024-06-06%2002%3A31%3A40.118" - 200 null "application/json; charset=utf-8" 30.5849ms (74253ad3)
+2024-06-05T23:35:16.6418385-03:00 0HN45Q33TKF6E:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""?startDate=2024-06-05&endDate=2024-06-10" - null null (d509f86a)
+2024-06-05T23:35:16.6420638-03:00 0HN45Q33TKF6E:00000001 [INF] Executing endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (500cc934)
+2024-06-05T23:35:16.6421351-03:00 0HN45Q33TKF6E:00000001 [INF] Route matched with "{action = \"GetPromotionsByProductAndPeriod\", controller = \"Promotions\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[APITrabalhoFinal.DataBase.Models.TbPromotion]] GetPromotionsByProductAndPeriod(Int32, System.DateTime, System.DateTime)" on controller "APITrabalhoFinal.Controllers.PromotionsController" ("APITrabalhoFinal"). (122b2fdf)
+2024-06-05T23:35:16.6455643-03:00 0HN45Q33TKF6E:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__productId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT EXISTS (
+    SELECT 1
+    FROM tb_products AS t
+    WHERE t.id = @__productId_0)" (0723d8ff)
+2024-06-05T23:35:16.6490505-03:00 0HN45Q33TKF6E:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__productId_0='?' (DbType = Int32), @__startDate_1='?' (DbType = DateTime2), @__endDate_2='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.enddate, t.productid, t.promotiontype, t.startdate, t.value
+FROM tb_promotions AS t
+WHERE t.productid = @__productId_0 AND t.startdate >= @__startDate_1 AND t.enddate <= @__endDate_2" (0723d8ff)
+2024-06-05T23:35:16.6494338-03:00 0HN45Q33TKF6E:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[APITrabalhoFinal.DataBase.Models.TbPromotion, APITrabalhoFinal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-06-05T23:35:16.6495847-03:00 0HN45Q33TKF6E:00000001 [INF] Executed action "APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)" in 7.4124ms (afa2e885)
+2024-06-05T23:35:16.6496097-03:00 0HN45Q33TKF6E:00000001 [INF] Executed endpoint '"APITrabalhoFinal.Controllers.PromotionsController.GetPromotionsByProductAndPeriod (APITrabalhoFinal)"' (99874f2b)
+2024-06-05T23:35:16.6497646-03:00 0HN45Q33TKF6E:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5034""""/api/Promotions/product/20/period""?startDate=2024-06-05&endDate=2024-06-10" - 200 null "application/json; charset=utf-8" 7.9711ms (74253ad3)

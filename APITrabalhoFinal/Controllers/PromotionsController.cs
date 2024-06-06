@@ -8,6 +8,7 @@ using System;
 using Microsoft.AspNetCore.Http;
 using APITrabalhoFinal.Services.Validate;
 using FluentValidation;
+using System.Linq;
 
 namespace APITrabalhoFinal.Controllers
 {
@@ -20,12 +21,11 @@ namespace APITrabalhoFinal.Controllers
     {
 
         public readonly PromotionService _service;
-        public readonly IValidator<PromotionDTO> _validator;
+        
 
-        public PromotionsController(PromotionService service, IValidator<PromotionDTO> validator)
+        public PromotionsController(PromotionService service)
         {
             _service = service;
-            _validator = validator;
         }
 
         /// <summary>
@@ -38,26 +38,27 @@ namespace APITrabalhoFinal.Controllers
         /// <response code="404">Indica que o id do produto passado não existe.</response>
         /// <response code="500">Indica que ocorreu um erro interno no servidor.</response>
         [HttpPost()]
+        [ProducesResponseType(typeof(TbPromotion), 201)]
+        [ProducesResponseType(500)]
         public ActionResult<TbPromotion> Insert(PromotionDTO promotion)
         {
             try
             {
-                var validationResult = _validator.Validate(promotion);
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(new { Message = "Dados inválidos", Errors = validationResult.Errors });
-                }
-
                 var entity = _service.Insert(promotion);
-                return Ok(entity);
+                return CreatedAtAction(nameof(Insert), new { id = entity.Id }, entity);
             }
-            catch (NotFoundException e)
+            catch (InvalidDataException ex)
             {
-                return NotFound(e.Message);
+                var errors = ex.ValidationErrors.Select(e => e.ErrorMessage).ToList();
+                return BadRequest(new { Message = "Dados inválidos", Errors = errors });
             }
-            catch (Exception e)
+            catch (NotFoundException ex)
             {
-                return StatusCode(500, e.Message);
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
 
@@ -76,28 +77,21 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                var checkPromotionById = _service.GetById(id);
-                if (checkPromotionById == null)
-                {
-                    return NotFound("Promoção não encontrada.");
-                }
-
-                var validationResult = _validator.Validate(dto);
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(new { Message = "Dados inválidos", Errors = validationResult.Errors });
-                }
-
                 var entity = _service.Update(dto, id);
                 return Ok(entity);
             }
-            catch (NotFoundException e)
+            catch (InvalidDataException ex)
             {
-                return NotFound(e.Message);
+                var errors = ex.ValidationErrors.Select(e => e.ErrorMessage).ToList();
+                return BadRequest(new { Message = "Dados inválidos", Errors = errors });
             }
-            catch (Exception e)
+            catch (NotFoundException ex)
             {
-                return StatusCode(500, e.Message);
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -118,21 +112,20 @@ namespace APITrabalhoFinal.Controllers
         {
             try
             {
-                if (startDate == default(DateTime) || endDate == default(DateTime))
-                {
-                    return BadRequest("A data de início e a data de fim não podem ser vazias.");
-                }
-
                 var entity = _service.GetPromotionsByProductAndPeriod(productId, startDate, endDate);
                 return Ok(entity);
             }
-            catch (NotFoundException e)
+            catch (InvalidEntityException ex)
             {
-                return NotFound(e.Message);
+                return BadRequest(ex.Message);
             }
-            catch (Exception e)
+            catch (NotFoundException ex)
             {
-                return StatusCode(500, e.Message);
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
 
