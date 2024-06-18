@@ -92,7 +92,7 @@ namespace APITrabalhoFinal.Services
             var existingEntity = _dbContext.TbSales.FirstOrDefault(c => c.Code == code);
             if (existingEntity == null)
             {
-                throw new NotFoundException("Ñenhuma venda encontrada para este código");
+                throw new NotFoundException("Nenhuma venda encontrada para este código");
             }
             return existingEntity;
         }
